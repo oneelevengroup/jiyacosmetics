@@ -37,8 +37,14 @@ export default function Hero() {
 
   useMotionValueEvent(scrollYProgress, "change", (v) => setRevealed(v > 0.3));
 
-  // Image
+  // Image + head-turn cross-dissolve (profile -> front), completing as the
+  // logo fades so she "lands" looking at you before the headline reveals.
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.12]);
+  const profileOpacity = useTransform(scrollYProgress, [0.05, 0.4], [1, 0]);
+  const frontOpacity = useTransform(scrollYProgress, [0.05, 0.4], [0, 1]);
+  const profileScale = useTransform(scrollYProgress, [0.05, 0.4], [1, reduce ? 1 : 1.04]);
+  const frontScale = useTransform(scrollYProgress, [0.05, 0.4], [reduce ? 1 : 1.06, 1]);
+  const hasFront = !getImage("home.heroFront").placeholder;
 
   // Phase 1 — centered logo + scroll hint (held longer before the reveal)
   const logoOpacity = useTransform(scrollYProgress, [0.22, 0.36], [1, 0]);
@@ -55,15 +61,31 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-[230vh]">
       <div className="sticky top-0 h-[100svh] min-h-[640px] w-full overflow-hidden bg-noir">
-        {/* Brand portrait */}
+        {/* Brand portrait — profile layer cross-dissolves into the front layer */}
         <motion.div style={{ scale: imgScale }} className="absolute inset-0">
-          <SiteImage
-            imageKey="home.hero"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-left"
-          />
+          <motion.div
+            style={hasFront ? { opacity: profileOpacity, scale: profileScale } : undefined}
+            className="absolute inset-0"
+          >
+            <SiteImage
+              imageKey="home.hero"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-left"
+            />
+          </motion.div>
+
+          {hasFront && (
+            <motion.div style={{ opacity: frontOpacity, scale: frontScale }} className="absolute inset-0">
+              <SiteImage
+                imageKey="home.heroFront"
+                fill
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+            </motion.div>
+          )}
         </motion.div>
 
         {/* Legibility gradients for phase-2 text */}

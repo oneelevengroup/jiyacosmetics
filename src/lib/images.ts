@@ -65,6 +65,14 @@ export const images = {
     placeholder: false,
     note: "Client hero. Subject sits left with dark negative space right. Source is 6336x2688 (~16MB) — consider exporting a web-optimized version later.",
   },
+  "home.heroFront": {
+    key: "home.heroFront",
+    src: "/images/HEROIMAGEFRONTSHOT.png",
+    alt: "Front-facing portrait, gaze to camera",
+    target: "/images/HEROIMAGEFRONTSHOT.png",
+    placeholder: false,
+    note: "Front-facing shot of the hero subject. On scroll the profile cross-dissolves into this (head-turn effect).",
+  },
   "home.philosophy": {
     key: "home.philosophy",
     src: "/images/home/philosophy.svg",
