@@ -16,8 +16,8 @@ No component code needs to change — everything references images by logical ke
 
 | Asset | Target path | Status | Notes |
 |-------|-------------|--------|-------|
-| JIYA logo (wordmark, light/cream) | `/public/images/brand/logo.svg` | ⬜ Needed | Currently rendered as a styled text wordmark on the dark UI. Provide real logo file. |
-| Favicon / app icon | `/public/favicon.ico` | ⬜ Needed | |
+| JIYA logo (gold lockup, transparent SVG) | `/public/images/JIYA_logo.svg` | ✅ In place | Used in header + footer. Emblem-only at `JIYA_icon.svg`. |
+| Favicon / app icon | `/public/favicon.ico` | ⬜ Needed | Can be generated from `JIYA_icon.svg`. |
 
 ## Fonts
 

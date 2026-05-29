@@ -2,38 +2,34 @@ import Link from "next/link";
 import { getImage } from "@/lib/images";
 
 /**
- * JIYA logo.
- *
- * Renders the real logo image when one has been added (set `placeholder: false`
- * on the "brand.logo" entry in src/lib/images.ts after dropping the file at
- * /public/images/brand/logo.svg). Until then it falls back to an elegant Forum
- * text wordmark, which suits the dark editorial aesthetic.
+ * JIYA logo — the real transparent gold lockup (src/lib/images.ts → "brand.logo").
+ * Falls back to a Forum text wordmark only if the logo entry is ever marked as a
+ * placeholder. `size` controls height for the header vs. the larger footer mark.
  */
 export default function Logo({
-  variant = "light",
+  size = "header",
   centered = false,
 }: {
-  /** "light" = cream (for dark backgrounds). */
-  variant?: "light" | "dark";
+  size?: "header" | "footer";
   centered?: boolean;
 }) {
   const logo = getImage("brand.logo");
+  const height = size === "footer" ? "h-16 lg:h-20" : "h-12 md:h-14";
 
   if (!logo.placeholder) {
     return (
       <Link href="/" aria-label="JIYA — home" className={centered ? "block text-center" : "block"}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logo.src} alt="JIYA" className="h-10 w-auto md:h-11" />
+        <img src={logo.src} alt={logo.alt} className={`${height} w-auto`} />
       </Link>
     );
   }
 
-  const color = variant === "dark" ? "text-noir" : "text-cream";
   return (
     <Link
       href="/"
       aria-label="JIYA — home"
-      className={`group block ${color} ${centered ? "text-center" : ""}`}
+      className={`group block text-cream ${centered ? "text-center" : ""}`}
     >
       <span className="block font-display text-2xl font-normal tracking-[0.5em] pl-[0.5em] leading-none">
         JIYA

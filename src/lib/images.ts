@@ -33,11 +33,19 @@ export const images = {
   // ---- Brand ----
   "brand.logo": {
     key: "brand.logo",
-    src: "/images/brand/logo.svg",
+    src: "/images/JIYA_logo.svg",
+    alt: "JIYA — Facial Cosmetic Surgery",
+    target: "/images/JIYA_logo.svg",
+    placeholder: false,
+    note: "Full vertical lockup (gold emblem + JIYA wordmark), transparent SVG.",
+  },
+  "brand.icon": {
+    key: "brand.icon",
+    src: "/images/JIYA_icon.svg",
     alt: "JIYA",
-    target: "/images/brand/logo.svg",
-    placeholder: true,
-    note: "Drop the new JIYA logo at /public/images/brand/logo.svg (SVG preferred; transparent PNG @2x also fine), then set placeholder:false to replace the text wordmark.",
+    target: "/images/JIYA_icon.svg",
+    placeholder: false,
+    note: "Emblem/icon only (gold floral mark), transparent SVG.",
   },
 
   // ---- Home ----
