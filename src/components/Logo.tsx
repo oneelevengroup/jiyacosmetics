@@ -13,8 +13,9 @@ export default function Logo({
   size?: "header" | "footer";
   centered?: boolean;
 }) {
-  const logo = getImage("brand.logo");
-  const height = size === "footer" ? "h-16 lg:h-20" : "h-12 md:h-14";
+  // Header uses the horizontal lockup; footer uses the taller vertical lockup.
+  const logo = getImage(size === "footer" ? "brand.logo" : "brand.logoHorizontal");
+  const height = size === "footer" ? "h-16 lg:h-20" : "h-10 md:h-12";
 
   if (!logo.placeholder) {
     return (
