@@ -35,9 +35,11 @@
 
 @layer base {
   :root {
-    /* Display = Forum. Body = Avenir when self-hosted files are present,
-       falling back to the Mulish stand-in loaded via next/font. */
-    --font-display: "Forum", Georgia, serif;
+    /* next/font defines --font-display (Forum) and --font-sans-fallback (Mulish)
+       on <html>. Do NOT redefine --font-display here — a literal "Forum" has no
+       @font-face and would clobber next/font, falling back to Georgia.
+       We only layer Avenir in front of the Mulish fallback, so self-hosted
+       Avenir files (when added to /public/fonts) win automatically. */
     --font-sans: "Avenir", var(--font-sans-fallback), system-ui, sans-serif;
   }
 
