@@ -1,10 +1,12 @@
 import type { Config } from "tailwindcss";
 
 /**
- * JIYA design system.
+ * JIYA design system — dark cinematic edition.
  *
- * Inspired by grigoriak.doctor: luxury editorial layout, warm neutral palette,
- * high-contrast serif display paired with a clean humanist sans, generous space.
+ * Modeled on grigoriak.doctor: warm near-black backgrounds, full-bleed moody
+ * portraiture, a tall elegant serif for display, and small uppercase
+ * letter-spaced labels with hairline dividers. Primary text is CREAM (never
+ * brown); soft blush is a sparing accent for the largest display moments only.
  */
 const config: Config = {
   content: [
@@ -15,30 +17,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Warm neutral foundation
-        ivory: "#F7F3ED", // page background
-        sand: "#ECE3D6", // soft section background
-        stone: "#D9CDBC", // borders / muted surfaces
-        taupe: "#9C8C77", // secondary text
-        clay: "#6B5D4D", // tertiary text
-        ink: "#211C17", // primary text / dark sections
-        espresso: "#2C2620", // dark surface alt
-        // Accent
-        gold: "#A9885F", // primary accent (bronze/gold)
-        "gold-soft": "#C2A581", // hover / light accent
+        // Warm near-black foundation
+        noir: "#14100D", // page background
+        "noir-2": "#1B1510", // lifted section
+        "noir-3": "#241C16", // raised surface / card
+        // Text
+        cream: "#F2EADD", // primary text + headings
+        // Accent (use sparingly)
+        blush: "#C9A695", // soft rose for large display accents
+        "blush-soft": "#D9C2B6",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        // Editorial display scale
-        "display-xl": ["clamp(3rem, 9vw, 8.5rem)", { lineHeight: "0.95", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(2.5rem, 6vw, 5.5rem)", { lineHeight: "1.0", letterSpacing: "-0.015em" }],
-        "display-md": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.05", letterSpacing: "-0.01em" }],
+        // Editorial display scale (elegant, airy caps)
+        "display-xl": ["clamp(2.75rem, 8vw, 8rem)", { lineHeight: "1.0", letterSpacing: "0.02em" }],
+        "display-lg": ["clamp(2.25rem, 5.5vw, 5rem)", { lineHeight: "1.05", letterSpacing: "0.015em" }],
+        "display-md": ["clamp(1.75rem, 3.5vw, 3.25rem)", { lineHeight: "1.1", letterSpacing: "0.01em" }],
       },
       letterSpacing: {
-        eyebrow: "0.28em",
+        eyebrow: "0.32em",
+        label: "0.22em",
       },
       maxWidth: {
         site: "1440px",
@@ -47,18 +48,13 @@ const config: Config = {
         lux: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       keyframes: {
-        "fade-up": {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
         "slow-zoom": {
           "0%": { transform: "scale(1.08)" },
           "100%": { transform: "scale(1)" },
         },
       },
       animation: {
-        "fade-up": "fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both",
-        "slow-zoom": "slow-zoom 8s ease-out both",
+        "slow-zoom": "slow-zoom 9s ease-out both",
       },
     },
   },

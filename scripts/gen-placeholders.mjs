@@ -9,11 +9,12 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-// Warm neutral brand palette (matches tailwind.config.ts)
+// Dark cinematic brand palette (matches tailwind.config.ts)
+// [gradient top, gradient bottom, accent]
 const palettes = [
-  ["#ECE3D6", "#D9CDBC", "#9C8C77"], // sand
-  ["#211C17", "#2C2620", "#A9885F"], // ink/gold
-  ["#D9CDBC", "#C2A581", "#6B5D4D"], // stone/clay
+  ["#1B1510", "#0D0A07", "#C9A695"], // warm near-black, blush accent
+  ["#241C16", "#120E0A", "#D9C2B6"], // espresso, soft blush
+  ["#15100D", "#0A0706", "#C9A695"], // deepest noir, blush accent
 ];
 
 const assets = [
@@ -31,8 +32,7 @@ const svg = ({ label, ratio, p }) => {
   const w = rw * 200;
   const h = rh * 200;
   const [c1, c2, accent] = palettes[p];
-  const dark = p === 1;
-  const textColor = dark ? "#F7F3ED" : "#211C17";
+  const textColor = "#F2EADD"; // cream on dark
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label} placeholder">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">

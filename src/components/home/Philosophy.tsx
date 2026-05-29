@@ -5,11 +5,11 @@ import { philosophy } from "@/content/site";
 
 export default function Philosophy() {
   return (
-    <section className="bg-ivory py-24 lg:py-36">
+    <section className="bg-noir-2 py-24 lg:py-36">
       <div className="container-site grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
         {/* Image */}
         <Reveal className="lg:col-span-6">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2px]">
+          <div className="relative aspect-[4/5] w-full overflow-hidden">
             <SiteImage
               imageKey="home.philosophy"
               fill
@@ -20,18 +20,26 @@ export default function Philosophy() {
         </Reveal>
 
         {/* Copy */}
-        <div className="lg:col-span-6 lg:pl-6">
+        <div className="relative lg:col-span-6 lg:pl-6">
+          {/* Oversized blush quote mark, as on the inspiration site */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute -top-16 left-0 font-display text-[10rem] leading-none text-blush/25 lg:-top-24"
+          >
+            &ldquo;
+          </span>
+
           <Reveal>
             <span className="eyebrow">{philosophy.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mt-5 font-display text-display-md font-light text-ink">
+            <h2 className="mt-6 font-display text-display-md font-light uppercase text-cream">
               {philosophy.heading}
             </h2>
           </Reveal>
           {philosophy.body.map((para, i) => (
             <Reveal key={i} delay={0.16 + i * 0.08}>
-              <p className="mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-clay">
+              <p className="mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-cream/65">
                 {para}
               </p>
             </Reveal>

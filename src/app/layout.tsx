@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Cormorant, Jost } from "next/font/google";
 import "./globals.css";
 import { business } from "@/content/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const display = Cormorant_Garamond({
+const display = Cormorant({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
   variable: "--font-display",
   display: "swap",
 });

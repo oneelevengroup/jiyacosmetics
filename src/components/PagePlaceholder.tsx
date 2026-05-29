@@ -14,18 +14,16 @@ export default function PagePlaceholder({
   blurb: string;
 }) {
   return (
-    <section className="flex min-h-[80svh] items-center bg-ivory pt-32">
+    <section className="flex min-h-[80svh] items-center bg-noir pt-32">
       <div className="container-site">
         <span className="eyebrow">{eyebrow}</span>
-        <h1 className="mt-5 max-w-4xl font-display text-display-lg font-light text-ink">
+        <h1 className="mt-6 max-w-4xl font-display text-display-lg font-light uppercase text-blush">
           {title}
         </h1>
-        <p className="mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-clay">
+        <p className="mt-7 max-w-xl font-sans text-sm font-light uppercase leading-relaxed tracking-[0.12em] text-cream/70">
           {blurb}
         </p>
-        <p className="mt-4 font-sans text-xs uppercase tracking-[0.18em] text-taupe">
-          This page is being designed next.
-        </p>
+        <p className="mt-5 label text-cream/45">This page is being designed next.</p>
         <Link href="/" className="btn-ghost mt-10">
           Back home
         </Link>
