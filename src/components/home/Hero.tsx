@@ -46,10 +46,11 @@ export default function Hero() {
   const frontScale = useTransform(scrollYProgress, [0.05, 0.4], [reduce ? 1 : 1.06, 1]);
   const hasFront = !getImage("home.heroFront").placeholder;
 
-  // Phase 1 — centered logo + scroll hint (held longer before the reveal)
-  const logoOpacity = useTransform(scrollYProgress, [0.22, 0.36], [1, 0]);
-  const logoY = useTransform(scrollYProgress, [0.22, 0.36], [0, reduce ? 0 : -24]);
-  const hintOpacity = useTransform(scrollYProgress, [0, 0.16], [1, 0]);
+  // Phase 1 — centered logo fades out fast and early, fully gone before the
+  // front-facing shot comes in. Scroll hint fades on the first nudge.
+  const logoOpacity = useTransform(scrollYProgress, [0.02, 0.13], [1, 0]);
+  const logoY = useTransform(scrollYProgress, [0.02, 0.13], [0, reduce ? 0 : -24]);
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
   // Phase 2 — headline block
   const contentOpacity = useTransform(scrollYProgress, [0.32, 0.62], [0, 1]);
