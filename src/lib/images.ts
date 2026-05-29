@@ -83,11 +83,11 @@ export const images = {
   },
   "home.doctor": {
     key: "home.doctor",
-    src: "/images/home/dr-jindal.svg",
-    alt: "Portrait of the surgeon",
-    target: "/images/home/dr-jindal.jpg",
-    placeholder: true,
-    note: "Replace with portrait of Dr. Sumeet Jindal (client to provide).",
+    src: "/New-Century-Ophthalmology0722-scaled-1.webp",
+    alt: "Portrait of Dr. Sumeet Jindal",
+    target: "/images/home/dr-jindal.webp",
+    placeholder: false,
+    note: "Interim Dr. Jindal headshot (light background). Swap for a higher-end portrait later.",
   },
 
   // ---- Service category imagery ----

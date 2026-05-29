@@ -20,7 +20,7 @@ export default function MeetDoctor() {
               imageKey="home.doctor"
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover"
+              className="object-cover object-[center_20%]"
             />
           </div>
         </Reveal>
