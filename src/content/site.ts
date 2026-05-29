@@ -134,11 +134,11 @@ export const doctor = {
  * name. Until then, the name renders as elegant text. (See PLACEHOLDERS.md.)
  */
 export const credentials: { name: string; slug: string; logo?: string }[] = [
-  { name: "American Board of Facial Cosmetic Surgery", slug: "abfcs" },
-  { name: "The American Board of Laser Surgery", slug: "abls" },
-  { name: "American Academy of Cosmetic Surgery", slug: "aacs" },
-  { name: "Koniver Wellness", slug: "koniver" },
-  { name: "American Board of Ophthalmology", slug: "abo" },
+  { name: "American Board of Facial Cosmetic Surgery", slug: "abfcs", logo: "/logo-abfcs.png" },
+  { name: "The American Board of Laser Surgery", slug: "abls", logo: "/american-board-of-laser-surgery.jpg" },
+  { name: "American Academy of Cosmetic Surgery", slug: "aacs", logo: "/amer_-reii2p6ah801cll4s4sv2u5oq704rvy07hzf2few1w.jpg" },
+  { name: "Koniver Wellness", slug: "koniver", logo: "/koniver_logo_white-reii2r1z81pdc8r8i09qail440h3f1itv90l9iirqo.png" },
+  { name: "American Board of Ophthalmology", slug: "abo", logo: "/Media-2-1.png" },
 ];
 
 /** Featured services shown on the homepage. */

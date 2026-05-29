@@ -62,7 +62,7 @@ export default function MeetDoctor() {
                   key={c.slug}
                   src={c.logo}
                   alt={c.name}
-                  className="h-10 w-auto object-contain opacity-75 transition-opacity duration-500 hover:opacity-100 lg:h-12"
+                  className="max-h-9 w-auto max-w-[150px] object-contain opacity-80 mix-blend-screen transition-opacity duration-500 hover:opacity-100 lg:max-h-11 lg:max-w-[170px]"
                 />
               ) : (
                 <span
