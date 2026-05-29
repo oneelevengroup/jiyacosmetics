@@ -14,11 +14,16 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    // On home, reveal the header deeper into the pinned intro (matches the
+    // longer hold before the hero headline appears). Elsewhere, near the top.
+    const onScroll = () => {
+      const threshold = isHome ? window.innerHeight * 0.34 : 40;
+      setScrolled(window.scrollY > threshold);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome]);
 
   // On the homepage the header stays hidden over the intro and reveals on
   // scroll, in tandem with the hero headline. Elsewhere it is always shown.

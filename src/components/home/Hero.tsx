@@ -35,24 +35,25 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  useMotionValueEvent(scrollYProgress, "change", (v) => setRevealed(v > 0.12));
+  useMotionValueEvent(scrollYProgress, "change", (v) => setRevealed(v > 0.3));
 
   // Image
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, reduce ? 1 : 1.12]);
 
-  // Phase 1 — centered logo + scroll hint
-  const logoOpacity = useTransform(scrollYProgress, [0, 0.14], [1, 0]);
-  const logoY = useTransform(scrollYProgress, [0, 0.14], [0, reduce ? 0 : -24]);
-  const hintOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
+  // Phase 1 — centered logo + scroll hint (held longer before the reveal)
+  const logoOpacity = useTransform(scrollYProgress, [0.22, 0.36], [1, 0]);
+  const logoY = useTransform(scrollYProgress, [0.22, 0.36], [0, reduce ? 0 : -24]);
+  const hintOpacity = useTransform(scrollYProgress, [0, 0.16], [1, 0]);
 
   // Phase 2 — headline block
-  const contentOpacity = useTransform(scrollYProgress, [0.12, 0.42], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.12, 0.42], [reduce ? 0 : 40, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.32, 0.62], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.32, 0.62], [reduce ? 0 : 40, 0]);
 
   const logo = getImage("brand.logoHorizontal");
+  const icon = getImage("brand.icon");
 
   return (
-    <section ref={ref} className="relative h-[180vh]">
+    <section ref={ref} className="relative h-[230vh]">
       <div className="sticky top-0 h-[100svh] min-h-[640px] w-full overflow-hidden bg-noir">
         {/* Brand portrait */}
         <motion.div style={{ scale: imgScale }} className="absolute inset-0">
@@ -82,9 +83,9 @@ export default function Hero() {
           className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center"
         >
           {/* soft scrim so the gold reads over the face */}
-          <div className="absolute left-1/2 top-1/2 h-[34vh] w-[70vw] max-w-3xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-noir/45 blur-3xl" />
+          <div className="absolute left-1/2 top-1/2 h-[42vh] w-[80vw] max-w-5xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-noir/45 blur-3xl" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={logo.src} alt={logo.alt} className="relative h-20 w-auto md:h-28 lg:h-32" />
+          <img src={logo.src} alt={logo.alt} className="relative h-28 w-auto md:h-40 lg:h-48" />
         </motion.div>
 
         {/* Phase 2 — headline in the right negative space */}
@@ -121,18 +122,21 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Phase 1 — scroll hint */}
+        {/* Phase 1 — scroll hint: gold JIYA icon gently bobbing downward */}
         <motion.div
           style={{ opacity: hintOpacity }}
-          className="pointer-events-none absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
+          className="pointer-events-none absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-4"
         >
-          <span className="font-sans text-[0.6rem] uppercase tracking-[0.3em] text-cream/60">
+          <span className="font-sans text-xs uppercase tracking-[0.45em] text-cream/75">
             Scroll
           </span>
-          <motion.span
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="block h-10 w-px bg-cream/40"
+          <motion.img
+            src={icon.src}
+            alt=""
+            aria-hidden
+            animate={{ y: reduce ? 0 : [0, 11, 0], opacity: [0.85, 1, 0.85] }}
+            transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
+            className="h-10 w-auto md:h-12"
           />
         </motion.div>
       </div>
