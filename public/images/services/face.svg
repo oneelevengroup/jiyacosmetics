@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Facial Surgery placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#211C17"/>
+      <stop offset="1" stop-color="#2C2620"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="400" cy="252" r="96" fill="none" stroke="#A9885F" stroke-width="1.5" opacity="0.6"/>
+  <text x="50%" y="252" text-anchor="middle" dominant-baseline="middle" fill="#F7F3ED" font-family="Georgia, serif" font-size="30" letter-spacing="6">JIYA</text>
+  <text x="50%" y="360" text-anchor="middle" fill="#F7F3ED" font-family="Georgia, serif" font-size="27" opacity="0.85">Facial Surgery</text>
+  <text x="50%" y="396" text-anchor="middle" fill="#F7F3ED" font-family="Arial, sans-serif" font-size="13.2" letter-spacing="3" opacity="0.5">PLACEHOLDER · REPLACE IN /public/images</text>
+</svg>
