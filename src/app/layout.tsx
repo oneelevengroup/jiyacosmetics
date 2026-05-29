@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import { Cormorant, Jost } from "next/font/google";
+import { Forum, Mulish } from "next/font/google";
 import "./globals.css";
 import { business } from "@/content/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const display = Cormorant({
+// Display: Forum — elegant high-contrast serif with refined capitals (per client).
+const display = Forum({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400"],
   variable: "--font-display",
   display: "swap",
 });
 
-const sans = Jost({
+// Body: Mulish — a clean geometric-humanist sans used as an Avenir stand-in
+// until licensed Avenir web fonts are supplied (see public/fonts + PLACEHOLDERS.md).
+const sans = Mulish({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-sans",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans-fallback",
   display: "swap",
 });
 
