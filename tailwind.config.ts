@@ -21,6 +21,7 @@ const config: Config = {
         noir: "#14100D", // page background
         "noir-2": "#1B1510", // lifted section
         "noir-3": "#241C16", // raised surface / card
+        "noir-deep": "#0A0807", // deepest near-black (Meet Dr. Jindal)
         // Text
         cream: "#F2EADD", // primary text + headings
         // Accent — sampled from the JIYA logo's gold (use sparingly)

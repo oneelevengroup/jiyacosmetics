@@ -115,6 +115,32 @@ export const philosophy = {
   ],
 };
 
+/** Dr. Jindal bio + credentials (from jiyacosmetic.com). */
+export const doctor = {
+  eyebrow: "Meet Your Surgeon",
+  name: "Dr. Sumeet Jindal",
+  bio: [
+    "Sumeet Jindal, MD, MBA is a board-certified ophthalmologist with advanced fellowship training in oculofacial cosmetic surgery. His expertise in eye microsurgery and cosmetic and reconstructive eyelid and facial procedures allows him to perform some of the most advanced and refined techniques in modern eyelid and facial plastic surgery.",
+    "Dr. Jindal specializes in endoscopic facial and brow lifting using tiny, well-hidden incisions, enabling natural rejuvenation of the upper and midface with minimal scarring and downtime. He is also highly sought after for complex revision cases, including eyelid retraction and correction of prior unsuccessful or “botched” surgeries.",
+    "Dr. Jindal was accepted into medical school directly out of high school through the Early Assurance Program at East Carolina University. He completed his ophthalmology residency in Richmond, Virginia, where he performed a record number of surgical cases, gaining extensive operative experience early in his career. He then further refined his skills through advanced fellowship training at a large, multi-location private practice in Florida before returning to Raleigh, North Carolina, where he now practices.",
+  ],
+  cta: { label: "Book a Consultation", href: "/contact" },
+};
+
+/**
+ * Professional memberships shown as a credentials row.
+ * `logo` is an optional path to a white/transparent logo in
+ * /public/images/credentials/. When set, the row shows the logo instead of the
+ * name. Until then, the name renders as elegant text. (See PLACEHOLDERS.md.)
+ */
+export const credentials: { name: string; slug: string; logo?: string }[] = [
+  { name: "American Board of Facial Cosmetic Surgery", slug: "abfcs" },
+  { name: "The American Board of Laser Surgery", slug: "abls" },
+  { name: "American Academy of Cosmetic Surgery", slug: "aacs" },
+  { name: "Koniver Wellness", slug: "koniver" },
+  { name: "American Board of Ophthalmology", slug: "abo" },
+];
+
 /** Featured services shown on the homepage. */
 export const featuredServices = [
   "eyelid",

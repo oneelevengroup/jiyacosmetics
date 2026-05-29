@@ -48,6 +48,26 @@ No component code needs to change — everything references images by logical ke
 | `service.nonsurgical` | `services/nonsurgical.svg` | `services/nonsurgical.jpg` | 🟡 Placeholder | Skin / non-surgical category image. |
 | `service.hair` | `services/hair.svg` | `services/hair.jpg` | 🟡 Placeholder | Hair restoration category image. |
 
+## Meet Dr. Jindal
+
+| Asset | Target path | Status | Notes |
+|-------|-------------|--------|-------|
+| Dr. Jindal portrait | `home.doctor` → `/public/images/home/dr-jindal.jpg` | 🟡 Placeholder | Real portrait of Dr. Sumeet Jindal (dark/neutral background preferred to suit the section). |
+
+## Credentials ("Member of") logos
+
+Currently rendered as **text** (names). To show logos, drop **white / transparent**
+versions in `/public/images/credentials/` and set the matching `logo` path in the
+`credentials` array in `src/content/site.ts`.
+
+| Credential | Suggested file | Status |
+|-----------|----------------|--------|
+| American Board of Facial Cosmetic Surgery | `credentials/abfcs.svg` | ⬜ Needed |
+| The American Board of Laser Surgery | `credentials/abls.svg` | ⬜ Needed |
+| American Academy of Cosmetic Surgery | `credentials/aacs.svg` | ⬜ Needed |
+| Koniver Wellness | `credentials/koniver.svg` | ⬜ Needed |
+| American Board of Ophthalmology | `credentials/abo.svg` | ⬜ Needed |
+
 ## Gallery (future page)
 
 | Asset | Target path | Status | Notes |
