@@ -1,21 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav, business } from "@/content/site";
 import Logo from "./Logo";
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // On the homepage the header stays hidden over the intro and reveals on
+  // scroll, in tandem with the hero headline. Elsewhere it is always shown.
+  const show = !isHome || scrolled || open;
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -26,10 +33,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-lux ${
-        scrolled
-          ? "bg-noir/80 backdrop-blur-md border-b border-cream/10"
-          : "bg-gradient-to-b from-noir/60 to-transparent border-b border-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-700 ease-lux ${
+        show
+          ? "translate-y-0 border-cream/10 bg-noir/85 opacity-100 backdrop-blur-md"
+          : "pointer-events-none -translate-y-full border-transparent opacity-0"
       }`}
     >
       <div className="container-site grid grid-cols-2 items-center py-5 lg:grid-cols-3">
