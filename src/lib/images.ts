@@ -49,11 +49,11 @@ export const images = {
   },
   "brand.logoHorizontal": {
     key: "brand.logoHorizontal",
-    src: "/jiya_horizontal_logo.svg",
+    src: "/images/jiya-header-logo.png",
     alt: "JIYA — Jindal Institute for Youthful Aging",
-    target: "/jiya_horizontal_logo.svg",
+    target: "/images/jiya-header-logo.png",
     placeholder: false,
-    note: "Horizontal lockup (emblem + JIYA + tagline), transparent SVG. Used in the site header.",
+    note: "Header lockup: cleaner transparent PNG (JIYAHORIZONTALTRANSPARENT), auto-trimmed of padding for tight sizing.",
   },
 
   // ---- Home ----
