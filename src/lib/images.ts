@@ -59,11 +59,11 @@ export const images = {
   // ---- Home ----
   "home.hero": {
     key: "home.hero",
-    src: "/images/home/hero.svg",
-    alt: "Serene close-up portrait conveying natural, refreshed beauty",
-    target: "/images/home/hero.jpg",
-    placeholder: true,
-    note: "Replace with JIYA brand hero (Dr. Jindal or signature studio portrait) or elevated stock.",
+    src: "/images/JIYAheropic.png",
+    alt: "Cinematic profile portrait on a dark background",
+    target: "/images/JIYAheropic.png",
+    placeholder: false,
+    note: "Client hero. Subject sits left with dark negative space right. Source is 6336x2688 (~16MB) — consider exporting a web-optimized version later.",
   },
   "home.philosophy": {
     key: "home.philosophy",
