@@ -23,9 +23,9 @@ const config: Config = {
         "noir-3": "#241C16", // raised surface / card
         // Text
         cream: "#F2EADD", // primary text + headings
-        // Accent (use sparingly)
-        gold: "#C5A35B", // elegant antique gold for accents
-        "gold-soft": "#DCC089",
+        // Accent — sampled from the JIYA logo's gold (use sparingly)
+        gold: "#D4A853", // core logo gold (JIYA1 mid-tone)
+        "gold-soft": "#E8C774", // logo highlight gold
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
