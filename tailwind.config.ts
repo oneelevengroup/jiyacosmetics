@@ -6,7 +6,7 @@ import type { Config } from "tailwindcss";
  * Modeled on grigoriak.doctor: warm near-black backgrounds, full-bleed moody
  * portraiture, a tall elegant serif for display, and small uppercase
  * letter-spaced labels with hairline dividers. Primary text is CREAM (never
- * brown); soft blush is a sparing accent for the largest display moments only.
+ * brown); a refined gold is a sparing accent for the largest display moments.
  */
 const config: Config = {
   content: [
@@ -24,8 +24,8 @@ const config: Config = {
         // Text
         cream: "#F2EADD", // primary text + headings
         // Accent (use sparingly)
-        blush: "#C9A695", // soft rose for large display accents
-        "blush-soft": "#D9C2B6",
+        gold: "#C5A35B", // elegant antique gold for accents
+        "gold-soft": "#DCC089",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

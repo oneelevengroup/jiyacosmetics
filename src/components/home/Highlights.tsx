@@ -18,7 +18,7 @@ export default function Highlights() {
           {highlights.map((item, i) => (
             <Reveal as="div" key={item.title} delay={i * 0.08}>
               <div className="flex h-full flex-col bg-noir p-8 lg:p-10">
-                <span className="font-display text-3xl text-blush">0{i + 1}</span>
+                <span className="font-display text-3xl text-gold">0{i + 1}</span>
                 <h3 className="mt-6 font-sans text-sm uppercase tracking-label text-cream">
                   {item.title}
                 </h3>

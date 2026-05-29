@@ -54,7 +54,7 @@
   }
 
   ::selection {
-    @apply bg-blush/30 text-cream;
+    @apply bg-gold/30 text-cream;
   }
 }
 

@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { getImage } from "@/lib/images";
 
 /**
- * JIYA wordmark — elegant spaced serif caps, echoing the inspiration's
- * centered logotype. Rendered as styled type until the real logo file is
- * supplied (see PLACEHOLDERS.md → brand assets); swap for an <Image> then.
+ * JIYA logo.
+ *
+ * Renders the real logo image when one has been added (set `placeholder: false`
+ * on the "brand.logo" entry in src/lib/images.ts after dropping the file at
+ * /public/images/brand/logo.svg). Until then it falls back to an elegant Forum
+ * text wordmark, which suits the dark editorial aesthetic.
  */
 export default function Logo({
   variant = "light",
@@ -13,6 +17,17 @@ export default function Logo({
   variant?: "light" | "dark";
   centered?: boolean;
 }) {
+  const logo = getImage("brand.logo");
+
+  if (!logo.placeholder) {
+    return (
+      <Link href="/" aria-label="JIYA — home" className={centered ? "block text-center" : "block"}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logo.src} alt="JIYA" className="h-10 w-auto md:h-11" />
+      </Link>
+    );
+  }
+
   const color = variant === "dark" ? "text-noir" : "text-cream";
   return (
     <Link

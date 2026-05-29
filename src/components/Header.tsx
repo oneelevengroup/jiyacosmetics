@@ -62,7 +62,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="label text-cream hover:text-blush transition-colors duration-500">
+          <Link href="/contact" className="label text-cream hover:text-gold transition-colors duration-500">
             Book an Appointment
           </Link>
         </div>

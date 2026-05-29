@@ -10,7 +10,7 @@ export default function ConsultCTA() {
           <span className="eyebrow">Begin Your Journey</span>
         </Reveal>
         <Reveal delay={0.08}>
-          <h2 className="mx-auto mt-7 max-w-4xl font-display text-display-lg font-light uppercase text-blush">
+          <h2 className="mx-auto mt-7 max-w-4xl font-display text-display-lg font-light uppercase text-gold">
             Your outside, looking more like your inside
           </h2>
         </Reveal>

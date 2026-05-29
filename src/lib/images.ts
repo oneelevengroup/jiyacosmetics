@@ -30,6 +30,16 @@ export type SiteImage = {
 };
 
 export const images = {
+  // ---- Brand ----
+  "brand.logo": {
+    key: "brand.logo",
+    src: "/images/brand/logo.svg",
+    alt: "JIYA",
+    target: "/images/brand/logo.svg",
+    placeholder: true,
+    note: "Drop the new JIYA logo at /public/images/brand/logo.svg (SVG preferred; transparent PNG @2x also fine), then set placeholder:false to replace the text wordmark.",
+  },
+
   // ---- Home ----
   "home.hero": {
     key: "home.hero",

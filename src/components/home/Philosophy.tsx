@@ -21,10 +21,10 @@ export default function Philosophy() {
 
         {/* Copy */}
         <div className="relative lg:col-span-6 lg:pl-6">
-          {/* Oversized blush quote mark, as on the inspiration site */}
+          {/* Oversized gold quote mark, as on the inspiration site */}
           <span
             aria-hidden
-            className="pointer-events-none absolute -top-16 left-0 font-display text-[10rem] leading-none text-blush/25 lg:-top-24"
+            className="pointer-events-none absolute -top-16 left-0 font-display text-[10rem] leading-none text-gold/25 lg:-top-24"
           >
             &ldquo;
           </span>

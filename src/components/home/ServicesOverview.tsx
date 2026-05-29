@@ -47,7 +47,7 @@ export default function ServicesOverview() {
                     className="group flex w-full items-center justify-between gap-6 py-7 text-left lg:py-9"
                   >
                     <span className="flex items-baseline gap-5">
-                      <span className="font-display text-xl text-blush/70">0{i + 1}</span>
+                      <span className="font-display text-xl text-gold/70">0{i + 1}</span>
                       <span
                         className={`font-sans text-lg uppercase tracking-label transition-colors duration-500 lg:text-2xl ${
                           open ? "text-cream" : "text-cream/65 group-hover:text-cream"
@@ -58,7 +58,7 @@ export default function ServicesOverview() {
                     </span>
 
                     {/* Circular +/- toggle */}
-                    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cream/30 transition-colors duration-500 group-hover:border-blush">
+                    <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cream/30 transition-colors duration-500 group-hover:border-gold">
                       <span className="absolute h-px w-3.5 bg-cream/70" />
                       <span
                         className={`absolute h-3.5 w-px bg-cream/70 transition-transform duration-500 ease-lux ${

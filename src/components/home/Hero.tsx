@@ -13,7 +13,7 @@ import { business } from "@/content/site";
 
 /**
  * Full-bleed, dark cinematic hero — modeled on grigoriak.doctor: a moody
- * full-bleed portrait, a giant airy serif headline (blush), and a small
+ * full-bleed portrait, a giant airy serif headline (gold), and a small
  * cream uppercase subtitle, with gentle scroll parallax for depth.
  */
 export default function Hero() {
@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 font-display text-display-xl font-light uppercase text-blush"
+          className="mt-6 font-display text-display-xl font-light uppercase text-gold"
         >
           Look Better.
           <br />

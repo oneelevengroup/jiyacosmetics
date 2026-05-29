@@ -17,7 +17,7 @@ export default function PagePlaceholder({
     <section className="flex min-h-[80svh] items-center bg-noir pt-32">
       <div className="container-site">
         <span className="eyebrow">{eyebrow}</span>
-        <h1 className="mt-6 max-w-4xl font-display text-display-lg font-light uppercase text-blush">
+        <h1 className="mt-6 max-w-4xl font-display text-display-lg font-light uppercase text-gold">
           {title}
         </h1>
         <p className="mt-7 max-w-xl font-sans text-sm font-light uppercase leading-relaxed tracking-[0.12em] text-cream/70">

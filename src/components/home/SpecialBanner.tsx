@@ -9,7 +9,7 @@ export default function SpecialBanner() {
         <Reveal>
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div>
-              <span className="eyebrow text-blush">{homeSpecial.eyebrow}</span>
+              <span className="eyebrow text-gold">{homeSpecial.eyebrow}</span>
               <h2 className="mt-5 font-display text-4xl font-light uppercase text-cream lg:text-5xl">
                 {homeSpecial.title}
               </h2>

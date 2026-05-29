@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand + tagline */}
           <div className="lg:col-span-4">
             <Logo />
-            <p className="mt-7 max-w-xs font-display text-3xl font-light uppercase leading-tight text-blush">
+            <p className="mt-7 max-w-xs font-display text-3xl font-light uppercase leading-tight text-gold">
               {business.tagline}
             </p>
           </div>
