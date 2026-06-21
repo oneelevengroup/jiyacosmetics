@@ -83,11 +83,11 @@ export const images = {
   },
   "home.doctor": {
     key: "home.doctor",
-    src: "/New-Century-Ophthalmology0722-scaled-1.webp",
+    src: "/images/drjheadshot.png",
     alt: "Portrait of Dr. Sumeet Jindal",
-    target: "/images/home/dr-jindal.webp",
+    target: "/images/drjheadshot.png",
     placeholder: false,
-    note: "Interim Dr. Jindal headshot (light background). Swap for a higher-end portrait later.",
+    note: "Dr. Jindal headshot — transparent cutout, floats on the dark section.",
   },
 
   // ---- Service category imagery ----
