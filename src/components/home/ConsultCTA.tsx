@@ -11,13 +11,13 @@ export default function ConsultCTA() {
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="mx-auto mt-7 max-w-4xl font-display text-display-lg font-light uppercase text-gold">
-            Your outside, looking more like your inside
+            Refined, natural, undeniably you
           </h2>
         </Reveal>
         <Reveal delay={0.16}>
           <p className="mx-auto mt-7 max-w-lg font-sans text-sm font-light uppercase leading-relaxed tracking-[0.14em] text-cream/70">
-            Schedule a personalized consultation with Dr. Jindal and build a plan
-            on your terms
+            Schedule a consultation with Dr. Jindal to design your personalized
+            plan
           </p>
         </Reveal>
         <Reveal delay={0.24}>
