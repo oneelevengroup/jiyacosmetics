@@ -4,7 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
+import SiteImage from "@/components/SiteImage";
 import { serviceCategories } from "@/content/site";
+import type { ImageKey } from "@/lib/images";
+
+const categoryImage: Record<string, ImageKey> = {
+  eyelid: "service.eyelid",
+  face: "service.face",
+  nonsurgical: "service.nonsurgical",
+  hair: "service.hair",
+};
 
 /**
  * Procedure index as an elegant accordion — uppercase tracked labels, hairline
@@ -77,22 +86,37 @@ export default function ServicesOverview() {
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <div className="grid gap-8 pb-9 lg:grid-cols-12 lg:gap-12">
-                          <p className="font-sans text-sm font-light leading-relaxed text-cream/60 lg:col-span-5">
-                            {cat.blurb}
-                          </p>
-                          <ul className="grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2 lg:col-span-7">
-                            {cat.procedures.map((p) => (
-                              <li key={p.slug}>
-                                <Link
-                                  href={`/services#${cat.id}`}
-                                  className="link-underline font-sans text-sm text-cream/85 hover:text-cream"
-                                >
-                                  {p.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
+                        <div className="grid items-start gap-8 pb-10 lg:grid-cols-12 lg:gap-12">
+                          {/* Preview image */}
+                          <div className="lg:col-span-5">
+                            <div className="relative aspect-[4/3] w-full overflow-hidden">
+                              <SiteImage
+                                imageKey={categoryImage[cat.id]}
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 40vw"
+                                className="object-cover"
+                              />
+                            </div>
+                          </div>
+
+                          {/* Blurb + procedures */}
+                          <div className="lg:col-span-7">
+                            <p className="max-w-md font-sans text-sm font-light leading-relaxed text-cream/60">
+                              {cat.blurb}
+                            </p>
+                            <ul className="mt-7 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
+                              {cat.procedures.map((p) => (
+                                <li key={p.slug}>
+                                  <Link
+                                    href={`/services#${cat.id}`}
+                                    className="link-underline font-sans text-sm text-cream/85 hover:text-cream"
+                                  >
+                                    {p.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
                       </motion.div>
                     )}
