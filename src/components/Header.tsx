@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { nav, business } from "@/content/site";
 import Logo from "./Logo";
 import BookButton from "./BookButton";
+import ServicesMenu from "./ServicesMenu";
 
 export default function Header() {
   const pathname = usePathname();
@@ -48,15 +49,19 @@ export default function Header() {
       <div className="container-site grid grid-cols-2 items-center py-5 lg:grid-cols-3">
         {/* Left: nav (desktop) */}
         <nav className="hidden items-center gap-8 lg:flex">
-          {nav.slice(0, 4).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="link-underline label text-cream/75 hover:text-cream"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.slice(0, 4).map((item) =>
+            item.href === "/services" ? (
+              <ServicesMenu key={item.href} />
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="link-underline label text-cream/75 hover:text-cream"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Center: logo */}
