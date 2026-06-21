@@ -22,7 +22,7 @@ export default function ConsultCTA() {
         </Reveal>
         <Reveal delay={0.24}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <BookButton label="Book an Appointment" className="btn-primary" />
+            <BookButton label="Book a Consultation" className="btn-primary" />
             <a href={business.phoneHref} className="btn-ghost">
               Call {business.phone}
             </a>

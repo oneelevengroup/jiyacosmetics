@@ -1,0 +1,34 @@
+# 📋 Client Needs — Assets & Content by Page
+
+A running checklist of what's needed from JIYA to finish each page (photos,
+copy approvals, etc.). Image placeholders are also tracked technically in
+[PLACEHOLDERS.md](PLACEHOLDERS.md).
+
+---
+
+## Global
+- [ ] **Web-optimized hero images** — the two hero photos are large PNGs (16 MB & 21 MB). Export ~400–600 KB WebP/JPEG versions for faster load.
+- [ ] **Final logo confirmation** — currently using the uploaded gold logos (horizontal in header, vertical in footer, icon as accents). Confirm these are final.
+- [ ] **Favicon / browser tab icon** (can be generated from the JIYA icon).
+- [ ] **Brand copy review** — confirm tone/wording across the site.
+
+## Home page
+- [ ] Approve hero head‑turn photos (profile + front) — or supply higher‑res/retouched versions.
+- [ ] **Service category photos** (4) — Eyelid, Facial, Skin & Non‑Surgical, Hair (shown when an accordion item expands). Currently placeholders.
+- [ ] Confirm homepage copy: hero tagline, "Why JIYA" highlights, the current Special offer (Mini Facelift pricing).
+
+## About page
+- [ ] **Practice/office photo(s)** — interior, treatment room, or Brier Creek exterior (for the "Our Story" image). Currently a placeholder.
+- [ ] **Dr. Jindal portrait** — current transparent headshot works; supply a higher‑end editorial portrait if desired.
+- [ ] **Approve/edit copy** — Our Story, Philosophy, and Dr. Jindal bio (pulled from the current site; confirm accuracy).
+- [ ] Any **team members** to feature (photos + short bios) if a team section is wanted.
+- [ ] Any **awards / press / affiliations** beyond the current "Member of" logos.
+
+## Services (hub + 28 procedure pages)
+- [ ] **Medical copy review** — every procedure description was drafted and must be reviewed/approved by the practice (`src/content/services.ts`).
+- [ ] **Per‑procedure photos** and **before & after galleries** (with patient consent) for each procedure.
+- [ ] Confirm the **procedure list** is complete/correct (28 procedures across 4 categories).
+
+---
+
+_Legend: unchecked = still needed. Update as items are delivered._

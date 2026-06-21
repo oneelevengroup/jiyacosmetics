@@ -76,7 +76,7 @@ export default function Header() {
             </Link>
           ))}
           <BookButton
-            label="Book an Appointment"
+            label="Book a Consultation"
             className="label text-cream transition-colors duration-500 hover:text-gold"
           />
         </div>
@@ -132,7 +132,7 @@ export default function Header() {
                 {business.phone}
               </a>
               <BookButton
-                label="Book an Appointment"
+                label="Book a Consultation"
                 className="btn-primary self-start"
                 onOpen={() => setOpen(false)}
               />

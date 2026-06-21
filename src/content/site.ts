@@ -31,6 +31,7 @@ export const business = {
 };
 
 export const nav = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Gallery", href: "/gallery" },
@@ -113,6 +114,27 @@ export const philosophy = {
     "JIYA is a homegrown facial cosmetic surgery practice that blends traditional anti-aging treatments with regenerative medicine. Founded by accomplished oculofacial cosmetic surgeon Dr. Sumeet Jindal — a Raleigh native — the Jindal Institute for Youthful Aging was built to bring the best treatments in the world back home.",
     "Aging should not be something that causes stress, but rather something you can do gracefully, with or without facial cosmetic enhancements. Our goal is to make your outside look more like your inside, with luxury, high-quality surgical and non-surgical procedures performed on your terms.",
   ],
+};
+
+/** About page content (from jiyacosmetic.com). */
+export const about = {
+  intro:
+    "JIYA is a homegrown facial cosmetic surgery practice that blends traditional anti-aging treatments with regenerative medicine — built to bring the best treatments in the world home to Raleigh.",
+  story: {
+    heading: "A homegrown practice, world-class care",
+    body: [
+      "The Jindal Institute for Youthful Aging was founded by accomplished oculofacial cosmetic surgeon Dr. Sumeet Jindal — a Raleigh-area native who built JIYA specifically to bring the best treatments in the world back to his hometown. The practice is located in the bustling Brier Creek neighborhood of Raleigh.",
+      "From your first visit, you can expect top-quality customer service, compassionate and personalized care, and some of the best expertise in anti-aging procedures from a premier Raleigh oculoplastic surgeon.",
+    ],
+  },
+  philosophy: {
+    heading: "Aging gracefully, on your terms",
+    body: [
+      "Aging should not be something that causes stress, but rather something you can do gracefully — with or without facial cosmetic enhancements. Our goal is to make your outside look more like your inside, with luxury, high-quality surgical and non-surgical procedures performed on your terms.",
+      "Our philosophy is holistic: nutrition, skin science, and regenerative medicine complement every surgical plan. Dr. Jindal provides each patient with customized pre- and post-operative nutrition and healing protocols to achieve the best results possible.",
+      "As one of the leading PRP specialists in Raleigh, Dr. Jindal prefers regenerative techniques like PRP and nanofat whenever they can deliver the ideal result — turning to surgery only when it is truly the best path.",
+    ],
+  },
 };
 
 /** Dr. Jindal bio + credentials (from jiyacosmetic.com). */

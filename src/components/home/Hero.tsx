@@ -136,7 +136,7 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-5">
-              <BookButton label="Book an Appointment" className="btn-primary" />
+              <BookButton label="Book a Consultation" className="btn-primary" />
               <Link href="/services" className="btn-ghost">
                 Explore Services
               </Link>
