@@ -10,6 +10,7 @@ import {
   useReducedMotion,
 } from "framer-motion";
 import SiteImage from "@/components/SiteImage";
+import BookButton from "@/components/BookButton";
 import { getImage } from "@/lib/images";
 import { business } from "@/content/site";
 
@@ -135,9 +136,7 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-5">
-              <Link href="/contact" className="btn-primary">
-                Book an Appointment
-              </Link>
+              <BookButton label="Book an Appointment" className="btn-primary" />
               <Link href="/services" className="btn-ghost">
                 Explore Services
               </Link>

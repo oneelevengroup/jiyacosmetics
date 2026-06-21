@@ -1,6 +1,6 @@
-import Link from "next/link";
 import SiteImage from "@/components/SiteImage";
 import Reveal from "@/components/Reveal";
+import BookButton from "@/components/BookButton";
 import { doctor, credentials } from "@/content/site";
 
 /**
@@ -43,9 +43,9 @@ export default function MeetDoctor() {
             </Reveal>
           ))}
           <Reveal delay={0.34}>
-            <Link href={doctor.cta.href} className="btn-primary mt-10">
-              {doctor.cta.label}
-            </Link>
+            <div className="mt-10">
+              <BookButton label={doctor.cta.label} className="btn-primary" />
+            </div>
           </Reveal>
         </div>
       </div>

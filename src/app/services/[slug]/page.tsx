@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
+import BookButton from "@/components/BookButton";
 import BeforeAfter from "@/components/BeforeAfter";
 import ConsultCTA from "@/components/home/ConsultCTA";
 import type { ImageKey } from "@/lib/images";
@@ -55,9 +56,7 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
             </Reveal>
             <Reveal delay={0.26}>
               <div className="mt-9 flex flex-wrap items-center gap-5">
-                <Link href="/contact" className="btn-primary">
-                  Book a Consultation
-                </Link>
+                <BookButton label="Book a Consultation" className="btn-primary" />
                 <Link href="/services" className="btn-ghost">
                   All Services
                 </Link>

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav, business } from "@/content/site";
 import Logo from "./Logo";
+import BookButton from "./BookButton";
 
 export default function Header() {
   const pathname = usePathname();
@@ -74,9 +75,10 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="label text-cream hover:text-gold transition-colors duration-500">
-            Book an Appointment
-          </Link>
+          <BookButton
+            label="Book an Appointment"
+            className="label text-cream transition-colors duration-500 hover:text-gold"
+          />
         </div>
 
         {/* Mobile toggle */}
@@ -129,9 +131,11 @@ export default function Header() {
               <a href={business.phoneHref} className="label text-cream/60">
                 {business.phone}
               </a>
-              <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary self-start">
-                Book an Appointment
-              </Link>
+              <BookButton
+                label="Book an Appointment"
+                className="btn-primary self-start"
+                onOpen={() => setOpen(false)}
+              />
             </div>
           </motion.nav>
         )}
