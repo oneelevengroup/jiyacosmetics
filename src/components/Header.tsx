@@ -47,8 +47,8 @@ export default function Header() {
     >
       <div className="container-site grid grid-cols-2 items-center py-5 lg:grid-cols-3">
         {/* Left: nav (desktop) */}
-        <nav className="hidden items-center gap-9 lg:flex">
-          {nav.slice(0, 3).map((item) => (
+        <nav className="hidden items-center gap-8 lg:flex">
+          {nav.slice(0, 4).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -65,8 +65,8 @@ export default function Header() {
         </div>
 
         {/* Right: remaining nav + CTA */}
-        <div className="hidden items-center justify-end gap-8 lg:flex">
-          {nav.slice(3).map((item) => (
+        <div className="hidden items-center justify-end gap-7 lg:flex">
+          {nav.slice(4).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -77,7 +77,7 @@ export default function Header() {
           ))}
           <BookButton
             label="Book a Consultation"
-            className="label text-cream transition-colors duration-500 hover:text-gold"
+            className="label whitespace-nowrap text-cream transition-colors duration-500 hover:text-gold"
           />
         </div>
 
