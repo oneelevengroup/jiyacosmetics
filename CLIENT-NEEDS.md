@@ -15,7 +15,10 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 ## Home page
 - [ ] Approve hero head‑turn photos (profile + front) — or supply higher‑res/retouched versions.
 - [ ] **Service category photos** (4) — Eyelid, Facial, Skin & Non‑Surgical, Hair (shown when an accordion item expands). Currently placeholders.
-- [ ] Confirm homepage copy: hero tagline, "Why JIYA" highlights, the current Special offer (Mini Facelift pricing).
+- [ ] **Real patient testimonials** (3+) — approved quotes for the "In their words" section (currently placeholder text). Google/RealSelf reviews ideal; confirm any attribution/privacy preferences.
+- [ ] **Before & After photos** for the Results teaser (links to Gallery) — with patient consent.
+- [ ] Confirm the **credibility strip** wording (Board-Certified · Oculofacial Fellowship · Regenerative Medicine · Raleigh).
+- [ ] Confirm homepage copy: hero tagline, intro band, "Why JIYA" highlights.
 
 ## About page
 - [ ] **Practice/office photo(s)** — interior, treatment room, or Brier Creek exterior (for the "Our Story" image). Currently a placeholder.

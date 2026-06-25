@@ -197,3 +197,43 @@ export const homeSpecial = {
   detail: "Starting at $4,900 — now 20% off.",
   cta: { label: "View all specials", href: "/specials" },
 };
+
+/** Short positioning band shown right after the hero. */
+export const homeIntro = {
+  heading: "The art of aging gracefully",
+  body: "JIYA blends refined oculofacial surgery with regenerative medicine — nutrition, skin science, PRP and nanofat — for results that look natural and feel entirely like you.",
+  cta: { label: "Our Philosophy", href: "/about" },
+};
+
+/** Slim credibility / trust signals. */
+export const credibility = [
+  "Board-Certified Ophthalmologist",
+  "Oculofacial Fellowship-Trained",
+  "Regenerative Medicine",
+  "Raleigh · Brier Creek",
+];
+
+/**
+ * Patient testimonials. PLACEHOLDER quotes — replace with real, approved
+ * reviews (Google / RealSelf, etc.). Keep attribution privacy-appropriate.
+ */
+export const testimonials = [
+  {
+    quote:
+      "From my first visit I felt genuinely cared for. Dr. Jindal listened, and my results look completely natural — like a refreshed version of me.",
+    name: "JIYA Patient",
+    detail: "Upper Blepharoplasty",
+  },
+  {
+    quote:
+      "The expertise and attention to detail are unmatched. I finally look as vibrant as I feel.",
+    name: "JIYA Patient",
+    detail: "Deep Plane Facelift",
+  },
+  {
+    quote:
+      "A true luxury experience from consultation to recovery. I couldn't be happier with my results.",
+    name: "JIYA Patient",
+    detail: "Morpheus8",
+  },
+];

@@ -1,18 +1,24 @@
 import Hero from "@/components/home/Hero";
+import IntroBand from "@/components/home/IntroBand";
+import CredibilityStrip from "@/components/home/CredibilityStrip";
 import MeetDoctor from "@/components/home/MeetDoctor";
 import ServicesOverview from "@/components/home/ServicesOverview";
 import Highlights from "@/components/home/Highlights";
-import SpecialBanner from "@/components/home/SpecialBanner";
+import ResultsTeaser from "@/components/home/ResultsTeaser";
+import Testimonials from "@/components/home/Testimonials";
 import ConsultCTA from "@/components/home/ConsultCTA";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <IntroBand />
+      <CredibilityStrip />
       <MeetDoctor />
       <ServicesOverview />
       <Highlights />
-      <SpecialBanner />
+      <ResultsTeaser />
+      <Testimonials />
       <ConsultCTA />
     </>
   );
