@@ -35,8 +35,9 @@ export const nav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Specials", href: "/specials" },
   { label: "Contact", href: "/contact" },
+  // "Specials" is intentionally omitted while there are no active offers.
+  // Re-add { label: "Specials", href: "/specials" } when a promotion is live.
 ];
 
 /**

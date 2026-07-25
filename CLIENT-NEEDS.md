@@ -34,6 +34,14 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 - [ ] Confirm the **map pin** location is correct.
 - [ ] Any **parking/directions** notes to add.
 
+## Gallery page
+- [ ] **Before & After photo pairs** — the whole page depends on these. Organize by procedure/category (Eyelid, Facial, Skin & Non-Surgical, Hair). Each case needs a *before* and an *after* image, with **patient photo-release/consent**.
+- [ ] As pairs arrive, add them to `src/content/gallery.ts` (files in `/public/images/gallery/`). The page filters by category and gracefully shows "coming soon" until then.
+
+## Specials page
+- [ ] **No action needed right now** — "Specials" is removed from the nav while there are no active offers; the page shows a graceful "no current specials" message.
+- [ ] When a promotion launches, send the **offer details** and I'll build the offer + re-add "Specials" to the nav.
+
 ## Ad Landing Page — Upper Blepharoplasty ($4,000 special)
 `/blepharoplasty-special` — standalone campaign page (no site nav), for paid traffic.
 - [ ] **Confirm offer details & fine print** — exactly what the $4,000 upper blepharoplasty special includes, any expiration/terms to display.
