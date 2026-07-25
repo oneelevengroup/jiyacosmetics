@@ -11,7 +11,7 @@ import { doctor, credentials } from "@/content/site";
  */
 export default function MeetDoctor() {
   return (
-    <section className="bg-noir-deep py-24 lg:py-36">
+    <section id="dr-jindal" className="scroll-mt-28 bg-noir-deep py-24 lg:py-36">
       <div className="container-site grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
         {/* Portrait */}
         <Reveal className="lg:col-span-5">

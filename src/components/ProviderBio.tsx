@@ -19,14 +19,16 @@ export default function ProviderBio({
   imageKey,
   reverse = false,
   bg = "bg-noir",
+  id,
 }: {
   provider: Provider;
   imageKey: ImageKey;
   reverse?: boolean;
   bg?: string;
+  id?: string;
 }) {
   return (
-    <section className={`${bg} py-24 lg:py-32`}>
+    <section id={id} className={`scroll-mt-28 ${bg} py-24 lg:py-32`}>
       <div className="container-site grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
         <Reveal className={`lg:col-span-5 ${reverse ? "lg:order-2" : ""}`}>
           <div className="relative aspect-[4/5] w-full overflow-hidden">

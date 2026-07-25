@@ -105,6 +105,7 @@ export default function AboutPage() {
         imageKey="provider.prabakaran"
         reverse
         bg="bg-noir"
+        id="dr-prabakaran"
       />
 
       <Highlights />

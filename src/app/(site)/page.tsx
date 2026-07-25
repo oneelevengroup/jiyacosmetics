@@ -1,7 +1,7 @@
 import Hero from "@/components/home/Hero";
 import IntroBand from "@/components/home/IntroBand";
 import CredibilityStrip from "@/components/home/CredibilityStrip";
-import MeetDoctor from "@/components/home/MeetDoctor";
+import SurgeonsIntro from "@/components/home/SurgeonsIntro";
 import ServicesOverview from "@/components/home/ServicesOverview";
 import Highlights from "@/components/home/Highlights";
 import ResultsTeaser from "@/components/home/ResultsTeaser";
@@ -15,7 +15,7 @@ export default function HomePage() {
       <Hero />
       <IntroBand />
       <CredibilityStrip />
-      <MeetDoctor />
+      <SurgeonsIntro />
       <ServicesOverview />
       <Highlights />
       <ResultsTeaser />

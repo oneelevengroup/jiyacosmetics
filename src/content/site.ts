@@ -161,6 +161,28 @@ export const about = {
   },
 };
 
+/** Two-up surgeons intro (homepage). Full bios live on the About page. */
+export const surgeons = [
+  {
+    name: "Dr. Sumeet Jindal",
+    role: "Founder · Oculofacial Surgeon",
+    blurb:
+      "Board-certified ophthalmologist and JIYA's founder, specializing in refined eyelid and facial rejuvenation with a regenerative approach.",
+    imageKey: "home.doctor",
+    meetHref: "/about#dr-jindal",
+    bookLabel: "Book with Dr. Jindal",
+  },
+  {
+    name: "Dr. Samantha Prabakaran",
+    role: "Oculofacial Surgeon",
+    blurb:
+      "Board-certified ophthalmologist with oculofacial fellowship training, focused on natural eyelid and brow rejuvenation.",
+    imageKey: "provider.prabakaran",
+    meetHref: "/about#dr-prabakaran",
+    bookLabel: "Book with Dr. Prabakaran",
+  },
+];
+
 /** Dr. Samantha Prabakaran bio (second surgeon). */
 export const drPrabakaran = {
   eyebrow: "Oculofacial Surgeon",
