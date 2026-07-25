@@ -34,6 +34,14 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 - [ ] **Eye-focused hero image** (optional) — a striking eye/eyelid close-up works best; currently using the front hero portrait.
 - [ ] Confirm the FAQ answers and procedure copy.
 
+## Ad Landing Page — Ziplyft
+`/ziplyft` — standalone campaign page (no site nav), lead-gen focused.
+- [ ] **Before & After photos** of Ziplyft / upper eyelid results (with consent).
+- [ ] **Confirm copy & medical claims** — how-it-works steps, benefits, and FAQ (drafted from public Ziplyft info; the practice should verify).
+- [ ] **Offer/price** (optional) — if there's a Ziplyft promo, send it and I'll add a badge + sticky-bar price like the bleph page.
+- [ ] **Eye/eyelid close-up hero image** (optional) — currently using the front hero portrait.
+- [ ] Confirm brand spelling/usage of "Ziplyft" and any trademark requirements.
+
 ## Services (hub + 28 procedure pages)
 - [ ] **Medical copy review** — every procedure description was drafted and must be reviewed/approved by the practice (`src/content/services.ts`).
 - [ ] **Per‑procedure photos** and **before & after galleries** (with patient consent) for each procedure.
