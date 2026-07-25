@@ -65,6 +65,8 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 
 ## Services (hub + 28 procedure pages)
 - [ ] **Medical copy review** — every procedure description was drafted and must be reviewed/approved by the practice (`src/content/services.ts`).
+- [ ] **FAQ review** — each page has a "Common Questions" section (a few custom, the rest a safe default set). Review/replace with the practice's real answers; add procedure-specific FAQs where helpful.
+- [ ] **"Procedure Explained" videos** — each page has a video slot. Send existing clips or record short Dr. Jindal explainers (one per procedure ideal). Provide the **YouTube video ID** for each and I'll set `videoId` in `src/content/services.ts`. Placeholder shows until then.
 - [ ] **Per‑procedure photos** and **before & after galleries** (with patient consent) for each procedure.
 - [ ] Confirm the **procedure list** is complete/correct (28 procedures across 4 categories).
 

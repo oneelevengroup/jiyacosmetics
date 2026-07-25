@@ -19,6 +19,11 @@ export type ProcedureContent = {
   body: string[];
   /** Short bullet points (benefits / highlights). */
   benefits: string[];
+  /** Procedure-specific FAQs. If omitted, a sensible default set is used. */
+  faqs?: { q: string; a: string }[];
+  /** YouTube video id for the "Procedure Explained" section (from a
+   *  youtube.com/watch?v=ID link). Leave undefined to show a placeholder. */
+  videoId?: string;
 };
 
 export const procedureContent: Record<string, ProcedureContent> = {
@@ -35,6 +40,24 @@ export const procedureContent: Record<string, ProcedureContent> = {
       "Brighter, more rested appearance",
       "Can improve obstructed peripheral vision",
       "Performed by a fellowship-trained oculofacial surgeon",
+    ],
+    faqs: [
+      {
+        q: "Am I a good candidate?",
+        a: "Most healthy adults bothered by excess or heavy upper-eyelid skin are candidates. Your consultation with Dr. Jindal will confirm what's right for you.",
+      },
+      {
+        q: "What is recovery like?",
+        a: "Most patients return to normal activities within about a week. Bruising and swelling are typically mild, and incisions are hidden in the natural eyelid crease.",
+      },
+      {
+        q: "Will it look natural?",
+        a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Jindal focuses on refreshed, natural results — never an operated look.",
+      },
+      {
+        q: "Can it improve my vision?",
+        a: "In some cases, removing heavy upper-eyelid skin can improve obstructed peripheral vision. Dr. Jindal will assess this at your visit.",
+      },
     ],
   },
   "lower-blepharoplasty": {
@@ -471,4 +494,35 @@ export function relatedProcedures(slug: string, categoryId: string): ResolvedPro
   return getAllProcedures()
     .filter((p) => p.categoryId === categoryId && p.slug !== slug)
     .slice(0, 4);
+}
+
+/** Safe, generic FAQs used when a procedure has no custom set. */
+function defaultFaqs(name: string): { q: string; a: string }[] {
+  return [
+    {
+      q: `Am I a good candidate for ${name}?`,
+      a: `The best way to know is a consultation. Dr. Jindal will review your anatomy, goals, and health to recommend whether ${name} is right for you.`,
+    },
+    {
+      q: `What does ${name} involve?`,
+      a: `Dr. Jindal will walk you through the full process — what to expect before, during, and after — and tailor the plan to your features and goals.`,
+    },
+    {
+      q: "What is recovery like?",
+      a: "Recovery varies by individual and procedure. Dr. Jindal provides personalized pre- and post-care instructions, including JIYA's holistic healing protocols, to support your best result.",
+    },
+    {
+      q: "Will my results look natural?",
+      a: "Yes — natural, refined results are always the priority. Every treatment is customized to complement your features, never to look overdone.",
+    },
+    {
+      q: "How much does it cost, and how do I start?",
+      a: "Pricing is personalized to your plan. Book a consultation and our team will provide a clear quote and outline your next steps.",
+    },
+  ];
+}
+
+/** FAQs for a procedure — its custom set if provided, else the default set. */
+export function procedureFaqs(p: ResolvedProcedure): { q: string; a: string }[] {
+  return p.content.faqs ?? defaultFaqs(p.name);
 }

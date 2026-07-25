@@ -11,6 +11,7 @@ import {
   getAllProcedures,
   getProcedure,
   relatedProcedures,
+  procedureFaqs,
   categoryImageKey,
   brandLine,
 } from "@/content/services";
@@ -31,6 +32,8 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
 
   const imageKey = categoryImageKey[proc.categoryId] as ImageKey;
   const related = relatedProcedures(proc.slug, proc.categoryId);
+  const faqs = procedureFaqs(proc);
+  const videoId = proc.content.videoId;
 
   return (
     <>
@@ -115,8 +118,84 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
         </div>
       </section>
 
+      {/* Procedure explained — video */}
+      <section className="bg-noir py-20 lg:py-28">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <Reveal>
+              <span className="eyebrow text-gold">Watch</span>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
+                {proc.name}, explained
+              </h2>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <p className="mx-auto mt-6 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
+                {videoId
+                  ? `Dr. Jindal walks through ${proc.name} — what it is, who it helps, and what to expect.`
+                  : `A short video with Dr. Jindal explaining ${proc.name} is coming soon.`}
+              </p>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.2}>
+            <div className="mx-auto mt-10 aspect-video w-full max-w-4xl overflow-hidden border border-cream/15 bg-noir-2">
+              {videoId ? (
+                <iframe
+                  title={`${proc.name} explained`}
+                  src={`https://www.youtube.com/embed/${videoId}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="h-full w-full"
+                  style={{ border: 0 }}
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center">
+                  <div className="text-center">
+                    <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/50">
+                      <span className="ml-1 border-y-8 border-l-[13px] border-y-transparent border-l-gold" />
+                    </span>
+                    <p className="mt-4 label text-cream/40">Video coming soon</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Before & After */}
       <BeforeAfter name={proc.name} />
+
+      {/* FAQ */}
+      <section className="bg-noir-deep py-20 lg:py-28">
+        <div className="container-site max-w-3xl">
+          <Reveal>
+            <span className="eyebrow text-gold">Common Questions</span>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
+              Good to know
+            </h2>
+          </Reveal>
+          <div className="mt-10 border-t border-cream/15">
+            {faqs.map((f, i) => (
+              <Reveal as="div" key={i} delay={i * 0.04}>
+                <div className="border-b border-cream/15 py-7">
+                  <h3 className="font-sans text-sm uppercase tracking-label text-cream">
+                    {f.q}
+                  </h3>
+                  <p className="mt-3 font-sans text-[0.9rem] font-light leading-relaxed text-cream/65">
+                    {f.a}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Related procedures */}
       {related.length > 0 && (
