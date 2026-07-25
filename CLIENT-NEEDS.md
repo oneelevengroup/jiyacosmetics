@@ -30,7 +30,9 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 - [ ] **Practice/office photo(s)** — interior, treatment room, or Brier Creek exterior (for the "Our Story" image). Currently a placeholder.
 - [ ] **Dr. Jindal portrait** — current transparent headshot works; supply a higher‑end editorial portrait if desired.
 - [ ] **Approve/edit copy** — Our Story, Philosophy, and Dr. Jindal bio (pulled from the current site; confirm accuracy).
-- [ ] Any **team members** to feature (photos + short bios) if a team section is wanted.
+- [ ] **Dr. Samantha Prabakaran portrait** — she's now featured on About as the second surgeon (placeholder in use). Provide her headshot (transparent cutout like Dr. Jindal's is ideal).
+- [ ] **Approve Dr. Prabakaran's bio** (drafted from public sources — VCU residency, oculofacial focus). Add any details she'd like (medical school, honors, etc.).
+- [ ] Any **other team members** to feature (photos + short bios) if a fuller team section is wanted.
 - [ ] Any **awards / press / affiliations** beyond the current "Member of" logos.
 
 ## Contact page

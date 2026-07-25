@@ -89,6 +89,14 @@ export const images = {
     placeholder: false,
     note: "Dr. Jindal headshot — transparent cutout, floats on the dark section.",
   },
+  "provider.prabakaran": {
+    key: "provider.prabakaran",
+    src: "/images/providers/dr-prabakaran.svg",
+    alt: "Portrait of Dr. Samantha Prabakaran",
+    target: "/images/providers/dr-prabakaran.jpg",
+    placeholder: true,
+    note: "Dr. Prabakaran portrait needed (client to provide).",
+  },
 
   // ---- Service category imagery ----
   "service.eyelid": {

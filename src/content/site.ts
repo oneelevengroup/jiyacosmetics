@@ -160,6 +160,18 @@ export const about = {
   },
 };
 
+/** Dr. Samantha Prabakaran bio (second surgeon). */
+export const drPrabakaran = {
+  eyebrow: "Oculofacial Surgeon",
+  name: "Dr. Samantha Prabakaran",
+  bio: [
+    "Samantha Prabakaran, MD is a board-certified ophthalmologist with specialized training in oculofacial cosmetic surgery. She completed her ophthalmology residency at Virginia Commonwealth University — a high-volume surgical program — building a strong foundation in complex eyelid and ophthalmic procedures.",
+    "Her practice focuses on advanced techniques for upper blepharoplasty, ptosis repair, cosmetic lower blepharoplasty, eye-bag removal, brow lifting, and reconstructive eyelid surgery.",
+    "Dr. Prabakaran trained in the same surgical program as JIYA founder Dr. Sumeet Jindal and continues to refine her craft alongside him — delivering the same refined, natural results JIYA is known for.",
+  ],
+  cta: { label: "Book with Dr. Prabakaran", href: "/contact" },
+};
+
 /** Dr. Jindal bio + credentials (from jiyacosmetic.com). */
 export const doctor = {
   eyebrow: "Meet Your Surgeon",

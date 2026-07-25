@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
 import MeetDoctor from "@/components/home/MeetDoctor";
+import ProviderBio from "@/components/ProviderBio";
 import Highlights from "@/components/home/Highlights";
 import ConsultCTA from "@/components/home/ConsultCTA";
-import { about } from "@/content/site";
+import { about, drPrabakaran } from "@/content/site";
 import { brandLine } from "@/content/services";
 
 export const metadata: Metadata = {
@@ -97,8 +98,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Meet Dr. Jindal (reused) + Why JIYA */}
+      {/* Our surgeons */}
       <MeetDoctor />
+      <ProviderBio
+        provider={drPrabakaran}
+        imageKey="provider.prabakaran"
+        reverse
+        bg="bg-noir"
+      />
+
       <Highlights />
 
       <ConsultCTA />
