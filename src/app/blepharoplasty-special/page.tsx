@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
 import BookButton from "@/components/BookButton";
@@ -265,6 +266,34 @@ export default function BlepharoplastyLanding() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Another option — Ziplyft */}
+      <section className="border-y border-cream/10 bg-noir-2 py-16 lg:py-20">
+        <div className="container-site flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+          <div>
+            <Reveal>
+              <span className="eyebrow text-gold">Another Option</span>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <h2 className="mt-4 font-display text-3xl font-light uppercase text-cream lg:text-4xl">
+                Prefer minimal downtime? Meet Ziplyft.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p className="mt-3 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
+                A 10-minute, in-office upper eyelid lift — no scalpel, no sutures.
+                At your consultation, Dr. Jindal will help you choose the approach
+                that best fits your eyes and goals.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal delay={0.16}>
+            <Link href="/ziplyft" className="btn-ghost shrink-0">
+              Explore Ziplyft
+            </Link>
+          </Reveal>
         </div>
       </section>
 
