@@ -12,6 +12,12 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 - [ ] **Favicon / browser tab icon** (can be generated from the JIYA icon).
 - [ ] **Brand copy review** — confirm tone/wording across the site.
 
+## Social & YouTube
+- [ ] **Instagram live feed** — sign up for a free feed widget (Behold, LightWidget, or SnapWidget), connect @jiyaraleigh, and send me the **embed URL**. I'll drop it into `socialFeed.instagramEmbedUrl` and the "Follow Along" band (above the footer) goes live. Until then it shows a placeholder + follow links.
+- [ ] **Dr. Jindal's YouTube channel URL** (for the Subscribe button) — set `social.youtube` / `socialFeed.youtube.channelUrl`.
+- [ ] **A featured YouTube video ID** (from a youtube.com/watch?v=ID link) for the homepage "Follow Dr. Jindal" section — set `socialFeed.youtube.featuredVideoId`.
+- [ ] Confirm the YouTube section blurb copy.
+
 ## Home page
 - [ ] Approve hero head‑turn photos (profile + front) — or supply higher‑res/retouched versions.
 - [ ] **Service category photos** (4) — Eyelid, Facial, Skin & Non‑Surgical, Hair (shown when an accordion item expands). Currently placeholders.

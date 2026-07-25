@@ -27,6 +27,28 @@ export const business = {
   social: {
     instagram: "https://www.instagram.com/jiyaraleigh/",
     facebook: "https://www.facebook.com/jiya.cosmeticraleigh/",
+    youtube: "", // Dr. Jindal's YouTube channel URL (client to provide)
+  },
+};
+
+/**
+ * Social feed + YouTube config.
+ *
+ * INSTAGRAM LIVE FEED: paste the embed URL from a feed widget provider
+ * (Behold / LightWidget / SnapWidget) into `instagramEmbedUrl`. Until then a
+ * tasteful placeholder + follow links are shown.
+ *
+ * YOUTUBE: set `youtube.channelUrl` (Subscribe link) and `youtube.featuredVideoId`
+ * (the id from a youtube.com/watch?v=ID link) to activate the homepage section.
+ */
+export const socialFeed = {
+  instagramHandle: "@jiyaraleigh",
+  instagramEmbedUrl: "", // e.g. https://cdn.lightwidget.com/widgets/<id>.html
+  youtube: {
+    channelUrl: "", // e.g. https://www.youtube.com/@drjindal
+    featuredVideoId: "", // e.g. "dQw4w9WgXcQ"
+    blurb:
+      "Dr. Jindal shares procedure walk-throughs, before-and-afters, and eyelid & facial rejuvenation insights on YouTube.",
   },
 };
 

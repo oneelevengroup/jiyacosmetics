@@ -6,6 +6,7 @@ import ServicesOverview from "@/components/home/ServicesOverview";
 import Highlights from "@/components/home/Highlights";
 import ResultsTeaser from "@/components/home/ResultsTeaser";
 import Testimonials from "@/components/home/Testimonials";
+import YouTubePromo from "@/components/home/YouTubePromo";
 import ConsultCTA from "@/components/home/ConsultCTA";
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Highlights />
       <ResultsTeaser />
       <Testimonials />
+      <YouTubePromo />
       <ConsultCTA />
     </>
   );
