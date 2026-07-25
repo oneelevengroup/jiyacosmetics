@@ -27,6 +27,13 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 - [ ] Any **team members** to feature (photos + short bios) if a team section is wanted.
 - [ ] Any **awards / press / affiliations** beyond the current "Member of" logos.
 
+## Contact page
+- [ ] **Confirm NAP** — name, address (7901 ACC Blvd, Suite 201, Raleigh, NC 27617), phone (984) 275-3818, email. Correct the email if `info@jiyacosmetic.com` isn't right.
+- [ ] **Confirm hours** (currently Mon–Fri 8am–5pm; after hours/weekends by appointment).
+- [ ] **Confirm the Typeform** is the correct/live consultation form (embedded inline here + popup elsewhere).
+- [ ] Confirm the **map pin** location is correct.
+- [ ] Any **parking/directions** notes to add.
+
 ## Ad Landing Page — Upper Blepharoplasty ($4,000 special)
 `/blepharoplasty-special` — standalone campaign page (no site nav), for paid traffic.
 - [ ] **Confirm offer details & fine print** — exactly what the $4,000 upper blepharoplasty special includes, any expiration/terms to display.
