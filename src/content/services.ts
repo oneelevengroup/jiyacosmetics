@@ -5,11 +5,11 @@ import { serviceCategories } from "./site";
  *
  * The procedure list + slugs live in site.ts (serviceCategories); this file adds
  * the long-form content for each. Descriptions are written to be accurate and
- * modest — PLEASE have the practice review/refine the medical copy before launch.
+ * modest, PLEASE have the practice review/refine the medical copy before launch.
  * Any procedure without an entry here falls back to a sensible generic template.
  */
 
-/** Recurring brand line — weave anywhere. */
+/** Recurring brand line, weave anywhere. */
 export const brandLine = "Surgical Artistry · Regenerative Care";
 
 export type ProcedureContent = {
@@ -52,7 +52,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
       },
       {
         q: "Will it look natural?",
-        a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Jindal focuses on refreshed, natural results — never an operated look.",
+        a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Jindal focuses on refreshed, natural results, never an operated look.",
       },
       {
         q: "Can it improve my vision?",
@@ -136,7 +136,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
     summary:
       "Lifts and re-drapes the deeper facial tissues to restore a natural, youthful contour to the face and neck.",
     body: [
-      "A facelift addresses sagging and laxity in the lower face and neck by repositioning the deeper tissues — not just the skin — for a result that looks natural and lasts.",
+      "A facelift addresses sagging and laxity in the lower face and neck by repositioning the deeper tissues, not just the skin, for a result that looks natural and lasts.",
       "Dr. Jindal combines surgical artistry with regenerative techniques to support healing and the most natural-looking outcome.",
     ],
     benefits: [
@@ -176,7 +176,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
   },
   "vertical-rejuvenation": {
     summary:
-      "JIYA Vertical Rejuvenation — a comprehensive, naturally vertical lift of the full face.",
+      "JIYA Vertical Rejuvenation, a comprehensive, naturally vertical lift of the full face.",
     body: [
       "JIYA Vertical Rejuvenation is Dr. Jindal's comprehensive approach to full facial rejuvenation, lifting the tissues in a natural, vertical direction to recreate youthful proportions.",
       "It blends surgical precision with regenerative medicine for a refreshed yet unmistakably natural result.",
@@ -235,7 +235,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
       "Uses your own purified fat to restore volume and refresh areas that have hollowed with age.",
     body: [
       "Facial fat transfer (grafting) harvests your own fat, purifies it, and re-injects it to restore lost volume in the cheeks, temples, under-eyes and more.",
-      "Because it uses your own tissue — rich in regenerative cells — results look and feel natural and can improve skin quality over time.",
+      "Because it uses your own tissue, rich in regenerative cells, results look and feel natural and can improve skin quality over time.",
     ],
     benefits: [
       "Natural volume using your own fat",
@@ -290,7 +290,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
     summary:
       "A bullhorn lip lift shortens the space between nose and lip to reveal a fuller, more youthful smile.",
     body: [
-      "The bullhorn lip lift shortens an elongated philtrum (the space between the nose and upper lip), revealing more of the upper lip and a softer, more youthful smile — without fillers.",
+      "The bullhorn lip lift shortens an elongated philtrum (the space between the nose and upper lip), revealing more of the upper lip and a softer, more youthful smile, without fillers.",
       "Incisions are hidden at the base of the nose for a discreet result.",
     ],
     benefits: [
@@ -320,7 +320,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
     summary:
       "A non-surgical refresh using dermal fillers and neurotoxins to restore volume and smooth lines.",
     body: [
-      "A liquid facelift uses a tailored combination of dermal fillers and neurotoxins to restore volume, soften lines and subtly lift the face — all without surgery.",
+      "A liquid facelift uses a tailored combination of dermal fillers and neurotoxins to restore volume, soften lines and subtly lift the face, all without surgery.",
       "Dr. Jindal's anatomical precision delivers balanced, natural-looking enhancement.",
     ],
     benefits: [
@@ -362,7 +362,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
     summary:
       "Customized IV therapy that supports hydration, recovery and overall wellness from the inside out.",
     body: [
-      "Our IV treatments deliver hydration, vitamins and nutrients directly into the bloodstream to support recovery, energy and overall wellness — part of JIYA's holistic, regenerative philosophy.",
+      "Our IV treatments deliver hydration, vitamins and nutrients directly into the bloodstream to support recovery, energy and overall wellness, part of JIYA's holistic, regenerative philosophy.",
       "Protocols are tailored to your needs, including pre- and post-procedure support.",
     ],
     benefits: [
@@ -406,7 +406,7 @@ export const procedureContent: Record<string, ProcedureContent> = {
     summary:
       "Regenerative nanofat and stem-cell therapy that revitalizes thinning hair and the scalp.",
     body: [
-      "Nanofat stem cell restoration harnesses the regenerative cells in your own fat to revitalize follicles and improve scalp health — a non-surgical approach to thinning hair.",
+      "Nanofat stem cell restoration harnesses the regenerative cells in your own fat to revitalize follicles and improve scalp health, a non-surgical approach to thinning hair.",
       "It reflects Dr. Jindal's leadership in regenerative medicine.",
     ],
     benefits: [
@@ -472,9 +472,9 @@ export function getAllProcedures(): ResolvedProcedure[] {
       categoryTitle: cat.title,
       content:
         procedureContent[p.slug] ?? {
-          summary: `${p.name} at JIYA — surgical artistry and regenerative care from Dr. Sumeet Jindal in Raleigh, NC.`,
+          summary: `${p.name} at JIYA, surgical artistry and regenerative care from Dr. Sumeet Jindal in Raleigh, NC.`,
           body: [
-            `${p.name} is offered at JIYA Eyelid & Facial Cosmetic Surgery. Detailed information for this procedure is coming soon — please contact us to learn whether it's right for you.`,
+            `${p.name} is offered at JIYA Eyelid & Facial Cosmetic Surgery. Detailed information for this procedure is coming soon, please contact us to learn whether it's right for you.`,
           ],
           benefits: [
             "Personalized consultation",
@@ -505,7 +505,7 @@ function defaultFaqs(name: string): { q: string; a: string }[] {
     },
     {
       q: `What does ${name} involve?`,
-      a: `Dr. Jindal will walk you through the full process — what to expect before, during, and after — and tailor the plan to your features and goals.`,
+      a: `Dr. Jindal will walk you through the full process, what to expect before, during, and after, and tailor the plan to your features and goals.`,
     },
     {
       q: "What is recovery like?",
@@ -513,7 +513,7 @@ function defaultFaqs(name: string): { q: string; a: string }[] {
     },
     {
       q: "Will my results look natural?",
-      a: "Yes — natural, refined results are always the priority. Every treatment is customized to complement your features, never to look overdone.",
+      a: "Yes, natural, refined results are always the priority. Every treatment is customized to complement your features, never to look overdone.",
     },
     {
       q: "How much does it cost, and how do I start?",
@@ -522,7 +522,7 @@ function defaultFaqs(name: string): { q: string; a: string }[] {
   ];
 }
 
-/** FAQs for a procedure — its custom set if provided, else the default set. */
+/** FAQs for a procedure, its custom set if provided, else the default set. */
 export function procedureFaqs(p: ResolvedProcedure): { q: string; a: string }[] {
   return p.content.faqs ?? defaultFaqs(p.name);
 }

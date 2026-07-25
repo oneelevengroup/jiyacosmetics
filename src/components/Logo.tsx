@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getImage } from "@/lib/images";
 
 /**
- * JIYA logo — the real transparent gold lockup (src/lib/images.ts → "brand.logo").
+ * JIYA logo, the real transparent gold lockup (src/lib/images.ts → "brand.logo").
  * Falls back to a Forum text wordmark only if the logo entry is ever marked as a
  * placeholder. `size` controls height for the header vs. the larger footer mark.
  */
@@ -19,7 +19,7 @@ export default function Logo({
 
   if (!logo.placeholder) {
     return (
-      <Link href="/" aria-label="JIYA — home" className={centered ? "block text-center" : "block"}>
+      <Link href="/" aria-label="JIYA, home" className={centered ? "block text-center" : "block"}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={logo.src} alt={logo.alt} className={`${height} w-auto`} />
       </Link>
@@ -29,7 +29,7 @@ export default function Logo({
   return (
     <Link
       href="/"
-      aria-label="JIYA — home"
+      aria-label="JIYA, home"
       className={`group block text-cream ${centered ? "text-center" : ""}`}
     >
       <span className="block font-display text-2xl font-normal tracking-[0.5em] pl-[0.5em] leading-none">

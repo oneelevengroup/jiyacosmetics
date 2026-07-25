@@ -16,7 +16,7 @@ const categoryImage: Record<string, ImageKey> = {
 };
 
 /**
- * Procedure index as an elegant accordion — uppercase tracked labels, hairline
+ * Procedure index as an elegant accordion, uppercase tracked labels, hairline
  * dividers, and a circular "+" that expands to reveal procedures. Directly
  * echoes the service list on the inspiration site.
  */

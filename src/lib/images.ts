@@ -8,7 +8,7 @@
  *   1. Drop the new file into /public/images/<folder> using the documented name.
  *   2. Change that entry's `src` to the local path, e.g. "/images/home/hero.jpg".
  *   3. Set `placeholder: false`.
- * Nothing else in the codebase needs to change — components reference images by key.
+ * Nothing else in the codebase needs to change, components reference images by key.
  *
  * Entries marked `placeholder: true` currently use elevated stock imagery (or
  * are awaiting client-provided assets). See PLACEHOLDERS.md for the full swap list.
@@ -34,7 +34,7 @@ export const images = {
   "brand.logo": {
     key: "brand.logo",
     src: "/images/JIYA_logo.svg",
-    alt: "JIYA — Facial Cosmetic Surgery",
+    alt: "JIYA, Facial Cosmetic Surgery",
     target: "/images/JIYA_logo.svg",
     placeholder: false,
     note: "Full vertical lockup (gold emblem + JIYA wordmark), transparent SVG.",
@@ -50,7 +50,7 @@ export const images = {
   "brand.logoHorizontal": {
     key: "brand.logoHorizontal",
     src: "/images/jiya-header-logo.png",
-    alt: "JIYA — Jindal Institute for Youthful Aging",
+    alt: "JIYA, Jindal Institute for Youthful Aging",
     target: "/images/jiya-header-logo.png",
     placeholder: false,
     note: "Header lockup: cleaner transparent PNG (JIYAHORIZONTALTRANSPARENT), auto-trimmed of padding for tight sizing.",
@@ -63,7 +63,7 @@ export const images = {
     alt: "Cinematic profile portrait on a dark background",
     target: "/images/JIYAheropic.png",
     placeholder: false,
-    note: "Client hero. Subject sits left with dark negative space right. Source is 6336x2688 (~16MB) — consider exporting a web-optimized version later.",
+    note: "Client hero. Subject sits left with dark negative space right. Source is 6336x2688 (~16MB), consider exporting a web-optimized version later.",
   },
   "home.heroFront": {
     key: "home.heroFront",
@@ -87,7 +87,7 @@ export const images = {
     alt: "Portrait of Dr. Sumeet Jindal",
     target: "/images/drjheadshot.png",
     placeholder: false,
-    note: "Dr. Jindal headshot — transparent cutout, floats on the dark section.",
+    note: "Dr. Jindal headshot, transparent cutout, floats on the dark section.",
   },
   "provider.prabakaran": {
     key: "provider.prabakaran",
@@ -95,7 +95,7 @@ export const images = {
     alt: "Portrait of Dr. Samantha Prabakaran",
     target: "/images/providers/dr-prabakaran.png",
     placeholder: true,
-    note: "AUTO-SWAP: upload the real headshot to /public/images/providers/dr-prabakaran.png (a transparent cutout like Dr. Jindal's) — it replaces this placeholder with no code change.",
+    note: "AUTO-SWAP: upload the real headshot to /public/images/providers/dr-prabakaran.png (a transparent cutout like Dr. Jindal's), it replaces this placeholder with no code change.",
   },
 
   // ---- Service category imagery ----

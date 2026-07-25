@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Placeholder from "@/components/Placeholder";
 
 /**
  * Before/After teaser that links to the Gallery. Placeholder slots until real
@@ -32,14 +33,9 @@ export default function ResultsTeaser() {
             <Reveal as="div" key={i} delay={i * 0.08}>
               <Link
                 href="/gallery"
-                className="group relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden border border-cream/15 bg-noir transition-colors duration-500 hover:border-gold/40"
+                className="group relative block aspect-[4/5] w-full overflow-hidden border border-cream/15 transition-colors duration-500 hover:border-gold/40"
               >
-                <div className="text-center">
-                  <span className="label text-cream/40">Before / After</span>
-                  <p className="mt-2 font-sans text-[0.65rem] uppercase tracking-[0.2em] text-cream/25">
-                    Photos coming soon
-                  </p>
-                </div>
+                <Placeholder />
               </Link>
             </Reveal>
           ))}

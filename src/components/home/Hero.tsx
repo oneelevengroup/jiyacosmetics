@@ -18,7 +18,7 @@ import { business } from "@/content/site";
  * Two-phase cinematic hero.
  *
  *  Phase 1 (page top): just the brand portrait with the horizontal logo
- *  centered over the dark space — no nav, no headline.
+ *  centered over the dark space, no nav, no headline.
  *  Phase 2 (on scroll): the logo fades out while the headline, subtitle and
  *  CTAs reveal in the right-side negative space. The global Header reveals on
  *  scroll in tandem (see Header.tsx).
@@ -47,13 +47,13 @@ export default function Hero() {
   const frontScale = useTransform(scrollYProgress, [0.05, 0.4], [reduce ? 1 : 1.06, 1]);
   const hasFront = !getImage("home.heroFront").placeholder;
 
-  // Phase 1 — centered logo fades out fast and early, fully gone before the
+  // Phase 1, centered logo fades out fast and early, fully gone before the
   // front-facing shot comes in. Scroll hint fades on the first nudge.
   const logoOpacity = useTransform(scrollYProgress, [0.02, 0.13], [1, 0]);
   const logoY = useTransform(scrollYProgress, [0.02, 0.13], [0, reduce ? 0 : -24]);
   const hintOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
 
-  // Phase 2 — headline block
+  // Phase 2, headline block
   const contentOpacity = useTransform(scrollYProgress, [0.32, 0.62], [0, 1]);
   const contentY = useTransform(scrollYProgress, [0.32, 0.62], [reduce ? 0 : 40, 0]);
 
@@ -63,7 +63,7 @@ export default function Hero() {
   return (
     <section ref={ref} className="relative h-[230vh]">
       <div className="sticky top-0 h-[100svh] min-h-[640px] w-full overflow-hidden bg-noir">
-        {/* Brand portrait — profile layer cross-dissolves into the front layer */}
+        {/* Brand portrait, profile layer cross-dissolves into the front layer */}
         <motion.div style={{ scale: imgScale }} className="absolute inset-0">
           <motion.div
             style={hasFront ? { opacity: profileOpacity, scale: profileScale } : undefined}
@@ -100,7 +100,7 @@ export default function Hero() {
           }}
         />
 
-        {/* Phase 1 — centered horizontal logo */}
+        {/* Phase 1, centered horizontal logo */}
         <motion.div
           style={{ opacity: logoOpacity, y: logoY }}
           aria-hidden={revealed}
@@ -112,7 +112,7 @@ export default function Hero() {
           <img src={logo.src} alt={logo.alt} className="relative h-28 w-auto md:h-40 lg:h-48" />
         </motion.div>
 
-        {/* Phase 2 — headline in the right negative space */}
+        {/* Phase 2, headline in the right negative space */}
         <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
           className={`container-site relative z-20 flex h-full flex-col justify-end pb-24 lg:flex-row lg:items-center lg:justify-end lg:pb-0 ${
@@ -144,7 +144,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Phase 1 — scroll hint: gold JIYA icon gently bobbing downward */}
+        {/* Phase 1, scroll hint: gold JIYA icon gently bobbing downward */}
         <motion.div
           style={{ opacity: hintOpacity }}
           className="pointer-events-none absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-4"

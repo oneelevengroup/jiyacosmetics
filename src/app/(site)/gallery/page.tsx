@@ -7,7 +7,7 @@ import { brandLine } from "@/content/services";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Before & after results from Dr. Sumeet Jindal at JIYA in Raleigh, NC — eyelid surgery, facial rejuvenation, skin treatments, and hair restoration.",
+    "Before & after results from Dr. Sumeet Jindal at JIYA in Raleigh, NC, eyelid surgery, facial rejuvenation, skin treatments, and hair restoration.",
 };
 
 export default function GalleryPage() {

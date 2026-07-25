@@ -6,7 +6,7 @@ import { surgeons } from "@/content/site";
 import type { ImageKey } from "@/lib/images";
 
 /**
- * Homepage "Our Surgeons" — Dr. Jindal and Dr. Prabakaran side by side, each
+ * Homepage "Our Surgeons", Dr. Jindal and Dr. Prabakaran side by side, each
  * with a "Meet" link (to their full bio on About) and a Book CTA.
  */
 export default function SurgeonsIntro() {

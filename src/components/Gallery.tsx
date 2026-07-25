@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { galleryCategories, galleryItems } from "@/content/gallery";
+import Placeholder from "@/components/Placeholder";
 
 /**
  * Filterable Before & After gallery. Real cases show their before/after images;
@@ -59,14 +60,7 @@ export default function Gallery() {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex h-full items-center justify-center text-center">
-                    <div>
-                      <span className="label text-cream/40">Before / After</span>
-                      <p className="mt-2 font-sans text-[0.65rem] uppercase tracking-[0.2em] text-cream/25">
-                        Coming soon
-                      </p>
-                    </div>
-                  </div>
+                  <Placeholder />
                 )}
               </div>
               <figcaption className="mt-3 font-sans text-xs uppercase tracking-label text-cream/60">

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /**
- * Self-hosted Avenir (licensed — client to provide).
+ * Self-hosted Avenir (licensed, client to provide).
  * Drop the web fonts in /public/fonts and these @font-face rules activate
  * automatically. Until then, the Mulish stand-in (loaded via next/font) is used.
  * Filenames expected: Avenir-Book / Avenir-Roman / Avenir-Medium (.woff2/.woff).
@@ -36,7 +36,7 @@
 @layer base {
   :root {
     /* next/font defines --font-display (Forum) and --font-sans-fallback (Mulish)
-       on <html>. Do NOT redefine --font-display here — a literal "Forum" has no
+       on <html>. Do NOT redefine --font-display here, a literal "Forum" has no
        @font-face and would clobber next/font, falling back to Georgia.
        We only layer Avenir in front of the Mulish fallback, so self-hosted
        Avenir files (when added to /public/fonts) win automatically. */
@@ -73,14 +73,14 @@
     @apply font-sans text-xs uppercase tracking-label text-cream/80;
   }
 
-  /* Primary CTA — thin, sharp-cornered frame (no radius), inverts on hover */
+  /* Primary CTA, thin, sharp-cornered frame (no radius), inverts on hover */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-3 border border-cream px-9 py-4
            font-sans text-[0.7rem] uppercase tracking-label text-cream
            transition-colors duration-500 ease-lux hover:bg-cream hover:text-noir;
   }
 
-  /* Secondary CTA — plain uppercase text with an animated underline */
+  /* Secondary CTA, plain uppercase text with an animated underline */
   .btn-ghost {
     @apply link-underline inline-flex items-center gap-2 pb-1
            font-sans text-[0.7rem] uppercase tracking-label text-cream/80 hover:text-cream;

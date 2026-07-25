@@ -4,7 +4,7 @@ import BookButton from "@/components/BookButton";
 import { doctor, credentials } from "@/content/site";
 
 /**
- * "Meet Dr. Jindal" — portrait left, bio right, with a "Member of" credentials
+ * "Meet Dr. Jindal", portrait left, bio right, with a "Member of" credentials
  * row beneath. Set on the deepest near-black for a refined, editorial feel.
  * Each credential renders its white/transparent logo when one is provided
  * (see PLACEHOLDERS.md), otherwise the name as elegant text.

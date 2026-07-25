@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
+import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import BeforeAfter from "@/components/BeforeAfter";
 import ConsultCTA from "@/components/home/ConsultCTA";
@@ -118,7 +119,7 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
         </div>
       </section>
 
-      {/* Procedure explained — video */}
+      {/* Procedure explained, video */}
       <section className="bg-noir py-20 lg:py-28">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
@@ -133,14 +134,14 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
             <Reveal delay={0.16}>
               <p className="mx-auto mt-6 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
                 {videoId
-                  ? `Dr. Jindal walks through ${proc.name} — what it is, who it helps, and what to expect.`
+                  ? `Dr. Jindal walks through ${proc.name}, what it is, who it helps, and what to expect.`
                   : `A short video with Dr. Jindal explaining ${proc.name} is coming soon.`}
               </p>
             </Reveal>
           </div>
 
           <Reveal delay={0.2}>
-            <div className="mx-auto mt-10 aspect-video w-full max-w-4xl overflow-hidden border border-cream/15 bg-noir-2">
+            <div className="relative mx-auto mt-10 aspect-video w-full max-w-4xl overflow-hidden border border-cream/15">
               {videoId ? (
                 <iframe
                   title={`${proc.name} explained`}
@@ -148,18 +149,11 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   loading="lazy"
-                  className="h-full w-full"
+                  className="absolute inset-0 h-full w-full"
                   style={{ border: 0 }}
                 />
               ) : (
-                <div className="flex h-full items-center justify-center">
-                  <div className="text-center">
-                    <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/50">
-                      <span className="ml-1 border-y-8 border-l-[13px] border-y-transparent border-l-gold" />
-                    </span>
-                    <p className="mt-4 label text-cream/40">Video coming soon</p>
-                  </div>
-                </div>
+                <Placeholder />
               )}
             </div>
           </Reveal>

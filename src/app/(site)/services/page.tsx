@@ -8,7 +8,7 @@ import { brandLine } from "@/content/services";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Surgical artistry & regenerative care — eyelid surgery, facial rejuvenation, skin and non-surgical treatments, and hair restoration with Dr. Sumeet Jindal in Raleigh, NC.",
+    "Surgical artistry & regenerative care, eyelid surgery, facial rejuvenation, skin and non-surgical treatments, and hair restoration with Dr. Sumeet Jindal in Raleigh, NC.",
 };
 
 export default function ServicesPage() {
@@ -27,7 +27,7 @@ export default function ServicesPage() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-7 max-w-xl font-sans text-base font-light leading-relaxed text-cream/70">
-              From refined oculofacial surgery to regenerative, non-surgical care —
+              From refined oculofacial surgery to regenerative, non-surgical care -
               every treatment is tailored to you and performed on your terms.
             </p>
           </Reveal>

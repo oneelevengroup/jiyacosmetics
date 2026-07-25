@@ -11,7 +11,7 @@ import { brandLine } from "@/content/services";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About JIYA — the Jindal Institute for Youthful Aging. A homegrown Raleigh facial cosmetic surgery practice blending surgical artistry with regenerative care.",
+    "About JIYA, the Jindal Institute for Youthful Aging. A homegrown Raleigh facial cosmetic surgery practice blending surgical artistry with regenerative care.",
 };
 
 export default function AboutPage() {
@@ -36,7 +36,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story — image + copy */}
+      {/* Story, image + copy */}
       <section className="bg-noir-deep py-20 lg:py-28">
         <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-6">

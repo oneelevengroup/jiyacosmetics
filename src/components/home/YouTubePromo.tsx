@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Placeholder from "@/components/Placeholder";
 import { socialFeed } from "@/content/site";
 
 /**
@@ -45,7 +46,7 @@ export default function YouTubePromo() {
           <div className="relative aspect-video w-full overflow-hidden border border-cream/15 bg-noir">
             {featuredVideoId ? (
               <iframe
-                title="Featured video — Dr. Jindal"
+                title="Featured video, Dr. Jindal"
                 src={`https://www.youtube.com/embed/${featuredVideoId}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -54,14 +55,7 @@ export default function YouTubePromo() {
                 style={{ border: 0 }}
               />
             ) : (
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center">
-                  <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-gold/50">
-                    <span className="ml-1 border-y-8 border-l-[13px] border-y-transparent border-l-gold" />
-                  </span>
-                  <p className="mt-4 label text-cream/40">Featured video coming soon</p>
-                </div>
-              </div>
+              <Placeholder />
             )}
           </div>
         </Reveal>

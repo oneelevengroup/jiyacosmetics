@@ -24,7 +24,7 @@ export default function SpecialsPage() {
         <Reveal delay={0.16}>
           <p className="mx-auto mt-7 max-w-lg font-sans text-base font-light leading-relaxed text-cream/70">
             We don&apos;t have any active specials at the moment. Be the first to
-            know when a new offer launches — schedule a consultation and our team
+            know when a new offer launches, schedule a consultation and our team
             will keep you informed.
           </p>
         </Reveal>

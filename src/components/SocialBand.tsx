@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Placeholder from "@/components/Placeholder";
 import { business, socialFeed } from "@/content/site";
 
 /**
@@ -67,23 +68,16 @@ export default function SocialBand() {
             />
           ) : (
             <Reveal>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <a
-                    key={i}
-                    href={business.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative flex aspect-square items-center justify-center border border-cream/15 bg-noir transition-colors duration-500 hover:border-gold/40"
-                  >
-                    <span className="label text-cream/30 transition-colors duration-500 group-hover:text-gold/70">
-                      IG
-                    </span>
-                  </a>
-                ))}
-              </div>
+              <a
+                href={business.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block h-64 w-full overflow-hidden border border-cream/15 transition-colors duration-500 hover:border-gold/40 md:h-80"
+              >
+                <Placeholder />
+              </a>
               <p className="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.18em] text-cream/40">
-                Live feed coming soon — follow {instagramHandle} for the latest.
+                Live feed coming soon. Follow {instagramHandle} for the latest.
               </p>
             </Reveal>
           )}

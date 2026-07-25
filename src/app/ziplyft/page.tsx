@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
+import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import { getImage } from "@/lib/images";
 import { business } from "@/content/site";
@@ -15,11 +16,11 @@ const HERO_STATS = [
 const steps = [
   {
     title: "Prep & Marking",
-    body: "Dr. Jindal precisely marks the amount of excess upper-eyelid skin to be removed — the foundation of a natural, symmetric result.",
+    body: "Dr. Jindal precisely marks the amount of excess upper-eyelid skin to be removed, the foundation of a natural, symmetric result.",
   },
   {
     title: "Compression & Excision",
-    body: "The Ziplyft device gently compresses the tissue to seal off blood flow, and a guarded blade glides across to neatly remove the excess skin — no cautery.",
+    body: "The Ziplyft device gently compresses the tissue to seal off blood flow, and a guarded blade glides across to neatly remove the excess skin, no cautery.",
   },
   {
     title: "Sutureless Closure",
@@ -38,18 +39,18 @@ const benefits = [
   },
   {
     title: "Natural Results",
-    body: "A refreshed, more youthful upper eye — and potentially improved peripheral vision from lifted, less-heavy lids.",
+    body: "A refreshed, more youthful upper eye, and potentially improved peripheral vision from lifted, less-heavy lids.",
   },
 ];
 
 const faqs = [
   {
     q: "What is Ziplyft?",
-    a: "Ziplyft is a minimally invasive upper eyelid lift performed in-office under local anesthesia. It uses a specialized compression device with a built-in blade to remove excess upper-eyelid skin — without a scalpel, sutures, or cautery.",
+    a: "Ziplyft is a minimally invasive upper eyelid lift performed in-office under local anesthesia. It uses a specialized compression device with a built-in blade to remove excess upper-eyelid skin, without a scalpel, sutures, or cautery.",
   },
   {
     q: "How long does it take?",
-    a: "About 10 minutes per eye, in-office, under local anesthesia — you're awake and comfortable the whole time.",
+    a: "About 10 minutes per eye, in-office, under local anesthesia, you're awake and comfortable the whole time.",
   },
   {
     q: "Is there any cutting or stitches?",
@@ -57,7 +58,7 @@ const faqs = [
   },
   {
     q: "What is recovery like?",
-    a: "Minimal. The compression approach reduces bruising and swelling versus traditional blepharoplasty, so most people return to normal activities within a week — often looking event-ready in just days.",
+    a: "Minimal. The compression approach reduces bruising and swelling versus traditional blepharoplasty, so most people return to normal activities within a week, often looking event-ready in just days.",
   },
   {
     q: "Ziplyft or traditional blepharoplasty?",
@@ -70,9 +71,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Ziplyft — The 10-Minute Upper Eyelid Lift | JIYA Raleigh",
+  title: "Ziplyft, The 10-Minute Upper Eyelid Lift | JIYA Raleigh",
   description:
-    "Ziplyft at JIYA in Raleigh, NC — a minimally invasive, in-office upper eyelid lift in about 10 minutes per eye. No scalpel, no sutures, minimal downtime. Book your consultation with Dr. Sumeet Jindal.",
+    "Ziplyft at JIYA in Raleigh, NC, a minimally invasive, in-office upper eyelid lift in about 10 minutes per eye. No scalpel, no sutures, minimal downtime. Book your consultation with Dr. Sumeet Jindal.",
   robots: { index: false, follow: false },
 };
 
@@ -128,7 +129,7 @@ export default function ZiplyftLanding() {
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-6 max-w-md font-sans text-base font-light leading-relaxed text-cream/85">
-                A 10-minute, in-office eyelid lift — no scalpel, no sutures, and
+                A 10-minute, in-office eyelid lift, no scalpel, no sutures, and
                 minimal downtime. Brighter, more youthful eyes on your schedule.
               </p>
             </Reveal>
@@ -249,7 +250,7 @@ export default function ZiplyftLanding() {
               <p className="mt-6 max-w-2xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
                 Dr. Sumeet Jindal is a board-certified ophthalmologist with advanced
                 fellowship training in oculofacial cosmetic surgery. Few surgeons know
-                the eyes like an oculofacial specialist — which is exactly what you
+                the eyes like an oculofacial specialist, which is exactly what you
                 want for a refined, natural upper-eyelid result.
               </p>
             </Reveal>
@@ -274,13 +275,8 @@ export default function ZiplyftLanding() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <Reveal as="div" key={i} delay={i * 0.08}>
-                <div className="relative flex aspect-[4/5] w-full items-center justify-center border border-cream/15 bg-noir">
-                  <div className="text-center">
-                    <span className="label text-cream/40">Before / After</span>
-                    <p className="mt-2 font-sans text-[0.65rem] uppercase tracking-[0.2em] text-cream/25">
-                      Photos coming soon
-                    </p>
-                  </div>
+                <div className="relative aspect-[4/5] w-full overflow-hidden border border-cream/15">
+                  <Placeholder />
                 </div>
               </Reveal>
             ))}

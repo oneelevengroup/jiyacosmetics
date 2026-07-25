@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
+import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import { getImage } from "@/lib/images";
 import { business } from "@/content/site";
@@ -11,7 +12,7 @@ const OFFER = {
   price: "$4,000",
   eyebrow: "Limited-Time Special",
   procedure: "Upper Blepharoplasty",
-  tagline: "Brighter, more youthful eyes — for a refreshed, well-rested look.",
+  tagline: "Brighter, more youthful eyes, for a refreshed, well-rested look.",
 };
 
 const content = procedureContent["upper-blepharoplasty"];
@@ -27,7 +28,7 @@ const faqs = [
   },
   {
     q: "Will my results look natural?",
-    a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Jindal focuses on refreshed, natural results — never an operated look.",
+    a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Jindal focuses on refreshed, natural results, never an operated look.",
   },
   {
     q: "Can it improve my vision?",
@@ -40,9 +41,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: `${OFFER.procedure} Special — ${OFFER.price} | JIYA Raleigh`,
-  description: `${OFFER.procedure} in Raleigh, NC — now ${OFFER.price} for a limited time with oculofacial surgeon Dr. Sumeet Jindal. Book your consultation.`,
-  // Campaign landing page — keep out of the main site's search index.
+  title: `${OFFER.procedure} Special, ${OFFER.price} | JIYA Raleigh`,
+  description: `${OFFER.procedure} in Raleigh, NC, now ${OFFER.price} for a limited time with oculofacial surgeon Dr. Sumeet Jindal. Book your consultation.`,
+  // Campaign landing page, keep out of the main site's search index.
   robots: { index: false, follow: false },
 };
 
@@ -200,7 +201,7 @@ export default function BlepharoplastyLanding() {
             <Reveal delay={0.14}>
               <p className="mt-6 max-w-2xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
                 A board-certified ophthalmologist with advanced fellowship training
-                in oculofacial cosmetic surgery, Dr. Jindal specializes in the eyes —
+                in oculofacial cosmetic surgery, Dr. Jindal specializes in the eyes -
                 performing some of the most advanced, refined eyelid techniques in
                 modern facial plastic surgery, with incisions hidden in the natural
                 eyelid crease.
@@ -227,13 +228,8 @@ export default function BlepharoplastyLanding() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[0, 1, 2].map((i) => (
               <Reveal as="div" key={i} delay={i * 0.08}>
-                <div className="relative flex aspect-[4/5] w-full items-center justify-center border border-cream/15 bg-noir">
-                  <div className="text-center">
-                    <span className="label text-cream/40">Before / After</span>
-                    <p className="mt-2 font-sans text-[0.65rem] uppercase tracking-[0.2em] text-cream/25">
-                      Photos coming soon
-                    </p>
-                  </div>
+                <div className="relative aspect-[4/5] w-full overflow-hidden border border-cream/15">
+                  <Placeholder />
                 </div>
               </Reveal>
             ))}
@@ -269,7 +265,7 @@ export default function BlepharoplastyLanding() {
         </div>
       </section>
 
-      {/* Another option — Ziplyft */}
+      {/* Another option, Ziplyft */}
       <section className="border-y border-cream/10 bg-noir-2 py-16 lg:py-20">
         <div className="container-site flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
@@ -283,7 +279,7 @@ export default function BlepharoplastyLanding() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-3 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
-                A 10-minute, in-office upper eyelid lift — no scalpel, no sutures.
+                A 10-minute, in-office upper eyelid lift, no scalpel, no sutures.
                 At your consultation, Dr. Jindal will help you choose the approach
                 that best fits your eyes and goals.
               </p>

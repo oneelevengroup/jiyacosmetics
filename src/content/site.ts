@@ -1,7 +1,7 @@
 /**
  * Central content source for the JIYA site.
  *
- * All copy is sourced from the current jiyacosmetic.com site. Edit text here —
+ * All copy is sourced from the current jiyacosmetic.com site. Edit text here -
  * components read from this file so content stays separate from layout.
  * Obvious typos may be corrected, but messaging is preserved.
  */
@@ -46,7 +46,7 @@ export const socialFeed = {
   instagramEmbedUrl: "", // e.g. https://cdn.lightwidget.com/widgets/<id>.html
   youtube: {
     channelUrl: "https://www.youtube.com/@drjindalraleigh",
-    featuredVideoId: "", // e.g. "dQw4w9WgXcQ" — add a featured video id to embed
+    featuredVideoId: "", // e.g. "dQw4w9WgXcQ", add a featured video id to embed
 
     blurb:
       "Dr. Jindal shares procedure walk-throughs, before-and-afters, and eyelid & facial rejuvenation insights on YouTube.",
@@ -86,7 +86,7 @@ export const serviceCategories = [
     id: "face",
     title: "Facial Surgery",
     blurb:
-      "Natural, long-lasting facial rejuvenation — from deep plane facelift to neck and midface.",
+      "Natural, long-lasting facial rejuvenation, from deep plane facelift to neck and midface.",
     procedures: [
       { name: "Facelift", slug: "facelift" },
       { name: "Deep Plane Facelift", slug: "deep-plane-facelift" },
@@ -135,7 +135,7 @@ export const philosophy = {
   eyebrow: "The JIYA Philosophy",
   heading: "Aging gracefully, on your terms.",
   body: [
-    "JIYA is a homegrown facial cosmetic surgery practice that blends traditional anti-aging treatments with regenerative medicine. Founded by accomplished oculofacial cosmetic surgeon Dr. Sumeet Jindal — a Raleigh native — the Jindal Institute for Youthful Aging was built to bring the best treatments in the world back home.",
+    "JIYA is a homegrown facial cosmetic surgery practice that blends traditional anti-aging treatments with regenerative medicine. Founded by accomplished oculofacial cosmetic surgeon Dr. Sumeet Jindal, a Raleigh native, the Jindal Institute for Youthful Aging was built to bring the best treatments in the world back home.",
     "Aging should not be something that causes stress, but rather something you can do gracefully, with or without facial cosmetic enhancements. Our goal is to make your outside look more like your inside, with luxury, high-quality surgical and non-surgical procedures performed on your terms.",
   ],
 };
@@ -143,20 +143,20 @@ export const philosophy = {
 /** About page content (from jiyacosmetic.com). */
 export const about = {
   intro:
-    "JIYA is a homegrown facial cosmetic surgery practice that blends traditional anti-aging treatments with regenerative medicine — built to bring the best treatments in the world home to Raleigh.",
+    "JIYA is a homegrown facial cosmetic surgery practice that blends traditional anti-aging treatments with regenerative medicine, built to bring the best treatments in the world home to Raleigh.",
   story: {
     heading: "A homegrown practice, world-class care",
     body: [
-      "The Jindal Institute for Youthful Aging was founded by accomplished oculofacial cosmetic surgeon Dr. Sumeet Jindal — a Raleigh-area native who built JIYA specifically to bring the best treatments in the world back to his hometown. The practice is located in the bustling Brier Creek neighborhood of Raleigh.",
+      "The Jindal Institute for Youthful Aging was founded by accomplished oculofacial cosmetic surgeon Dr. Sumeet Jindal, a Raleigh-area native who built JIYA specifically to bring the best treatments in the world back to his hometown. The practice is located in the bustling Brier Creek neighborhood of Raleigh.",
       "From your first visit, you can expect top-quality customer service, compassionate and personalized care, and some of the best expertise in anti-aging procedures from a premier Raleigh oculoplastic surgeon.",
     ],
   },
   philosophy: {
     heading: "Aging gracefully, on your terms",
     body: [
-      "Aging should not be something that causes stress, but rather something you can do gracefully — with or without facial cosmetic enhancements. Our goal is to make your outside look more like your inside, with luxury, high-quality surgical and non-surgical procedures performed on your terms.",
+      "Aging should not be something that causes stress, but rather something you can do gracefully, with or without facial cosmetic enhancements. Our goal is to make your outside look more like your inside, with luxury, high-quality surgical and non-surgical procedures performed on your terms.",
       "Our philosophy is holistic: nutrition, skin science, and regenerative medicine complement every surgical plan. Dr. Jindal provides each patient with customized pre- and post-operative nutrition and healing protocols to achieve the best results possible.",
-      "As one of the leading PRP specialists in Raleigh, Dr. Jindal prefers regenerative techniques like PRP and nanofat whenever they can deliver the ideal result — turning to surgery only when it is truly the best path.",
+      "As one of the leading PRP specialists in Raleigh, Dr. Jindal prefers regenerative techniques like PRP and nanofat whenever they can deliver the ideal result, turning to surgery only when it is truly the best path.",
     ],
   },
 };
@@ -188,9 +188,9 @@ export const drPrabakaran = {
   eyebrow: "Oculofacial Surgeon",
   name: "Dr. Samantha Prabakaran",
   bio: [
-    "Samantha Prabakaran, MD is a board-certified ophthalmologist with specialized training in oculofacial cosmetic surgery. She completed her ophthalmology residency at Virginia Commonwealth University — a high-volume surgical program — building a strong foundation in complex eyelid and ophthalmic procedures.",
+    "Samantha Prabakaran, MD is a board-certified ophthalmologist with specialized training in oculofacial cosmetic surgery. She completed her ophthalmology residency at Virginia Commonwealth University, a high-volume surgical program, building a strong foundation in complex eyelid and ophthalmic procedures.",
     "Her practice focuses on advanced techniques for upper blepharoplasty, ptosis repair, cosmetic lower blepharoplasty, eye-bag removal, brow lifting, and reconstructive eyelid surgery.",
-    "Dr. Prabakaran trained in the same surgical program as JIYA founder Dr. Sumeet Jindal and continues to refine her craft alongside him — delivering the same refined, natural results JIYA is known for.",
+    "Dr. Prabakaran trained in the same surgical program as JIYA founder Dr. Sumeet Jindal and continues to refine her craft alongside him, delivering the same refined, natural results JIYA is known for.",
   ],
   cta: { label: "Book with Dr. Prabakaran", href: "/contact" },
 };
@@ -237,7 +237,7 @@ export const highlights = [
   },
   {
     title: "Regenerative Medicine",
-    body: "A leader in PRP, stem cells, and nanofat — preferring regenerative techniques and reserving surgery for when it delivers the ideal result.",
+    body: "A leader in PRP, stem cells, and nanofat, preferring regenerative techniques and reserving surgery for when it delivers the ideal result.",
   },
   {
     title: "Holistic Healing",
@@ -245,21 +245,21 @@ export const highlights = [
   },
   {
     title: "Personalized Care",
-    body: "Compassionate, customized treatment at every stage — the same hospitality whether you choose injections or a facelift.",
+    body: "Compassionate, customized treatment at every stage, the same hospitality whether you choose injections or a facelift.",
   },
 ];
 
 export const homeSpecial = {
   eyebrow: "Current Special",
   title: "Mini Facelift",
-  detail: "Starting at $4,900 — now 20% off.",
+  detail: "Starting at $4,900, now 20% off.",
   cta: { label: "View all specials", href: "/specials" },
 };
 
 /** Short positioning band shown right after the hero. */
 export const homeIntro = {
   heading: "The art of aging gracefully",
-  body: "JIYA blends refined oculofacial surgery with regenerative medicine — nutrition, skin science, PRP and nanofat — for results that look natural and feel entirely like you.",
+  body: "JIYA blends refined oculofacial surgery with regenerative medicine, nutrition, skin science, PRP and nanofat, for results that look natural and feel entirely like you.",
   cta: { label: "Our Philosophy", href: "/about" },
 };
 
@@ -272,13 +272,13 @@ export const credibility = [
 ];
 
 /**
- * Patient testimonials. PLACEHOLDER quotes — replace with real, approved
+ * Patient testimonials. PLACEHOLDER quotes, replace with real, approved
  * reviews (Google / RealSelf, etc.). Keep attribution privacy-appropriate.
  */
 export const testimonials = [
   {
     quote:
-      "From my first visit I felt genuinely cared for. Dr. Jindal listened, and my results look completely natural — like a refreshed version of me.",
+      "From my first visit I felt genuinely cared for. Dr. Jindal listened, and my results look completely natural, like a refreshed version of me.",
     name: "JIYA Patient",
     detail: "Upper Blepharoplasty",
   },
