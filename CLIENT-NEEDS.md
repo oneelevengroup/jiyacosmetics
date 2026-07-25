@@ -27,6 +27,13 @@ copy approvals, etc.). Image placeholders are also tracked technically in
 - [ ] Any **team members** to feature (photos + short bios) if a team section is wanted.
 - [ ] Any **awards / press / affiliations** beyond the current "Member of" logos.
 
+## Ad Landing Page — Upper Blepharoplasty ($4,000 special)
+`/blepharoplasty-special` — standalone campaign page (no site nav), for paid traffic.
+- [ ] **Confirm offer details & fine print** — exactly what the $4,000 upper blepharoplasty special includes, any expiration/terms to display.
+- [ ] **Before & After photos** of upper blepharoplasty (with consent) for the results section.
+- [ ] **Eye-focused hero image** (optional) — a striking eye/eyelid close-up works best; currently using the front hero portrait.
+- [ ] Confirm the FAQ answers and procedure copy.
+
 ## Services (hub + 28 procedure pages)
 - [ ] **Medical copy review** — every procedure description was drafted and must be reviewed/approved by the practice (`src/content/services.ts`).
 - [ ] **Per‑procedure photos** and **before & after galleries** (with patient consent) for each procedure.

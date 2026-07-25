@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Forum, Mulish } from "next/font/google";
 import "./globals.css";
 import { business } from "@/content/site";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 // Display: Forum — elegant high-contrast serif with refined capitals (per client).
 const display = Forum({
@@ -44,11 +42,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
