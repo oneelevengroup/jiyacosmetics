@@ -27,7 +27,7 @@ export const business = {
   social: {
     instagram: "https://www.instagram.com/jiyaraleigh/",
     facebook: "https://www.facebook.com/jiya.cosmeticraleigh/",
-    youtube: "", // Dr. Jindal's YouTube channel URL (client to provide)
+    youtube: "https://www.youtube.com/@drjindalraleigh",
   },
 };
 
@@ -45,8 +45,9 @@ export const socialFeed = {
   instagramHandle: "@jiyaraleigh",
   instagramEmbedUrl: "", // e.g. https://cdn.lightwidget.com/widgets/<id>.html
   youtube: {
-    channelUrl: "", // e.g. https://www.youtube.com/@drjindal
-    featuredVideoId: "", // e.g. "dQw4w9WgXcQ"
+    channelUrl: "https://www.youtube.com/@drjindalraleigh",
+    featuredVideoId: "", // e.g. "dQw4w9WgXcQ" — add a featured video id to embed
+
     blurb:
       "Dr. Jindal shares procedure walk-throughs, before-and-afters, and eyelid & facial rejuvenation insights on YouTube.",
   },

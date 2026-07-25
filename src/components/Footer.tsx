@@ -90,6 +90,11 @@ export default function Footer() {
             <a href={business.social.facebook} target="_blank" rel="noopener noreferrer" className="link-underline label text-cream/55">
               Facebook
             </a>
+            {business.social.youtube && (
+              <a href={business.social.youtube} target="_blank" rel="noopener noreferrer" className="link-underline label text-cream/55">
+                YouTube
+              </a>
+            )}
           </div>
         </div>
       </div>
