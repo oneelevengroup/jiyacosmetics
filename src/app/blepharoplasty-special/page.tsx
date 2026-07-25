@@ -304,7 +304,7 @@ export default function BlepharoplastyLanding() {
             <span className="eyebrow text-gold">{OFFER.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mx-auto mt-6 max-w-3xl font-display text-display-lg font-light uppercase text-gold">
+            <h2 className="mx-auto mt-6 font-display text-display-lg font-light uppercase text-gold md:whitespace-nowrap">
               {OFFER.price} Upper Eyelid Lift
             </h2>
           </Reveal>
