@@ -91,11 +91,11 @@ export const images = {
   },
   "provider.prabakaran": {
     key: "provider.prabakaran",
-    src: "/images/providers/dr-prabakaran.svg",
+    src: "/images/providers/dr-prabakaran.png",
     alt: "Portrait of Dr. Samantha Prabakaran",
-    target: "/images/providers/dr-prabakaran.jpg",
+    target: "/images/providers/dr-prabakaran.png",
     placeholder: true,
-    note: "Dr. Prabakaran portrait needed (client to provide).",
+    note: "AUTO-SWAP: upload the real headshot to /public/images/providers/dr-prabakaran.png (a transparent cutout like Dr. Jindal's) — it replaces this placeholder with no code change.",
   },
 
   // ---- Service category imagery ----
