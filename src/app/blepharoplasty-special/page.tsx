@@ -5,45 +5,60 @@ import SiteImage from "@/components/SiteImage";
 import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import { getImage } from "@/lib/images";
-import { business } from "@/content/site";
+import { business, drPrabakaran } from "@/content/site";
 import { procedureContent } from "@/content/services";
 
 const OFFER = {
-  price: "$4,000",
   eyebrow: "Limited-Time Special",
-  procedure: "Upper Blepharoplasty",
-  tagline: "Brighter, more youthful eyes, for a refreshed, well-rested look.",
+  priceFrom: "$4,000",
+  surgeon: "Dr. Samantha Prabakaran, MD",
 };
 
 const content = procedureContent["upper-blepharoplasty"];
 
+// The special, performed by Dr. Prabakaran
+const specialPricing = [
+  { name: "Upper Blepharoplasty", price: "$4,000", note: null as string | null },
+  {
+    name: "Lower Blepharoplasty",
+    price: "$4,000",
+    note: "+ $1,600 anesthesia fee",
+  },
+];
+
+// Premium option with Dr. Jindal
+const jindalPricing = [
+  { name: "Upper Blepharoplasty", price: "$6,000" },
+  { name: "Lower Blepharoplasty", price: "$8,000" },
+];
+
 const faqs = [
   {
     q: "Am I a good candidate?",
-    a: "Most healthy adults bothered by excess or drooping upper-eyelid skin are candidates. Your consultation with Dr. Jindal will confirm what's right for you.",
+    a: "Most healthy adults bothered by excess or heavy eyelid skin, or under-eye bags, are candidates. Your consultation with Dr. Prabakaran will confirm what's right for you.",
   },
   {
     q: "Is it surgical, and what is recovery like?",
-    a: "Upper blepharoplasty is a short procedure typically performed under local anesthesia. Most patients return to normal activities within about a week, with incisions hidden in the natural eyelid crease.",
+    a: "Blepharoplasty is a short procedure. Most patients return to normal activities within about a week, with incisions hidden in the natural eyelid creases.",
   },
   {
     q: "Will my results look natural?",
-    a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Jindal focuses on refreshed, natural results, never an operated look.",
+    a: "Yes. As a fellowship-trained oculofacial surgeon, Dr. Prabakaran focuses on refreshed, natural results, never an operated look.",
   },
   {
-    q: "Can it improve my vision?",
-    a: "In some cases, removing heavy upper-eyelid skin can improve obstructed peripheral vision. Dr. Jindal will assess this at your visit.",
+    q: "What's the difference between upper and lower?",
+    a: "Upper blepharoplasty removes excess upper-eyelid skin for a more open, rested look. Lower blepharoplasty addresses under-eye bags and puffiness. Some patients benefit from both.",
   },
   {
-    q: "What's included in the special?",
-    a: `Reach out and we'll walk you through everything the current ${OFFER.price} upper blepharoplasty special includes.`,
+    q: "What's included in the special pricing?",
+    a: "Reach out and we'll walk you through everything the current blepharoplasty special includes, including the lower-lid anesthesia fee.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: `${OFFER.procedure} Special, ${OFFER.price} | JIYA Raleigh`,
-  description: `${OFFER.procedure} in Raleigh, NC, now ${OFFER.price} for a limited time with oculofacial surgeon Dr. Sumeet Jindal. Book your consultation.`,
-  // Campaign landing page, keep out of the main site's search index.
+  title: "Blepharoplasty Special from $4,000 | JIYA Raleigh",
+  description:
+    "Upper & lower blepharoplasty from $4,000 with oculofacial surgeon Dr. Samantha Prabakaran, MD at JIYA in Raleigh, NC. Book your consultation.",
   robots: { index: false, follow: false },
 };
 
@@ -52,7 +67,7 @@ export default function BlepharoplastyLanding() {
 
   return (
     <div className="bg-noir text-cream">
-      {/* Minimal top bar (no site nav) */}
+      {/* Minimal top bar */}
       <header className="absolute inset-x-0 top-0 z-30">
         <div className="container-site flex items-center justify-between py-5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -94,22 +109,23 @@ export default function BlepharoplastyLanding() {
             </Reveal>
             <Reveal delay={0.08}>
               <h1 className="mt-5 font-display text-display-lg font-light uppercase leading-[1.02] text-gold">
-                Upper Eyelid Lift
+                Eyelid Lift
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mt-6 max-w-md font-sans text-base font-light leading-relaxed text-cream/85">
-                {OFFER.tagline}
+                Brighter, more youthful eyes with oculofacial surgeon{" "}
+                <span className="text-cream">{OFFER.surgeon}</span>.
               </p>
             </Reveal>
 
             <Reveal delay={0.24}>
               <div className="mt-9 inline-flex items-baseline gap-3 border border-gold/40 px-6 py-4">
                 <span className="font-display text-5xl leading-none text-gold">
-                  {OFFER.price}
+                  {OFFER.priceFrom}
                 </span>
                 <span className="font-sans text-xs uppercase tracking-label text-cream/70">
-                  {OFFER.procedure}
+                  Blepharoplasty
                   <br />
                   Special
                 </span>
@@ -127,15 +143,55 @@ export default function BlepharoplastyLanding() {
 
             <Reveal delay={0.4}>
               <p className="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.18em] text-cream/50">
-                Oculofacial surgeon Dr. Sumeet Jindal · Brier Creek, Raleigh
+                {OFFER.surgeon} · Brier Creek, Raleigh
               </p>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Overview + benefits */}
+      {/* The special — pricing options */}
       <section className="bg-noir-deep py-20 lg:py-28">
+        <div className="container-site">
+          <div className="text-center">
+            <Reveal>
+              <span className="eyebrow text-gold">The Special</span>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h2 className="mx-auto mt-5 max-w-2xl font-display text-display-md font-light uppercase text-cream">
+                Blepharoplasty, from $4,000
+              </h2>
+            </Reveal>
+            <Reveal delay={0.14}>
+              <p className="mx-auto mt-5 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/60">
+                Performed by oculofacial surgeon {OFFER.surgeon}.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
+            {specialPricing.map((p, i) => (
+              <Reveal as="div" key={p.name} delay={i * 0.08}>
+                <div className="flex h-full flex-col items-center border border-cream/15 bg-noir p-8 text-center">
+                  <span className="label text-cream/70">{p.name}</span>
+                  <span className="mt-5 font-display text-6xl leading-none text-gold">
+                    {p.price}
+                  </span>
+                  <span className="mt-3 min-h-[1rem] font-sans text-[0.7rem] uppercase tracking-label text-cream/50">
+                    {p.note ?? ""}
+                  </span>
+                  <div className="mt-7">
+                    <BookButton label="Book This" className="btn-primary" />
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Overview + highlights */}
+      <section className="bg-noir py-20 lg:py-28">
         <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
@@ -176,16 +232,16 @@ export default function BlepharoplastyLanding() {
         </div>
       </section>
 
-      {/* Why Dr. Jindal */}
-      <section className="bg-noir py-20 lg:py-28">
+      {/* Meet Dr. Prabakaran */}
+      <section className="bg-noir-deep py-20 lg:py-28">
         <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <SiteImage
-                imageKey="home.doctor"
+                imageKey="provider.prabakaran"
                 fill
                 sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover object-[center_20%]"
+                className="object-cover object-top"
               />
             </div>
           </Reveal>
@@ -195,27 +251,25 @@ export default function BlepharoplastyLanding() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
-                Dr. Sumeet Jindal
+                {drPrabakaran.name}
               </h2>
             </Reveal>
-            <Reveal delay={0.14}>
-              <p className="mt-6 max-w-2xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
-                A board-certified ophthalmologist with advanced fellowship training
-                in oculofacial cosmetic surgery, Dr. Jindal specializes in the eyes -
-                performing some of the most advanced, refined eyelid techniques in
-                modern facial plastic surgery, with incisions hidden in the natural
-                eyelid crease.
-              </p>
-            </Reveal>
-            <Reveal delay={0.22}>
-              <BookButton label="Book Your Consultation" className="btn-primary mt-9" />
+            {drPrabakaran.bio.slice(0, 2).map((para, i) => (
+              <Reveal key={i} delay={0.14 + i * 0.06}>
+                <p className="mt-6 max-w-2xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
+                  {para}
+                </p>
+              </Reveal>
+            ))}
+            <Reveal delay={0.28}>
+              <BookButton label="Book with Dr. Prabakaran" className="btn-primary mt-9" />
             </Reveal>
           </div>
         </div>
       </section>
 
       {/* Before & After */}
-      <section className="bg-noir-2 py-20 lg:py-28">
+      <section className="bg-noir py-20 lg:py-28">
         <div className="container-site">
           <Reveal>
             <span className="eyebrow text-gold">Real Results</span>
@@ -265,7 +319,7 @@ export default function BlepharoplastyLanding() {
         </div>
       </section>
 
-      {/* Another option, Ziplyft */}
+      {/* Another option — Ziplyft */}
       <section className="border-y border-cream/10 bg-noir-2 py-16 lg:py-20">
         <div className="container-site flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div>
@@ -279,8 +333,8 @@ export default function BlepharoplastyLanding() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-3 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
-                A 10-minute, in-office upper eyelid lift, no scalpel, no sutures.
-                At your consultation, Dr. Jindal will help you choose the approach
+                A 10-minute, in-office upper eyelid lift, no scalpel, no sutures. At
+                your consultation, our surgeons will help you choose the approach
                 that best fits your eyes and goals.
               </p>
             </Reveal>
@@ -293,20 +347,67 @@ export default function BlepharoplastyLanding() {
         </div>
       </section>
 
+      {/* Book with Dr. Jindal (premium option) */}
+      <section className="bg-noir py-20 lg:py-28">
+        <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-5">
+            <div className="relative aspect-[4/5] w-full overflow-hidden bg-gradient-to-b from-noir-2 to-noir">
+              <SiteImage
+                imageKey="home.doctor"
+                fill
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-top"
+              />
+            </div>
+          </Reveal>
+          <div className="lg:col-span-7">
+            <Reveal>
+              <span className="eyebrow text-gold">Prefer Dr. Jindal?</span>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
+                Book with Dr. Jindal
+              </h2>
+            </Reveal>
+            <Reveal delay={0.14}>
+              <p className="mt-6 max-w-xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
+                JIYA founder and oculofacial surgeon Dr. Sumeet Jindal also performs
+                blepharoplasty. Book directly with Dr. Jindal at the following rates:
+              </p>
+            </Reveal>
+            <div className="mt-8 max-w-md border-t border-cream/15">
+              {jindalPricing.map((p, i) => (
+                <Reveal as="div" key={p.name} delay={0.2 + i * 0.06}>
+                  <div className="flex items-center justify-between border-b border-cream/15 py-4">
+                    <span className="font-sans text-sm uppercase tracking-label text-cream/80">
+                      {p.name}
+                    </span>
+                    <span className="font-display text-2xl text-gold">{p.price}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal delay={0.36}>
+              <BookButton label="Book with Dr. Jindal" className="btn-primary mt-9" />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
-      <section className="bg-noir py-24 lg:py-32">
+      <section className="bg-noir-deep py-24 lg:py-32">
         <div className="container-site text-center">
           <Reveal>
             <span className="eyebrow text-gold">{OFFER.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mx-auto mt-6 font-display text-display-lg font-light uppercase text-gold md:whitespace-nowrap">
-              {OFFER.price} Upper Eyelid Lift
+              Blepharoplasty, from $4,000
             </h2>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mx-auto mt-6 max-w-lg font-sans text-sm font-light uppercase leading-relaxed tracking-[0.14em] text-cream/70">
-              Book your consultation with Dr. Jindal while this special lasts
+              Book your consultation with {OFFER.surgeon} while this special lasts
             </p>
           </Reveal>
           <Reveal delay={0.24}>
@@ -331,10 +432,10 @@ export default function BlepharoplastyLanding() {
         <div className="container-site flex items-center justify-between gap-4 py-3.5">
           <div className="flex items-baseline gap-3">
             <span className="font-display text-2xl leading-none text-gold">
-              {OFFER.price}
+              From {OFFER.priceFrom}
             </span>
             <span className="hidden font-sans text-[0.7rem] uppercase tracking-label text-cream/70 sm:block">
-              Upper Blepharoplasty Special
+              Blepharoplasty Special
             </span>
           </div>
           <BookButton label="Book Now" className="btn-primary !px-6 !py-3" />
