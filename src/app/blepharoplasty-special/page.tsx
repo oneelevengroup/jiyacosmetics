@@ -17,8 +17,16 @@ const content = procedureContent["upper-blepharoplasty"];
 
 // The special, performed by Dr. Prabakaran
 const specialPricing = [
-  { name: "Upper Blepharoplasty", price: "$4,000" },
-  { name: "Lower Blepharoplasty", price: "$4,000" },
+  {
+    name: "Upper Blepharoplasty",
+    price: "$4,000",
+    note: "Typically performed without anesthesia",
+  },
+  {
+    name: "Lower Blepharoplasty",
+    price: "$4,000",
+    note: "Does not include anesthesia",
+  },
 ];
 
 // Before & after results (each image is before on top, after on bottom)
@@ -39,8 +47,8 @@ const beforeAfters = [
 
 // Premium option with Dr. Jindal
 const jindalPricing = [
-  { name: "Upper Blepharoplasty", price: "$6,000" },
-  { name: "Lower Blepharoplasty", price: "$8,000" },
+  { name: "Upper Blepharoplasty", price: "$6,000", note: null as string | null },
+  { name: "Lower Blepharoplasty", price: "$8,000", note: "Includes anesthesia" },
 ];
 
 const faqs = [
@@ -178,11 +186,6 @@ export default function BlepharoplastyLanding() {
                 Performed by oculofacial surgeon {OFFER.surgeon}.
               </p>
             </Reveal>
-            <Reveal delay={0.18}>
-              <p className="mt-3 font-sans text-[0.7rem] uppercase tracking-label text-cream/45">
-                Anesthesia fee may apply
-              </p>
-            </Reveal>
           </div>
 
           <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
@@ -192,6 +195,9 @@ export default function BlepharoplastyLanding() {
                   <span className="label text-cream/70">{p.name}</span>
                   <span className="mt-5 font-display text-6xl leading-none text-gold">
                     {p.price}
+                  </span>
+                  <span className="mt-3 max-w-[15rem] font-sans text-[0.7rem] uppercase tracking-label text-cream/45">
+                    {p.note}
                   </span>
                   <div className="mt-7">
                     <BookButton label="Book This" className="btn-primary" />
@@ -395,11 +401,20 @@ export default function BlepharoplastyLanding() {
             <div className="mt-8 max-w-md border-t border-cream/15">
               {jindalPricing.map((p, i) => (
                 <Reveal as="div" key={p.name} delay={0.2 + i * 0.06}>
-                  <div className="flex items-center justify-between border-b border-cream/15 py-4">
-                    <span className="font-sans text-sm uppercase tracking-label text-cream/80">
-                      {p.name}
+                  <div className="flex items-center justify-between gap-4 border-b border-cream/15 py-4">
+                    <div>
+                      <span className="block font-sans text-sm uppercase tracking-label text-cream/80">
+                        {p.name}
+                      </span>
+                      {p.note && (
+                        <span className="mt-1 block font-sans text-[0.65rem] uppercase tracking-label text-cream/45">
+                          {p.note}
+                        </span>
+                      )}
+                    </div>
+                    <span className="shrink-0 font-display text-2xl text-gold">
+                      {p.price}
                     </span>
-                    <span className="font-display text-2xl text-gold">{p.price}</span>
                   </div>
                 </Reveal>
               ))}
