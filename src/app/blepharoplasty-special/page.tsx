@@ -20,12 +20,12 @@ const specialPricing = [
   {
     name: "Upper Blepharoplasty",
     price: "$4,000",
-    note: "Typically performed without anesthesia",
+    note: "Typically performed under local anesthesia",
   },
   {
     name: "Lower Blepharoplasty",
     price: "$4,000",
-    note: "Does not include anesthesia",
+    note: "Does not include IV sedation (twilight) fees",
   },
 ];
 
