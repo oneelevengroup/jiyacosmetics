@@ -95,7 +95,7 @@ export const images = {
     alt: "Portrait of Dr. Samantha Prabakaran",
     target: "/images/providers/dr-prabakaran.png",
     placeholder: false,
-    note: "Framed portrait (original studio headshot). For a floating cutout like Dr. Jindal's, replace with a transparent PNG.",
+    note: "Dr. Prabakaran headshot, transparent cutout, floats on the dark section (matches Dr. Jindal).",
   },
 
   // ---- Service category imagery ----
