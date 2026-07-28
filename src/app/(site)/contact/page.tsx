@@ -7,7 +7,7 @@ import { brandLine } from "@/content/services";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact JIYA Eyelid & Facial Cosmetic Surgery in Brier Creek, Raleigh, NC. Book a consultation with Dr. Sumeet Jindal, call (984) 275-3818, or visit us.",
+    "Contact JIYA Eyelid & Facial Cosmetic Surgery in Brier Creek, Raleigh, NC. Book a consultation with Dr. Sumeet Jindal, call (919) 929-6006, or visit us.",
 };
 
 const mapSrc =

@@ -11,8 +11,8 @@ export const business = {
   fullName: "JIYA Eyelid & Facial Cosmetic Surgery + Hair Restoration",
   tagline: "Look better. See better. Feel better.",
   founderTitle: "Jindal Institute for Youthful Aging",
-  phone: "(984) 275-3818",
-  phoneHref: "tel:+19842753818",
+  phone: "(919) 929-6006",
+  phoneHref: "tel:+19199296006",
   email: "info@jiyacosmetic.com",
   emailHref: "mailto:info@jiyacosmetic.com",
   address: {
