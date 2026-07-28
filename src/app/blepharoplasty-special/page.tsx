@@ -35,7 +35,6 @@ const beforeAfters = [
   "/images/IMG_4726.JPG",
   "/images/IMG_6652.JPG",
   "/images/IMG_7594.JPG",
-  "/images/IMG_9655.JPG",
 ];
 
 // Premium option with Dr. Jindal
