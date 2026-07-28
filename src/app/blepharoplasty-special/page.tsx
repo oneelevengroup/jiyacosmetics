@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
-import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import { getImage } from "@/lib/images";
 import { business, drPrabakaran } from "@/content/site";
@@ -18,12 +18,25 @@ const content = procedureContent["upper-blepharoplasty"];
 
 // The special, performed by Dr. Prabakaran
 const specialPricing = [
-  { name: "Upper Blepharoplasty", price: "$4,000", note: null as string | null },
-  {
-    name: "Lower Blepharoplasty",
-    price: "$4,000",
-    note: "+ $1,600 anesthesia fee",
-  },
+  { name: "Upper Blepharoplasty", price: "$4,000" },
+  { name: "Lower Blepharoplasty", price: "$4,000" },
+];
+
+// Before & after results (each image is before on top, after on bottom)
+const beforeAfters = [
+  "/images/IMG_0117.JPG",
+  "/images/IMG_0582.JPG",
+  "/images/IMG_0698.JPG",
+  "/images/IMG_1549.JPG",
+  "/images/IMG_1581.JPG",
+  "/images/IMG_2928.JPG",
+  "/images/IMG_3618.JPG",
+  "/images/IMG_4580.JPG",
+  "/images/IMG_4691.JPG",
+  "/images/IMG_4726.JPG",
+  "/images/IMG_6652.JPG",
+  "/images/IMG_7594.JPG",
+  "/images/IMG_9655.JPG",
 ];
 
 // Premium option with Dr. Jindal
@@ -50,8 +63,8 @@ const faqs = [
     a: "Upper blepharoplasty removes excess upper-eyelid skin for a more open, rested look. Lower blepharoplasty addresses under-eye bags and puffiness. Some patients benefit from both.",
   },
   {
-    q: "What's included in the special pricing?",
-    a: "Reach out and we'll walk you through everything the current blepharoplasty special includes, including the lower-lid anesthesia fee.",
+    q: "Is there an anesthesia fee?",
+    a: "An anesthesia fee may apply depending on the procedure. We'll review the full cost, including any anesthesia fee, with you at your consultation.",
   },
 ];
 
@@ -159,12 +172,18 @@ export default function BlepharoplastyLanding() {
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mx-auto mt-5 max-w-2xl font-display text-display-md font-light uppercase text-cream">
-                Blepharoplasty, from $4,000
+                Blepharoplasty,{" "}
+                <span className="whitespace-nowrap">from $4,000</span>
               </h2>
             </Reveal>
             <Reveal delay={0.14}>
               <p className="mx-auto mt-5 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/60">
                 Performed by oculofacial surgeon {OFFER.surgeon}.
+              </p>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <p className="mt-3 font-sans text-[0.7rem] uppercase tracking-label text-cream/45">
+                Anesthesia fee may apply
               </p>
             </Reveal>
           </div>
@@ -176,9 +195,6 @@ export default function BlepharoplastyLanding() {
                   <span className="label text-cream/70">{p.name}</span>
                   <span className="mt-5 font-display text-6xl leading-none text-gold">
                     {p.price}
-                  </span>
-                  <span className="mt-3 min-h-[1rem] font-sans text-[0.7rem] uppercase tracking-label text-cream/50">
-                    {p.note ?? ""}
                   </span>
                   <div className="mt-7">
                     <BookButton label="Book This" className="btn-primary" />
@@ -279,11 +295,22 @@ export default function BlepharoplastyLanding() {
               Before &amp; After
             </h2>
           </Reveal>
+          <Reveal delay={0.12}>
+            <p className="mt-4 font-sans text-[0.7rem] uppercase tracking-[0.2em] text-cream/45">
+              Before (top) · After (bottom) · Individual results vary
+            </p>
+          </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <Reveal as="div" key={i} delay={i * 0.08}>
-                <div className="relative aspect-[4/5] w-full overflow-hidden border border-cream/15">
-                  <Placeholder />
+            {beforeAfters.map((src, i) => (
+              <Reveal as="div" key={src} delay={(i % 3) * 0.08}>
+                <div className="relative aspect-square w-full overflow-hidden border border-cream/15">
+                  <Image
+                    src={src}
+                    alt="Blepharoplasty before and after result"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover"
+                  />
                 </div>
               </Reveal>
             ))}
@@ -401,8 +428,9 @@ export default function BlepharoplastyLanding() {
             <span className="eyebrow text-gold">{OFFER.eyebrow}</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mx-auto mt-6 font-display text-display-lg font-light uppercase text-gold md:whitespace-nowrap">
-              Blepharoplasty, from $4,000
+            <h2 className="mx-auto mt-6 font-display text-display-lg font-light uppercase text-gold">
+              Blepharoplasty,{" "}
+              <span className="whitespace-nowrap">from $4,000</span>
             </h2>
           </Reveal>
           <Reveal delay={0.16}>

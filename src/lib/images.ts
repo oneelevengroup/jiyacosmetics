@@ -94,8 +94,8 @@ export const images = {
     src: "/images/providers/dr-prabakaran.png",
     alt: "Portrait of Dr. Samantha Prabakaran",
     target: "/images/providers/dr-prabakaran.png",
-    placeholder: true,
-    note: "AUTO-SWAP: upload the real headshot to /public/images/providers/dr-prabakaran.png (a transparent cutout like Dr. Jindal's), it replaces this placeholder with no code change.",
+    placeholder: false,
+    note: "Framed portrait (original studio headshot). For a floating cutout like Dr. Jindal's, replace with a transparent PNG.",
   },
 
   // ---- Service category imagery ----
