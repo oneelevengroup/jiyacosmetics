@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blepharoplasty Special from $4,000 | JIYA Raleigh</title>
+    <meta name="description" content="Upper & lower blepharoplasty from $4,000 with oculofacial surgeon Dr. Samantha Prabakaran, MD at JIYA in Raleigh, NC. Book your consultation." />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!--
+      SELF-CONTAINED LANDING PAGE.
+      Images are loaded from the live deployment (https://jiyacosmetics.vercel.app).
+      To fully self-host, download those image files and change ASSET base URLs below.
+      The "Book" buttons open the JIYA Typeform (id ZJCdEhfD) as a popup.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Typeform popup embed -->
+    <script src="//embed.typeform.com/next/embed.js"></script>
+
+    <style>
+      :root {
+        --noir: #14100d;
+        --noir-2: #1b1510;
+        --noir-deep: #0a0807;
+        --cream: #f2eadd;
+        --gold: #d4a853;
+        --display: "Forum", Georgia, serif;
+        --sans: "Mulish", system-ui, sans-serif;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+      body { background: var(--noir); color: var(--cream); font-family: var(--sans); overflow-x: hidden; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+
+      .wrap { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 24px; }
+      @media (min-width: 1024px) { .wrap { padding: 0 64px; } }
+
+      .eyebrow { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.32em; color: rgba(242,234,221,0.55); }
+      .eyebrow.gold { color: var(--gold); }
+      .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.22em; }
+      .display { font-family: var(--display); font-weight: 300; text-transform: uppercase; }
+      .d-lg { font-size: clamp(2.25rem, 5.5vw, 5rem); line-height: 1.02; }
+      .d-md { font-size: clamp(1.75rem, 3.6vw, 3.25rem); line-height: 1.1; }
+      .gold { color: var(--gold); }
+      .muted { color: rgba(242,234,221,0.7); }
+      .muted-2 { color: rgba(242,234,221,0.45); }
+      .body { font-size: 0.95rem; font-weight: 300; line-height: 1.7; color: rgba(242,234,221,0.72); }
+
+      .btn-primary {
+        display: inline-flex; align-items: center; justify-content: center;
+        border: 1px solid var(--cream); padding: 15px 34px;
+        font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream);
+        background: transparent; cursor: pointer; transition: background .5s cubic-bezier(.22,1,.36,1), color .5s cubic-bezier(.22,1,.36,1);
+      }
+      .btn-primary:hover { background: var(--cream); color: var(--noir); }
+      .btn-primary.sm { padding: 11px 24px; }
+      .btn-ghost {
+        display: inline-flex; align-items: center; gap: 8px; padding-bottom: 4px;
+        font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,0.85);
+        border-bottom: 1px solid transparent; cursor: pointer; transition: border-color .5s, color .5s;
+      }
+      .btn-ghost:hover { border-color: var(--gold); color: var(--cream); }
+
+      section { position: relative; }
+      .py { padding: 80px 0; }
+      @media (min-width: 1024px) { .py { padding: 112px 0; } }
+      .bg-noir { background: var(--noir); }
+      .bg-noir-2 { background: var(--noir-2); }
+      .bg-deep { background: var(--noir-deep); }
+      .hairline { border-top: 1px solid rgba(242,234,221,0.15); }
+
+      /* Reveal */
+      .rv { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+      .rv.in { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+      /* Top bar */
+      .topbar { position: absolute; inset: 0 0 auto 0; z-index: 30; }
+      .topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+      .topbar img { height: 40px; width: auto; }
+      @media (min-width: 768px) { .topbar img { height: 44px; } }
+      .topbar .right { display: flex; align-items: center; gap: 24px; }
+      .topbar .phone { display: none; }
+      @media (min-width: 640px) { .topbar .phone { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,0.8); } }
+
+      /* Hero */
+      .hero { min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
+      .hero .bg { position: absolute; inset: 0; background-size: cover; background-position: center 22%; }
+      .hero .ov1 { position: absolute; inset: 0; background: linear-gradient(to top, var(--noir), rgba(20,16,13,.55) 55%, rgba(20,16,13,.7)); }
+      .hero .ov2 { position: absolute; inset: 0; display: none; }
+      @media (min-width: 1024px) { .hero .ov2 { display: block; background: linear-gradient(to right, rgba(20,16,13,.92) 0%, rgba(20,16,13,.6) 45%, transparent 75%); } }
+      .hero .content { position: relative; z-index: 10; padding: 128px 0; }
+      .hero .block { max-width: 560px; }
+      .badge { display: inline-flex; align-items: baseline; gap: 12px; border: 1px solid rgba(212,168,83,.4); padding: 16px 24px; margin-top: 36px; }
+      .badge .price { font-family: var(--display); font-size: 3rem; line-height: 1; color: var(--gold); }
+      .badge .txt { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,.7); }
+      .cta-row { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+
+      /* Grids */
+      .grid { display: grid; gap: 24px; }
+      .center { text-align: center; }
+      .mt-sm { margin-top: 20px; } .mt-md { margin-top: 28px; } .mt-lg { margin-top: 48px; }
+
+      /* Pricing cards */
+      .price-grid { max-width: 768px; margin: 48px auto 0; display: grid; gap: 24px; }
+      @media (min-width: 768px) { .price-grid { grid-template-columns: 1fr 1fr; } }
+      .price-card { display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid rgba(242,234,221,.15); background: var(--noir); padding: 32px; }
+      .price-card .name { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,.7); }
+      .price-card .big { font-family: var(--display); font-size: 3.75rem; line-height: 1; color: var(--gold); margin-top: 20px; }
+      .price-card .note { margin-top: 12px; max-width: 15rem; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,.45); }
+      .price-card .book { margin-top: 28px; }
+
+      /* Two-col */
+      .two { display: grid; gap: 48px; align-items: center; }
+      @media (min-width: 1024px) { .two { grid-template-columns: 5fr 7fr; gap: 64px; } .two.rev > .media { order: 2; } }
+      .portrait { position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: linear-gradient(to bottom, var(--noir-2), var(--noir)); }
+      .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+
+      .highlights { margin-top: 24px; list-style: none; }
+      .highlights li { display: flex; gap: 16px; border-bottom: 1px solid rgba(242,234,221,.1); padding-bottom: 16px; margin-bottom: 16px; }
+      .highlights .num { font-family: var(--display); font-size: 1.125rem; color: var(--gold); }
+      .highlights .txt { font-size: 0.9rem; font-weight: 300; line-height: 1.6; color: rgba(242,234,221,.75); }
+
+      /* Before/after */
+      .ba-grid { margin-top: 48px; display: grid; gap: 24px; grid-template-columns: 1fr; }
+      @media (min-width: 640px) { .ba-grid { grid-template-columns: 1fr 1fr; } }
+      @media (min-width: 1024px) { .ba-grid { grid-template-columns: 1fr 1fr 1fr; } }
+      .ba { position: relative; aspect-ratio: 1/1; overflow: hidden; border: 1px solid rgba(242,234,221,.15); }
+      .ba img { width: 100%; height: 100%; object-fit: cover; }
+
+      /* FAQ */
+      .faq { max-width: 768px; }
+      .faq .item { border-bottom: 1px solid rgba(242,234,221,.15); padding: 28px 0; }
+      .faq .item:first-child { border-top: 1px solid rgba(242,234,221,.15); }
+      .faq h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--cream); }
+      .faq p { margin-top: 12px; font-size: 0.9rem; font-weight: 300; line-height: 1.6; color: rgba(242,234,221,.65); }
+
+      /* Jindal pricing rows */
+      .rows { max-width: 28rem; margin-top: 32px; border-top: 1px solid rgba(242,234,221,.15); }
+      .rows .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(242,234,221,.15); padding: 16px 0; }
+      .rows .row .rn { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,.8); }
+      .rows .row .rnote { margin-top: 4px; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,.45); }
+      .rows .row .rp { font-family: var(--display); font-size: 1.5rem; color: var(--gold); flex-shrink: 0; }
+
+      /* Sticky bar */
+      .sticky { position: fixed; inset: auto 0 0 0; z-index: 40; border-top: 1px solid rgba(242,234,221,.15); background: rgba(20,16,13,.95); backdrop-filter: blur(8px); }
+      .sticky .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+      .sticky .from { font-family: var(--display); font-size: 1.5rem; line-height: 1; color: var(--gold); }
+      .sticky .lbl { display: none; }
+      @media (min-width: 640px) { .sticky .lbl { display: inline; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.22em; color: rgba(242,234,221,.7); margin-left: 12px; } }
+
+      .nowrap { white-space: nowrap; }
+      body { padding-bottom: 64px; } /* space for sticky bar */
+    </style>
+  </head>
+  <body>
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="wrap">
+        <img src="https://jiyacosmetics.vercel.app/images/jiya-header-logo.png" alt="JIYA — Jindal Institute for Youthful Aging" />
+        <div class="right">
+          <a class="phone" href="tel:+19199296006">(919) 929-6006</a>
+          <button class="btn-primary sm" data-tf-popup="ZJCdEhfD" data-tf-size="75">Book Now</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="bg" style="background-image:url('https://jiyacosmetics.vercel.app/images/HEROIMAGEFRONTSHOT.png')"></div>
+      <div class="ov1"></div>
+      <div class="ov2"></div>
+      <div class="wrap content">
+        <div class="block">
+          <span class="eyebrow gold rv">Limited-Time Special</span>
+          <h1 class="display d-lg gold rv" style="margin-top:20px;">Eyelid Lift</h1>
+          <p class="rv" style="margin-top:24px;max-width:28rem;font-size:1rem;font-weight:300;line-height:1.7;color:rgba(242,234,221,.85);">
+            Brighter, more youthful eyes with oculofacial surgeon <span style="color:var(--cream)">Dr. Samantha Prabakaran, MD</span>.
+          </p>
+          <div class="badge rv">
+            <span class="price">$4,000</span>
+            <span class="txt">Blepharoplasty<br />Special</span>
+          </div>
+          <div class="cta-row rv">
+            <button class="btn-primary" data-tf-popup="ZJCdEhfD" data-tf-size="75">Claim This Offer</button>
+            <a class="btn-ghost" href="tel:+19199296006">Call (919) 929-6006</a>
+          </div>
+          <p class="rv" style="margin-top:24px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.18em;color:rgba(242,234,221,.5);">
+            Dr. Samantha Prabakaran, MD · Brier Creek, Raleigh
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Special -->
+    <section class="py bg-deep">
+      <div class="wrap">
+        <div class="center">
+          <span class="eyebrow gold rv">The Special</span>
+          <h2 class="display d-md rv" style="margin-top:20px;color:var(--cream);"><span class="nowrap">Blepharoplasty, from $4,000</span></h2>
+          <p class="rv" style="margin:20px auto 0;max-width:36rem;font-size:0.9rem;font-weight:300;line-height:1.6;color:rgba(242,234,221,.6);">Performed by oculofacial surgeon Dr. Samantha Prabakaran, MD.</p>
+        </div>
+        <div class="price-grid">
+          <div class="price-card rv">
+            <span class="name">Upper Blepharoplasty</span>
+            <span class="big">$4,000</span>
+            <span class="note">Typically performed under local anesthesia</span>
+            <div class="book"><button class="btn-primary" data-tf-popup="ZJCdEhfD" data-tf-size="75">Book This</button></div>
+          </div>
+          <div class="price-card rv">
+            <span class="name">Lower Blepharoplasty</span>
+            <span class="big">$4,000</span>
+            <span class="note">Does not include IV sedation (twilight) fees</span>
+            <div class="book"><button class="btn-primary" data-tf-popup="ZJCdEhfD" data-tf-size="75">Book This</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview + highlights -->
+    <section class="py bg-noir">
+      <div class="wrap two">
+        <div class="media" style="grid-column: auto;">
+          <span class="eyebrow gold rv">The Procedure</span>
+          <h2 class="display d-md rv" style="margin-top:20px;color:var(--cream);">A refreshed, more open gaze</h2>
+          <p class="body rv" style="margin-top:24px;max-width:36rem;">Upper blepharoplasty removes the extra skin and tissue that can collect on the upper eyelids with age, restoring a brighter, well-rested appearance. In certain cases it can also improve peripheral vision and the overall function of the eyes.</p>
+          <p class="body rv" style="margin-top:24px;max-width:36rem;">Performed by a fellowship-trained oculofacial surgeon through the natural eyelid crease, keeping incisions hidden and results natural.</p>
+        </div>
+        <div>
+          <span class="eyebrow gold rv">Highlights</span>
+          <ul class="highlights">
+            <li class="rv"><span class="num">01</span><span class="txt">Hidden incisions within the natural eyelid crease</span></li>
+            <li class="rv"><span class="num">02</span><span class="txt">Brighter, more rested appearance</span></li>
+            <li class="rv"><span class="num">03</span><span class="txt">Can improve obstructed peripheral vision</span></li>
+            <li class="rv"><span class="num">04</span><span class="txt">Performed by a fellowship-trained oculofacial surgeon</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet Dr. Prabakaran -->
+    <section class="py bg-deep">
+      <div class="wrap two">
+        <div class="media">
+          <div class="portrait rv"><img src="https://jiyacosmetics.vercel.app/images/providers/dr-prabakaran.png" alt="Dr. Samantha Prabakaran, MD" /></div>
+        </div>
+        <div>
+          <span class="eyebrow gold rv">Your Surgeon</span>
+          <h2 class="display d-md rv" style="margin-top:20px;color:var(--cream);">Dr. Samantha Prabakaran</h2>
+          <p class="body rv" style="margin-top:24px;max-width:40rem;">Samantha Prabakaran, MD is a board-certified ophthalmologist with specialized training in oculofacial cosmetic surgery. She completed her ophthalmology residency at Virginia Commonwealth University, a high-volume surgical program, building a strong foundation in complex eyelid and ophthalmic procedures.</p>
+          <p class="body rv" style="margin-top:24px;max-width:40rem;">Her practice focuses on advanced techniques for upper blepharoplasty, ptosis repair, cosmetic lower blepharoplasty, eye-bag removal, brow lifting, and reconstructive eyelid surgery.</p>
+          <div class="rv" style="margin-top:36px;"><button class="btn-primary" data-tf-popup="ZJCdEhfD" data-tf-size="75">Book with Dr. Prabakaran</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After -->
+    <section class="py bg-noir">
+      <div class="wrap">
+        <span class="eyebrow gold rv">Real Results</span>
+        <h2 class="display d-md rv" style="margin-top:20px;color:var(--cream);">Before &amp; After</h2>
+        <p class="rv" style="margin-top:16px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:rgba(242,234,221,.45);">Before (top) · After (bottom) · Individual results vary</p>
+        <div class="ba-grid">
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_0117.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_0582.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_0698.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_1549.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_1581.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_2928.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_3618.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_4580.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_4691.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_4726.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_6652.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+          <div class="ba rv"><img src="https://jiyacosmetics.vercel.app/images/IMG_7594.JPG" alt="Blepharoplasty before and after" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py bg-deep">
+      <div class="wrap faq">
+        <span class="eyebrow gold rv">Questions</span>
+        <h2 class="display d-md rv" style="margin-top:20px;color:var(--cream);">Good to know</h2>
+        <div style="margin-top:40px;">
+          <div class="item rv"><h3>Am I a good candidate?</h3><p>Most healthy adults bothered by excess or heavy eyelid skin, or under-eye bags, are candidates. Your consultation with Dr. Prabakaran will confirm what's right for you.</p></div>
+          <div class="item rv"><h3>Is it surgical, and what is recovery like?</h3><p>Blepharoplasty is a short procedure. Most patients return to normal activities within about a week, with incisions hidden in the natural eyelid creases.</p></div>
+          <div class="item rv"><h3>Will my results look natural?</h3><p>Yes. As a fellowship-trained oculofacial surgeon, Dr. Prabakaran focuses on refreshed, natural results, never an operated look.</p></div>
+          <div class="item rv"><h3>What's the difference between upper and lower?</h3><p>Upper blepharoplasty removes excess upper-eyelid skin for a more open, rested look. Lower blepharoplasty addresses under-eye bags and puffiness. Some patients benefit from both.</p></div>
+          <div class="item rv"><h3>Is there an anesthesia fee?</h3><p>An anesthesia fee may apply depending on the procedure. We'll review the full cost, including any anesthesia fee, with you at your consultation.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ask us about Ziplyft -->
+    <section class="py bg-noir-2" style="border-top:1px solid rgba(242,234,221,.1);border-bottom:1px solid rgba(242,234,221,.1);padding:64px 0;">
+      <div class="wrap center">
+        <span class="eyebrow gold rv">Another Option</span>
+        <h2 class="display rv" style="margin-top:16px;font-size:clamp(1.5rem,3vw,2.25rem);color:var(--cream);">Ask us about Ziplyft</h2>
+        <p class="rv" style="margin:16px auto 0;max-width:36rem;font-size:0.9rem;font-weight:300;line-height:1.6;color:rgba(242,234,221,.65);">A 10-minute, in-office upper eyelid lift, no scalpel, no sutures. At your consultation, our surgeons will help you choose the approach that best fits your eyes and goals.</p>
+      </div>
+    </section>
+
+    <!-- Book with Dr. Jindal -->
+    <section class="py bg-noir">
+      <div class="wrap two">
+        <div class="media">
+          <div class="portrait rv"><img src="https://jiyacosmetics.vercel.app/images/drjheadshot.png" alt="Dr. Sumeet Jindal" /></div>
+        </div>
+        <div>
+          <span class="eyebrow gold rv">Prefer Dr. Jindal?</span>
+          <h2 class="display d-md rv" style="margin-top:20px;color:var(--cream);">Book with Dr. Jindal</h2>
+          <p class="body rv" style="margin-top:24px;max-width:36rem;">JIYA founder and oculofacial surgeon Dr. Sumeet Jindal also performs blepharoplasty. Book directly with Dr. Jindal at the following rates:</p>
+          <div class="rows">
+            <div class="row rv"><div><span class="rn">Upper Blepharoplasty</span></div><span class="rp">$6,000</span></div>
+            <div class="row rv"><div><span class="rn">Lower Blepharoplasty</span><span class="rnote" style="display:block;">Includes anesthesia</span></div><span class="rp">$8,000</span></div>
+          </div>
+          <div class="rv" style="margin-top:36px;"><button class="btn-primary" data-tf-popup="ZJCdEhfD" data-tf-size="75">Book with Dr. Jindal</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py bg-deep center">
+      <div class="wrap">
+        <span class="eyebrow gold rv">Limited-Time Special</span>
+        <h2 class="display d-lg gold rv" style="margin:24px auto 0;"><span class="nowrap">Blepharoplasty, from $4,000</span></h2>
+        <p class="rv" style="margin:24px auto 0;max-width:32rem;font-size:0.85rem;font-weight:300;text-transform:uppercase;letter-spacing:0.14em;line-height:1.7;color:rgba(242,234,221,.7);">Book your consultation with Dr. Samantha Prabakaran, MD while this special lasts</p>
+        <div class="cta-row rv" style="justify-content:center;">
+          <button class="btn-primary" data-tf-popup="ZJCdEhfD" data-tf-size="75">Claim This Offer</button>
+          <a class="btn-ghost" href="tel:+19199296006">Call (919) 929-6006</a>
+        </div>
+        <p class="rv" style="margin-top:32px;font-size:0.7rem;line-height:1.6;color:rgba(242,234,221,.4);">JIYA Eyelid &amp; Facial Cosmetic Surgery + Hair Restoration · 7901 ACC Blvd, Suite 201, Raleigh, NC 27617</p>
+      </div>
+    </section>
+
+    <!-- Sticky bar -->
+    <div class="sticky">
+      <div class="wrap">
+        <div><span class="from">From $4,000</span><span class="lbl">Blepharoplasty Special</span></div>
+        <button class="btn-primary sm" data-tf-popup="ZJCdEhfD" data-tf-size="75">Book Now</button>
+      </div>
+    </div>
+
+    <script>
+      // Scroll reveals
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+    </script>
+  </body>
+</html>
