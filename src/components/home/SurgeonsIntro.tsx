@@ -18,7 +18,7 @@ export default function SurgeonsIntro() {
             <span className="eyebrow text-gold">Our Surgeons</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="mx-auto mt-6 max-w-2xl font-display text-display-md font-light uppercase text-cream">
+            <h2 className="mx-auto mt-6 font-display text-display-md font-light uppercase text-cream md:whitespace-nowrap">
               Meet the surgeons behind JIYA
             </h2>
           </Reveal>
