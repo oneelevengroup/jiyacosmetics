@@ -65,9 +65,19 @@ export const nav = [
 
 /**
  * Service categories and procedures, sourced from jiyacosmetic.com/services.
- * `slug` values map to future /services/[slug] detail pages.
+ * `slug` values map to /services/[slug] detail pages. A procedure may set an
+ * `href` override to link elsewhere (e.g. Ziplyft -> its standalone landing page);
+ * href entries do not generate a /services/[slug] page.
  */
-export const serviceCategories = [
+export type Procedure = { name: string; slug: string; href?: string };
+export type ServiceCategory = {
+  id: string;
+  title: string;
+  blurb: string;
+  procedures: Procedure[];
+};
+
+export const serviceCategories: ServiceCategory[] = [
   {
     id: "eyelid",
     title: "Eyelid Surgery",
@@ -76,6 +86,7 @@ export const serviceCategories = [
     procedures: [
       { name: "Upper Blepharoplasty", slug: "upper-blepharoplasty" },
       { name: "Lower Blepharoplasty", slug: "lower-blepharoplasty" },
+      { name: "Ziplyft", slug: "ziplyft", href: "/ziplyft" },
       { name: "Eyelid Ptosis Repair", slug: "eyelid-ptosis" },
       { name: "Canthoplasty", slug: "canthoplasty" },
       { name: "Canthopexy", slug: "canthopexy" },

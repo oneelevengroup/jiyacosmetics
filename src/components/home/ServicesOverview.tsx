@@ -108,7 +108,7 @@ export default function ServicesOverview() {
                               {cat.procedures.map((p) => (
                                 <li key={p.slug}>
                                   <Link
-                                    href={`/services/${p.slug}`}
+                                    href={p.href ?? `/services/${p.slug}`}
                                     className="link-underline font-sans text-sm text-cream/85 hover:text-cream"
                                   >
                                     {p.name}

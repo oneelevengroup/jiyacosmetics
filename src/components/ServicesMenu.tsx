@@ -68,7 +68,7 @@ export default function ServicesMenu() {
                     {activeCat.procedures.map((p) => (
                       <li key={p.slug}>
                         <Link
-                          href={`/services/${p.slug}`}
+                          href={p.href ?? `/services/${p.slug}`}
                           className="link-underline font-sans text-[0.8rem] text-cream/75 hover:text-cream"
                         >
                           {p.name}

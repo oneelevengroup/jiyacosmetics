@@ -462,10 +462,14 @@ export type ResolvedProcedure = {
   content: ProcedureContent;
 };
 
-/** Flattened list of every procedure with its category + content. */
+/** Flattened list of every procedure with its category + content.
+ *  Entries with an `href` override (e.g. Ziplyft) are excluded — they link to a
+ *  separate page and do not generate a /services/[slug] detail page. */
 export function getAllProcedures(): ResolvedProcedure[] {
   return serviceCategories.flatMap((cat) =>
-    cat.procedures.map((p) => ({
+    cat.procedures
+      .filter((p) => !p.href)
+      .map((p) => ({
       slug: p.slug,
       name: p.name,
       categoryId: cat.id,

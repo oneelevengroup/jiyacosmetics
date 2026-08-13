@@ -35,6 +35,7 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
   const related = relatedProcedures(proc.slug, proc.categoryId);
   const faqs = procedureFaqs(proc);
   const videoId = proc.content.videoId;
+  const showZiplyft = proc.slug === "upper-blepharoplasty";
 
   return (
     <>
@@ -190,6 +191,35 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
           </div>
         </div>
       </section>
+
+      {/* Another option — Ziplyft (upper bleph only) */}
+      {showZiplyft && (
+        <section className="border-y border-cream/10 bg-noir-2 py-16 lg:py-20">
+          <div className="container-site flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div>
+              <Reveal>
+                <span className="eyebrow text-gold">Another Option</span>
+              </Reveal>
+              <Reveal delay={0.06}>
+                <h2 className="mt-4 font-display text-3xl font-light uppercase text-cream lg:text-4xl">
+                  Prefer minimal downtime? Meet Ziplyft.
+                </h2>
+              </Reveal>
+              <Reveal delay={0.12}>
+                <p className="mt-3 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
+                  A 10-minute, in-office upper eyelid lift, no scalpel, no
+                  sutures. Ask us whether Ziplyft is right for you.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal delay={0.16}>
+              <Link href="/ziplyft" className="btn-ghost shrink-0">
+                Explore Ziplyft
+              </Link>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* Related procedures */}
       {related.length > 0 && (

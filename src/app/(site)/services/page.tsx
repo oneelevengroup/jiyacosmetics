@@ -64,7 +64,7 @@ export default function ServicesPage() {
               {cat.procedures.map((p, i) => (
                 <Reveal as="div" key={p.slug} delay={(i % 3) * 0.05}>
                   <Link
-                    href={`/services/${p.slug}`}
+                    href={p.href ?? `/services/${p.slug}`}
                     className="group flex items-center justify-between gap-4 bg-noir px-7 py-7 transition-colors duration-500 hover:bg-noir-2"
                   >
                     <span className="font-sans text-sm uppercase tracking-label text-cream/80 transition-colors duration-500 group-hover:text-cream">
