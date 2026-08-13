@@ -123,7 +123,7 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
       {/* Procedure explained, video */}
       <section className="bg-noir py-20 lg:py-28">
         <div className="container-site">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="text-center">
             <Reveal>
               <span className="eyebrow text-gold">Watch</span>
             </Reveal>

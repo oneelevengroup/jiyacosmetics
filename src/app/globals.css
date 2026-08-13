@@ -53,6 +53,15 @@
     @apply bg-noir text-cream font-sans;
   }
 
+  /* Balance headings across lines (prevents a single orphaned word) and
+     avoid orphans in body copy. Progressive enhancement in modern browsers. */
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+
   ::selection {
     @apply bg-gold/30 text-cream;
   }
