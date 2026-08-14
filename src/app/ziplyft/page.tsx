@@ -137,7 +137,7 @@ export default function ZiplyftLanding() {
             <Reveal delay={0.24}>
               <div className="mt-9 flex flex-wrap items-center gap-5">
                 <BookButton label="Book a Consultation" className="btn-primary" />
-                <a href={business.phoneHref} className="btn-ghost">
+                <a href={business.phoneHref} className="btn-primary">
                   Call {business.phone}
                 </a>
               </div>
@@ -331,7 +331,7 @@ export default function ZiplyftLanding() {
           <Reveal delay={0.24}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <BookButton label="Book a Consultation" className="btn-primary" />
-              <a href={business.phoneHref} className="btn-ghost">
+              <a href={business.phoneHref} className="btn-primary">
                 Call {business.phone}
               </a>
             </div>
