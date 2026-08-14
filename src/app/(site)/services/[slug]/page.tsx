@@ -213,7 +213,7 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
               </Reveal>
             </div>
             <Reveal delay={0.16}>
-              <Link href="/ziplyft" className="btn-ghost shrink-0">
+              <Link href="/services/ziplyft" className="btn-ghost shrink-0">
                 Explore Ziplyft
               </Link>
             </Reveal>
