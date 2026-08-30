@@ -95,15 +95,21 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Brow Lift", slug: "brow-lift" },
       { name: "Endoscopic Brow / Midface Lift", slug: "endoscopic-brow-midface" },
       // #10: these vision procedures link OUT to New Century Ophthalmology.
-      // RLE URL confirmed (NCO landing page). Premium cataract + laser vision
-      // correction URLs still PENDING, add `href` once received.
       {
         name: "Refractive Lens Exchange",
         slug: "refractive-lens-exchange",
         href: "https://www.ncophth.com/lp/premium-refractive-lens-exchange/",
       },
-      { name: "Premium Cataract Surgery", slug: "premium-cataract-surgery" },
-      { name: "Laser Vision Correction", slug: "laser-vision-correction" },
+      {
+        name: "Premium Cataract Surgery",
+        slug: "premium-cataract-surgery",
+        href: "https://www.ncophth.com/",
+      },
+      {
+        name: "Laser Vision Correction",
+        slug: "laser-vision-correction",
+        href: "https://www.ncophth.com/",
+      },
       { name: "Dry Eye Treatment", slug: "dry-eye" },
     ],
   },
