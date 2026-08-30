@@ -103,8 +103,8 @@ export const images = {
     src: "/images/providers/katie-gambino.png",
     alt: "Portrait of Katie Gambino, PA-C",
     target: "/images/providers/katie-gambino.png",
-    placeholder: true,
-    note: "Katie Gambino PA-C headshot. Drop the file at /public/images/providers/katie-gambino.png and set placeholder:false. (Provided headshot: curly blonde hair, black top, warm studio background.)",
+    placeholder: false,
+    note: "Katie Gambino PA-C headshot (1254x1254, studio background), framed portrait in the About team section.",
   },
 
   // ---- Service category imagery ----
