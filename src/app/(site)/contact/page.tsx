@@ -137,8 +137,8 @@ export default function ContactPage() {
             </Reveal>
           </div>
           <Reveal className="lg:col-span-8">
-            <div className="border border-cream/15 bg-noir-deep p-8 lg:p-10">
-              <InquiryForm />
+            <div className="h-[560px] w-full overflow-hidden border border-cream/15 bg-noir">
+              <InquiryForm className="h-full w-full" />
             </div>
           </Reveal>
         </div>
