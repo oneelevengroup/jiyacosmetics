@@ -94,10 +94,14 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Mid Facelift", slug: "midface-lift" },
       { name: "Brow Lift", slug: "brow-lift" },
       { name: "Endoscopic Brow / Midface Lift", slug: "endoscopic-brow-midface" },
-      // NCO LINK PENDING (#10): once New Century Ophthalmology page URLs are
-      // confirmed, add `href: "<NCO url>"` to the three vision items below so
-      // they link out (href entries are excluded from /services/[slug]).
-      { name: "Refractive Lens Exchange", slug: "refractive-lens-exchange" },
+      // #10: these vision procedures link OUT to New Century Ophthalmology.
+      // RLE URL confirmed (NCO landing page). Premium cataract + laser vision
+      // correction URLs still PENDING, add `href` once received.
+      {
+        name: "Refractive Lens Exchange",
+        slug: "refractive-lens-exchange",
+        href: "https://www.ncophth.com/lp/premium-refractive-lens-exchange/",
+      },
       { name: "Premium Cataract Surgery", slug: "premium-cataract-surgery" },
       { name: "Laser Vision Correction", slug: "laser-vision-correction" },
       { name: "Dry Eye Treatment", slug: "dry-eye" },
@@ -215,6 +219,19 @@ export const drPrabakaran = {
     "Dr. Prabakaran trained in the same surgical program as JIYA founder Dr. Sumeet Jindal and continues to refine her craft alongside him, delivering the same refined, natural results JIYA is known for.",
   ],
   cta: { label: "Book with Dr. Prabakaran", href: "/contact" },
+};
+
+/** Katie Gambino, PA-C bio (physician associate, surgical + non-surgical). */
+export const katiePA = {
+  eyebrow: "Physician Associate",
+  name: "Katie Gambino, PA-C",
+  bio: [
+    "Katie Gambino believes good aesthetic care starts with an honest answer to one question: what will actually get you the result you want, a syringe, a laser, or a surgeon? Because she works both sides of the practice, she has no reason to steer you toward either.",
+    "As Dr. Sumeet Jindal's physician associate, Katie is with surgical patients at every stage: the first consultation, the preoperative workup, the operating room, and each follow-up visit. The person who helps plan your surgery is the same one beside you when it happens.",
+    "On the non-surgical side, she focuses on facial rejuvenation with neuromodulators, dermal fillers, biostimulators, PRP and PRF, microneedling, and energy-based skin treatments. Her injections are precise and conservative, grounded in advanced training in surgical-level facial anatomy. The goal is a face that looks rested, balanced, and unmistakably yours. Katie established one of the practice's most active injectable patient bases during her time at her prior med spa, driven primarily by word-of-mouth referrals and repeat clientele.",
+    "During your initial consultation with Katie, expect a thorough, attentive, and deliberate discussion. Schedule your consultation with Katie to determine the ideal treatment plan for your needs.",
+  ],
+  cta: { label: "Book with Katie", href: "/contact" },
 };
 
 /** Dr. Jindal bio + credentials (from jiyacosmetic.com). */

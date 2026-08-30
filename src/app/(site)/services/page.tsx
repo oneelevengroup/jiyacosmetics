@@ -61,21 +61,39 @@ export default function ServicesPage() {
             </div>
 
             <div className="grid gap-px overflow-hidden border-x border-b border-cream/15 bg-cream/15 sm:grid-cols-2 lg:grid-cols-3">
-              {cat.procedures.map((p, i) => (
-                <Reveal as="div" key={p.slug} delay={(i % 3) * 0.05}>
-                  <Link
-                    href={p.href ?? `/services/${p.slug}`}
-                    className="group flex items-center justify-between gap-4 bg-noir px-7 py-7 transition-colors duration-500 hover:bg-noir-2"
-                  >
+              {cat.procedures.map((p, i) => {
+                const external = p.href?.startsWith("http");
+                const cls =
+                  "group flex items-center justify-between gap-4 bg-noir px-7 py-7 transition-colors duration-500 hover:bg-noir-2";
+                const inner = (
+                  <>
                     <span className="font-sans text-sm uppercase tracking-label text-cream/80 transition-colors duration-500 group-hover:text-cream">
                       {p.name}
                     </span>
                     <span className="font-sans text-base text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                      →
+                      {external ? "↗" : "→"}
                     </span>
-                  </Link>
-                </Reveal>
-              ))}
+                  </>
+                );
+                return (
+                  <Reveal as="div" key={p.slug} delay={(i % 3) * 0.05}>
+                    {external ? (
+                      <a
+                        href={p.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={cls}
+                      >
+                        {inner}
+                      </a>
+                    ) : (
+                      <Link href={p.href ?? `/services/${p.slug}`} className={cls}>
+                        {inner}
+                      </Link>
+                    )}
+                  </Reveal>
+                );
+              })}
             </div>
           </div>
         </section>

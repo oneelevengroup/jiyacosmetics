@@ -65,16 +65,29 @@ export default function ServicesMenu() {
               <div className="w-[28rem] p-7">
                 {activeCat && (
                   <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
-                    {activeCat.procedures.map((p) => (
-                      <li key={p.slug}>
-                        <Link
-                          href={p.href ?? `/services/${p.slug}`}
-                          className="link-underline font-sans text-[0.8rem] text-cream/75 hover:text-cream"
-                        >
-                          {p.name}
-                        </Link>
-                      </li>
-                    ))}
+                    {activeCat.procedures.map((p) => {
+                      const external = p.href?.startsWith("http");
+                      const cls =
+                        "link-underline font-sans text-[0.8rem] text-cream/75 hover:text-cream";
+                      return (
+                        <li key={p.slug}>
+                          {external ? (
+                            <a
+                              href={p.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={cls}
+                            >
+                              {p.name}
+                            </a>
+                          ) : (
+                            <Link href={p.href ?? `/services/${p.slug}`} className={cls}>
+                              {p.name}
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 )}
               </div>

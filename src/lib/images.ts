@@ -98,6 +98,15 @@ export const images = {
     note: "Dr. Prabakaran headshot, transparent cutout, floats on the dark section (matches Dr. Jindal).",
   },
 
+  "provider.katie": {
+    key: "provider.katie",
+    src: "/images/providers/katie-gambino.png",
+    alt: "Portrait of Katie Gambino, PA-C",
+    target: "/images/providers/katie-gambino.png",
+    placeholder: true,
+    note: "Katie Gambino PA-C headshot. Drop the file at /public/images/providers/katie-gambino.png and set placeholder:false. (Provided headshot: curly blonde hair, black top, warm studio background.)",
+  },
+
   // ---- Service category imagery ----
   "service.eyelid": {
     key: "service.eyelid",

@@ -5,7 +5,7 @@ import MeetDoctor from "@/components/home/MeetDoctor";
 import ProviderBio from "@/components/ProviderBio";
 import Highlights from "@/components/home/Highlights";
 import ConsultCTA from "@/components/home/ConsultCTA";
-import { about, drPrabakaran } from "@/content/site";
+import { about, drPrabakaran, katiePA } from "@/content/site";
 import { brandLine } from "@/content/services";
 
 export const metadata: Metadata = {
@@ -106,6 +106,12 @@ export default function AboutPage() {
         reverse
         bg="bg-noir"
         id="dr-prabakaran"
+      />
+      <ProviderBio
+        provider={katiePA}
+        imageKey="provider.katie"
+        bg="bg-noir-deep"
+        id="katie-gambino"
       />
 
       <Highlights />
