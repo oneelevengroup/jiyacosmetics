@@ -88,7 +88,7 @@ export const serviceCategories: ServiceCategory[] = [
       { name: "Upper Blepharoplasty", slug: "upper-blepharoplasty" },
       { name: "Ptosis Repair", slug: "eyelid-ptosis" },
       { name: "Lower Blepharoplasty", slug: "lower-blepharoplasty" },
-      { name: "Ziplift", slug: "ziplyft", href: "/services/ziplyft" },
+      { name: "Ziplyft", slug: "ziplyft", href: "/services/ziplyft" },
       { name: "Eyelid Retraction Repair", slug: "eyelid-retraction-repair" },
       { name: "Canthoplasty / Canthopexy", slug: "canthoplasty-canthopexy" },
       { name: "Mid Facelift", slug: "midface-lift" },
