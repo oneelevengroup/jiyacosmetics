@@ -80,63 +80,74 @@ export type ServiceCategory = {
 export const serviceCategories: ServiceCategory[] = [
   {
     id: "eyelid",
-    title: "Eyelid Surgery",
+    title: "Eye",
+    // Oculofacial is the priority per client (upper bleph, ptosis, lower bleph).
     blurb:
-      "Refined oculoplastic techniques to brighten the eyes, restore function, and turn back the clock.",
+      "Refined oculofacial surgery to brighten tired eyes, restore the eyelid, and open the field of vision.",
     procedures: [
       { name: "Upper Blepharoplasty", slug: "upper-blepharoplasty" },
+      { name: "Ptosis Repair", slug: "eyelid-ptosis" },
       { name: "Lower Blepharoplasty", slug: "lower-blepharoplasty" },
-      { name: "Ziplyft", slug: "ziplyft", href: "/services/ziplyft" },
-      { name: "Eyelid Ptosis Repair", slug: "eyelid-ptosis" },
-      { name: "Canthoplasty", slug: "canthoplasty" },
-      { name: "Canthopexy", slug: "canthopexy" },
-      { name: "Ectropion Repair", slug: "ectropion-repair" },
+      { name: "Eyelid Retraction Repair", slug: "eyelid-retraction-repair" },
+      { name: "Canthoplasty / Canthopexy", slug: "canthoplasty-canthopexy" },
+      { name: "Mid Facelift", slug: "midface-lift" },
+      { name: "Brow Lift", slug: "brow-lift" },
+      { name: "Endoscopic Brow / Midface Lift", slug: "endoscopic-brow-midface" },
+      // NCO LINK PENDING (#10): once New Century Ophthalmology page URLs are
+      // confirmed, add `href: "<NCO url>"` to the three vision items below so
+      // they link out (href entries are excluded from /services/[slug]).
+      { name: "Refractive Lens Exchange", slug: "refractive-lens-exchange" },
+      { name: "Premium Cataract Surgery", slug: "premium-cataract-surgery" },
+      { name: "Laser Vision Correction", slug: "laser-vision-correction" },
+      { name: "Dry Eye Treatment", slug: "dry-eye" },
+      { name: "Ziplift", slug: "ziplyft", href: "/services/ziplyft" },
     ],
   },
   {
     id: "face",
-    title: "Facial Surgery",
+    title: "Face",
     blurb:
-      "Natural, long-lasting facial rejuvenation, from deep plane facelift to neck and midface.",
+      "Natural, long-lasting facial rejuvenation, from deep plane facelift to neck, lip, and fat grafting.",
     procedures: [
-      { name: "Facelift", slug: "facelift" },
       { name: "Deep Plane Facelift", slug: "deep-plane-facelift" },
-      { name: "Mini Facelift", slug: "mini-facelift" },
-      { name: "JIYA Vertical Rejuvenation", slug: "vertical-rejuvenation" },
-      { name: "Necklift", slug: "necklift" },
-      { name: "FaceTite", slug: "facetite" },
-      { name: "Cheek / Midface Lift", slug: "midface-lift" },
-      { name: "Facial Fat Transfer", slug: "facial-fat-transfer" },
-      { name: "Facial Liposuction", slug: "facial-liposuction" },
-      { name: "Brow Lift", slug: "brow-lift" },
-      { name: "Forehead Reduction", slug: "forehead-reduction" },
-      { name: "Bullhorn Lip Lift", slug: "lip-lift" },
-    ],
-  },
-  {
-    id: "nonsurgical",
-    title: "Skin & Non-Surgical",
-    blurb:
-      "Regenerative, minimally invasive treatments that refresh and restore without downtime.",
-    procedures: [
-      { name: "Morpheus8", slug: "morpheus8" },
-      { name: "Liquid Facelift", slug: "liquid-facelift" },
-      { name: "Laser Treatments", slug: "laser-treatments" },
-      { name: "UltraClear Scar Treatment", slug: "ultraclear-scar-treatment" },
-      { name: "IV Treatments", slug: "iv-treatments" },
+      { name: "Deep Neck Lift", slug: "deep-neck-lift" },
+      { name: "Lip Lift", slug: "lip-lift" },
+      { name: "Revision Facelift", slug: "revision-facelift" },
+      { name: "Fat Grafting", slug: "fat-grafting" },
     ],
   },
   {
     id: "hair",
-    title: "Hair Restoration",
+    title: "Hair",
     blurb:
       "From robotic transplantation to regenerative therapies, restore a fuller, natural hairline.",
+    // AD-POLICY FLAG (#14): the regenerative hair labels below are placeholders.
+    // Client asked us to review Google/ad-policy language before publishing the
+    // exact wording for PRP / stem cell / exosome hair claims. Do not run these
+    // in paid ads until wording is confirmed.
     procedures: [
       { name: "ARTAS Robotic Hair Restoration", slug: "artas-robotic" },
       { name: "NeoGraft", slug: "neograft" },
-      { name: "Nanofat Stem Cell Restoration", slug: "nanofat-stem-cell" },
-      { name: "Platelet Rich Fibrin (PRF) Therapy", slug: "prf-therapy" },
       { name: "Scalp Micropigmentation", slug: "scalp-micropigmentation" },
+      { name: "PRP Hair Therapy", slug: "prp-hair-therapy" },
+      { name: "Stem Cell Hair Therapy", slug: "nanofat-stem-cell" },
+      { name: "Exosome Hair Therapy", slug: "exosome-hair-therapy" },
+    ],
+  },
+  {
+    id: "nonsurgical",
+    title: "Non-Surgical",
+    blurb:
+      "Regenerative, minimally invasive treatments that refresh and restore with little to no downtime.",
+    procedures: [
+      { name: "IPL Photofacial", slug: "ipl" },
+      { name: "Fillers", slug: "fillers" },
+      { name: "Biosimilars", slug: "biosimilars" },
+      { name: "Neurotoxins", slug: "neurotoxins" },
+      { name: "Microneedling", slug: "microneedling" },
+      { name: "Regenerative Aesthetics", slug: "regenerative-aesthetics" },
+      { name: "Facials", slug: "facials" },
+      { name: "Laser Resurfacing", slug: "laser-resurfacing" },
     ],
   },
 ];

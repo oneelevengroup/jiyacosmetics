@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import ConsultForm from "@/components/ConsultForm";
+import InquiryForm from "@/components/InquiryForm";
 import { business } from "@/content/site";
 import { brandLine } from "@/content/services";
 
@@ -110,6 +111,82 @@ export default function ContactPage() {
           <Reveal className="lg:col-span-8">
             <div className="h-[620px] w-full overflow-hidden border border-cream/15 bg-noir">
               <ConsultForm className="h-full w-full" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* General inquiry (#21) */}
+      <section className="bg-noir py-16 lg:py-24">
+        <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <Reveal>
+              <span className="eyebrow text-gold">Quick Question?</span>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
+                Ask us anything
+              </h2>
+            </Reveal>
+            <Reveal delay={0.16}>
+              <p className="mt-5 max-w-sm font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
+                Not ready to book yet? Send us a quick note about a procedure,
+                pricing, or scheduling and our team will reply, no email app
+                required.
+              </p>
+            </Reveal>
+          </div>
+          <Reveal className="lg:col-span-8">
+            <div className="border border-cream/15 bg-noir-deep p-8 lg:p-10">
+              <InquiryForm />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Prominent social (#22) */}
+      <section className="bg-noir-2 py-16 lg:py-20">
+        <div className="container-site text-center">
+          <Reveal>
+            <span className="eyebrow text-gold">Follow Along</span>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h2 className="mx-auto mt-5 max-w-2xl font-display text-display-md font-light uppercase text-cream">
+              See the results for yourself
+            </h2>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="mx-auto mt-5 max-w-xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
+              Follow JIYA for daily before-and-afters, procedure walk-throughs,
+              and patient stories, especially on Instagram.
+            </p>
+          </Reveal>
+          <Reveal delay={0.24}>
+            <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={business.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                Instagram
+              </a>
+              <a
+                href={business.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+              >
+                YouTube
+              </a>
+              <a
+                href={business.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost"
+              >
+                Facebook
+              </a>
             </div>
           </Reveal>
         </div>
