@@ -43,7 +43,7 @@ export default async function ShortsFeed({
                 rel="noopener noreferrer"
                 className="btn-ghost shrink-0"
               >
-                {ui.subscribeYouTube}
+                {ui.subscribeDrJindal}
               </a>
             </Reveal>
           )}

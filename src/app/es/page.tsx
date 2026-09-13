@@ -9,6 +9,7 @@ import ResultsTeaser from "@/components/home/ResultsTeaser";
 import Testimonials from "@/components/home/Testimonials";
 import ShortsFeed from "@/components/home/ShortsFeed";
 import ConsultCTA from "@/components/home/ConsultCTA";
+import NcoBand from "@/components/home/NcoBand";
 
 export const metadata: Metadata = {
   description:
@@ -28,6 +29,7 @@ export default function HomeEs() {
       <Testimonials locale="es" />
       <ShortsFeed locale="es" />
       <ConsultCTA locale="es" />
+      <NcoBand locale="es" />
     </>
   );
 }

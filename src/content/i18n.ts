@@ -42,6 +42,8 @@ type UIStrings = {
   contactHeroBody: string; quickQuestion: string; askAnything: string; inquiryBody: string;
   seeResults: string; socialBody: string; scroll: string;
   shortsEyebrow: string; shortsHeading: string; watchOnYt: string;
+  subscribeDrJindal: string;
+  ncoEyebrow: string; ncoHeadline: string; ncoBody: string; ncoCta: string;
 };
 
 const uiEn: UIStrings = {
@@ -113,6 +115,12 @@ const uiEn: UIStrings = {
   shortsEyebrow: "Latest Shorts",
   shortsHeading: "Straight from our YouTube",
   watchOnYt: "Watch on YouTube",
+  subscribeDrJindal: "Subscribe To Dr. Jindal On YouTube",
+  ncoEyebrow: "Our Sister Practice",
+  ncoHeadline: "NCO Eye Center",
+  ncoBody:
+    "JIYA and NCO Eye Center come from the same practice, founded by Dr. Sumeet Jindal. NCO handles the vision side: cataract surgery, lens replacement, ICL, LASIK, and keratoconus care, with operating rooms in the building instead of a hospital. Same Brier Creek address, one suite over.",
+  ncoCta: "Visit NCO Eye Center",
 };
 
 const uiEs: UIStrings = {
@@ -184,6 +192,12 @@ const uiEs: UIStrings = {
   shortsEyebrow: "Últimos Shorts",
   shortsHeading: "Directo desde nuestro YouTube",
   watchOnYt: "Ver en YouTube",
+  subscribeDrJindal: "Suscríbete al Dr. Jindal en YouTube",
+  ncoEyebrow: "Nuestra Marca Hermana",
+  ncoHeadline: "NCO Eye Center",
+  ncoBody:
+    "JIYA y NCO Eye Center pertenecen al mismo grupo médico, fundado por el Dr. Sumeet Jindal. NCO se encarga de la visión: cirugía de cataratas, reemplazo de cristalino, ICL, LASIK y queratocono, con quirófanos propios en el edificio, no en un hospital. Mismo edificio en Brier Creek, una suite más allá.",
+  ncoCta: "Visitar NCO Eye Center",
 };
 
 export type UI = UIStrings;

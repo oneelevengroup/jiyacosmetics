@@ -107,6 +107,15 @@ export const images = {
     note: "Katie Gambino PA-C headshot (1254x1254, studio background), framed portrait in the About team section.",
   },
 
+  "home.iris": {
+    key: "home.iris",
+    src: "/images/home/iris.jpg",
+    alt: "Macro detail of a human iris",
+    target: "/images/home/iris.jpg",
+    placeholder: true,
+    note: "Full-bleed background for the NCO Eye Center band: macro crop of a human iris (client-supplied). Drop at /public/images/home/iris.jpg and set placeholder:false. Until then the band renders on a dark warm gradient.",
+  },
+
   // ---- Service category imagery ----
   "service.eyelid": {
     key: "service.eyelid",
