@@ -310,26 +310,45 @@ export const credibility = [
 ];
 
 /**
- * Patient testimonials. PLACEHOLDER quotes, replace with real, approved
- * reviews (Google / RealSelf, etc.). Keep attribution privacy-appropriate.
+ * Real, verbatim patient reviews from the practice's Google profile
+ * (lightly trimmed for length, meaning preserved). Weighted toward
+ * blepharoplasty per positioning, and covering Dr. Prabakaran and Katie, PA-C.
  */
 export const testimonials = [
   {
     quote:
-      "From my first visit I felt genuinely cared for. Dr. Jindal listened, and my results look completely natural, like a refreshed version of me.",
-    name: "JIYA Patient",
-    detail: "Upper Blepharoplasty",
+      "I wanted to restore the youthful eye shape I had before kids and weight fluctuations, and Dr. J gave me exactly what I asked for. I couldn't be more grateful. I look like myself again.",
+    name: "Victoria G.",
+    detail: "Lower Blepharoplasty · Google",
   },
   {
     quote:
-      "The expertise and attention to detail are unmatched. I finally look as vibrant as I feel.",
-    name: "JIYA Patient",
-    detail: "Deep Plane Facelift",
+      "From the moment we walked through the door, we felt genuinely cared for, listened to, and completely comfortable. Their expertise, professionalism, attention to detail, and bedside manner are truly exceptional.",
+    name: "Deanna P.",
+    detail: "Upper Blepharoplasty · Google",
   },
   {
     quote:
-      "A true luxury experience from consultation to recovery. I couldn't be happier with my results.",
-    name: "JIYA Patient",
-    detail: "Morpheus8",
+      "His consultation was thorough and informative, and he never tried to up-sell me on any procedures. He is very conservative and his work is wonderful, a true perfectionist. If I could give 10 stars, I would.",
+    name: "Sue B.",
+    detail: "Double Board-Certified · Google",
+  },
+  {
+    quote:
+      "Katie, PA did my lip filler. She made me feel so comfortable and listened to exactly what I wanted, gentle, knowledgeable, and careful to keep everything looking natural. I came out with exactly what I hoped for.",
+    name: "Shannon L.",
+    detail: "Lip Filler with Katie, PA-C · Google",
+  },
+  {
+    quote:
+      "Dr. P has been amazing from the consultation to the surgery to the follow-up. I could not be happier with my results, my bruising was minimal and barely noticeable at three weeks. I highly recommend her.",
+    name: "Patricia E.",
+    detail: "with Dr. Prabakaran · Google",
+  },
+  {
+    quote:
+      "Other surgeons pushed more expensive, intrusive options, while the JIYA team achieved the same result with less cost and downtime. Great care from the free video consult to the procedure. 10/10 recommend.",
+    name: "Glen W.",
+    detail: "Google Review",
   },
 ];
