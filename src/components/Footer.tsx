@@ -82,6 +82,10 @@ export default function Footer() {
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-cream/10 pt-8 sm:flex-row sm:items-center">
           <p className="font-sans text-xs tracking-wide text-cream/45">
             © {new Date().getFullYear()} {business.fullName}. All rights reserved.
+            <span className="mx-2 text-cream/25">·</span>
+            <Link href="/privacy" className="link-underline hover:text-cream/70">
+              Privacy Policy
+            </Link>
           </p>
           <div className="flex gap-6">
             <a href={business.social.instagram} target="_blank" rel="noopener noreferrer" className="link-underline label text-cream/55">

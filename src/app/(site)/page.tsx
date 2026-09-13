@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import IntroBand from "@/components/home/IntroBand";
 import CredibilityStrip from "@/components/home/CredibilityStrip";
@@ -8,6 +9,11 @@ import ResultsTeaser from "@/components/home/ResultsTeaser";
 import Testimonials from "@/components/home/Testimonials";
 import YouTubePromo from "@/components/home/YouTubePromo";
 import ConsultCTA from "@/components/home/ConsultCTA";
+
+export const metadata: Metadata = {
+  description:
+    "JIYA Eyelid & Facial Cosmetic Surgery + Hair Restoration in Raleigh, NC. Look better, see better, feel better. Refined blepharoplasty, facelift, and regenerative care from Dr. Sumeet Jindal and team.",
+};
 
 export default function HomePage() {
   return (

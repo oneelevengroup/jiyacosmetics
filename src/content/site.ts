@@ -294,13 +294,6 @@ export const highlights = [
   },
 ];
 
-export const homeSpecial = {
-  eyebrow: "Current Special",
-  title: "Mini Facelift",
-  detail: "Starting at $4,900, now 20% off.",
-  cta: { label: "View all specials", href: "/specials" },
-};
-
 /** Short positioning band shown right after the hero. */
 export const homeIntro = {
   heading: "The art of aging gracefully",
