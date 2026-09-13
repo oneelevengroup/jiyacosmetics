@@ -6,8 +6,9 @@ import { surgeons } from "@/content/site";
 import type { ImageKey } from "@/lib/images";
 
 /**
- * Homepage "Our Surgeons", Dr. Jindal and Dr. Prabakaran side by side, each
- * with a "Meet" link (to their full bio on About) and a Book CTA.
+ * Homepage "Our Team", Dr. Jindal, Dr. Prabakaran, and Katie Gambino, PA-C
+ * side by side, each with a "Meet" link (to their full bio on About) and a
+ * Book CTA.
  */
 export default function SurgeonsIntro() {
   return (
@@ -15,16 +16,16 @@ export default function SurgeonsIntro() {
       <div className="container-site">
         <div className="text-center">
           <Reveal>
-            <span className="eyebrow text-gold">Our Surgeons</span>
+            <span className="eyebrow text-gold">Our Team</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mx-auto mt-6 font-display text-display-md font-light uppercase text-cream md:whitespace-nowrap">
-              Meet the surgeons behind JIYA
+              Meet the team behind JIYA
             </h2>
           </Reveal>
         </div>
 
-        <div className="mt-16 grid gap-10 md:grid-cols-2 lg:gap-14">
+        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {surgeons.map((s, i) => (
             <Reveal as="div" key={s.name} delay={i * 0.1}>
               <div className="flex h-full flex-col">
@@ -51,7 +52,7 @@ export default function SurgeonsIntro() {
                   <div className="mt-7 flex flex-wrap items-center gap-4">
                     <BookButton label={s.bookLabel} className="btn-primary" />
                     <Link href={s.meetHref} className="btn-ghost">
-                      Meet {s.name.replace("Dr. Sumeet Jindal", "Dr. J").replace("Dr. Samantha Prabakaran", "Dr. P")}
+                      Meet {s.meetLabel}
                     </Link>
                   </div>
                 </div>

@@ -193,7 +193,7 @@ export const about = {
   },
 };
 
-/** Two-up surgeons intro (homepage). Full bios live on the About page. */
+/** Team intro (homepage). Full bios live on the About page. */
 export const surgeons = [
   {
     name: "Dr. Sumeet Jindal",
@@ -202,6 +202,7 @@ export const surgeons = [
       "Board-certified ophthalmologist and JIYA's founder, specializing in refined eyelid and facial rejuvenation with a regenerative approach.",
     imageKey: "home.doctor",
     meetHref: "/about#dr-jindal",
+    meetLabel: "Dr. J",
     bookLabel: "Book with Dr. Jindal",
   },
   {
@@ -211,7 +212,18 @@ export const surgeons = [
       "Board-certified ophthalmologist with oculofacial fellowship training, focused on natural eyelid and brow rejuvenation.",
     imageKey: "provider.prabakaran",
     meetHref: "/about#dr-prabakaran",
+    meetLabel: "Dr. P",
     bookLabel: "Book with Dr. Prabakaran",
+  },
+  {
+    name: "Katie Gambino, PA-C",
+    role: "Physician Associate",
+    blurb:
+      "Dr. Jindal's physician associate, beside surgical patients at every stage and focused on natural, conservative facial rejuvenation on the non-surgical side.",
+    imageKey: "provider.katie",
+    meetHref: "/about#katie-gambino",
+    meetLabel: "Katie",
+    bookLabel: "Book with Katie",
   },
 ];
 
