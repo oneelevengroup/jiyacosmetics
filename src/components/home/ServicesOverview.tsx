@@ -4,16 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
-import SiteImage from "@/components/SiteImage";
 import { serviceCategories } from "@/content/site";
-import type { ImageKey } from "@/lib/images";
-
-const categoryImage: Record<string, ImageKey> = {
-  eyelid: "service.eyelid",
-  face: "service.face",
-  nonsurgical: "service.nonsurgical",
-  hair: "service.hair",
-};
 
 /**
  * Procedure index as an elegant accordion, uppercase tracked labels, hairline
@@ -87,34 +78,34 @@ export default function ServicesOverview() {
                         className="overflow-hidden"
                       >
                         <div className="grid items-start gap-8 pb-10 lg:grid-cols-12 lg:gap-12">
-                          {/* Preview image */}
+                          {/* Blurb */}
                           <div className="lg:col-span-5">
-                            <div className="relative aspect-[4/3] w-full overflow-hidden">
-                              <SiteImage
-                                imageKey={categoryImage[cat.id]}
-                                fill
-                                sizes="(max-width: 1024px) 100vw, 40vw"
-                                className="object-cover"
-                              />
-                            </div>
-                          </div>
-
-                          {/* Blurb + procedures */}
-                          <div className="lg:col-span-7">
                             <p className="max-w-md font-sans text-sm font-light leading-relaxed text-cream/60">
                               {cat.blurb}
                             </p>
-                            <ul className="mt-7 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
-                              {cat.procedures.map((p) => (
-                                <li key={p.slug}>
-                                  <Link
-                                    href={p.href ?? `/services/${p.slug}`}
-                                    className="link-underline font-sans text-sm text-cream/85 hover:text-cream"
-                                  >
-                                    {p.name}
-                                  </Link>
-                                </li>
-                              ))}
+                          </div>
+
+                          {/* Procedures */}
+                          <div className="lg:col-span-7">
+                            <ul className="grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
+                              {cat.procedures.map((p) => {
+                                const external = p.href?.startsWith("http");
+                                const cls =
+                                  "link-underline font-sans text-sm text-cream/85 hover:text-cream";
+                                return (
+                                  <li key={p.slug}>
+                                    {external ? (
+                                      <a href={p.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                                        {p.name}
+                                      </a>
+                                    ) : (
+                                      <Link href={p.href ?? `/services/${p.slug}`} className={cls}>
+                                        {p.name}
+                                      </Link>
+                                    )}
+                                  </li>
+                                );
+                              })}
                             </ul>
                           </div>
                         </div>

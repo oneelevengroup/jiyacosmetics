@@ -2,20 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
-import SiteImage from "@/components/SiteImage";
-import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import BeforeAfter from "@/components/BeforeAfter";
 import ConsultCTA from "@/components/home/ConsultCTA";
-import type { ImageKey } from "@/lib/images";
 import {
   getAllProcedures,
   getProcedure,
   relatedProcedures,
   procedureFaqs,
-  categoryImageKey,
   brandLine,
 } from "@/content/services";
+
+// Real before/after results for the blepharoplasty pages (before top, after bottom).
+const BLEPH_RESULTS = [
+  "/images/IMG_0117.JPG",
+  "/images/IMG_1581.JPG",
+  "/images/IMG_2928.JPG",
+  "/images/IMG_3618.JPG",
+  "/images/IMG_4691.JPG",
+  "/images/IMG_9655.JPG",
+];
 
 export function generateStaticParams() {
   return getAllProcedures().map((p) => ({ slug: p.slug }));
@@ -31,52 +37,42 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
   const proc = getProcedure(params.slug);
   if (!proc) notFound();
 
-  const imageKey = categoryImageKey[proc.categoryId] as ImageKey;
   const related = relatedProcedures(proc.slug, proc.categoryId);
   const faqs = procedureFaqs(proc);
   const videoId = proc.content.videoId;
   const showZiplyft = proc.slug === "upper-blepharoplasty";
+  const baImages =
+    proc.slug === "upper-blepharoplasty" || proc.slug === "lower-blepharoplasty"
+      ? BLEPH_RESULTS
+      : [];
 
   return (
     <>
       {/* Hero */}
       <section className="bg-noir pt-32 lg:pt-40">
-        <div className="container-site grid items-center gap-12 pb-16 lg:grid-cols-12 lg:gap-16 lg:pb-24">
-          <div className="lg:col-span-7">
-            <Reveal>
-              <span className="eyebrow text-gold">{brandLine}</span>
-            </Reveal>
-            <Reveal delay={0.06}>
-              <p className="mt-5 label text-cream/50">{proc.categoryTitle}</p>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <h1 className="mt-3 font-display text-display-lg font-light uppercase text-gold">
-                {proc.name}
-              </h1>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <p className="mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-cream/75">
-                {proc.content.summary}
-              </p>
-            </Reveal>
-            <Reveal delay={0.26}>
-              <div className="mt-9 flex flex-wrap items-center gap-5">
-                <BookButton label="Book a Consultation" className="btn-primary" />
-                <Link href="/services" className="btn-ghost">
-                  All Services
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal className="lg:col-span-5">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
-              <SiteImage
-                imageKey={imageKey}
-                fill
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover"
-              />
+        <div className="container-site max-w-3xl pb-16 lg:pb-24">
+          <Reveal>
+            <span className="eyebrow text-gold">{brandLine}</span>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <p className="mt-5 label text-cream/50">{proc.categoryTitle}</p>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <h1 className="mt-3 font-display text-display-lg font-light uppercase text-gold">
+              {proc.name}
+            </h1>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <p className="mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-cream/75">
+              {proc.content.summary}
+            </p>
+          </Reveal>
+          <Reveal delay={0.26}>
+            <div className="mt-9 flex flex-wrap items-center gap-5">
+              <BookButton label="Book a Consultation" className="btn-primary" />
+              <Link href="/services" className="btn-ghost">
+                All Services
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -120,30 +116,28 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
         </div>
       </section>
 
-      {/* Procedure explained, video */}
-      <section className="bg-noir py-20 lg:py-28">
-        <div className="container-site">
-          <div className="text-center">
-            <Reveal>
-              <span className="eyebrow text-gold">Watch</span>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
-                {proc.name}, explained
-              </h2>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <p className="mx-auto mt-6 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
-                {videoId
-                  ? `Dr. Jindal walks through ${proc.name}, what it is, who it helps, and what to expect.`
-                  : `A short video with Dr. Jindal explaining ${proc.name} is coming soon.`}
-              </p>
-            </Reveal>
-          </div>
+      {/* Procedure explained, video (only when a video exists) */}
+      {videoId && (
+        <section className="bg-noir py-20 lg:py-28">
+          <div className="container-site">
+            <div className="text-center">
+              <Reveal>
+                <span className="eyebrow text-gold">Watch</span>
+              </Reveal>
+              <Reveal delay={0.08}>
+                <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
+                  {proc.name}, explained
+                </h2>
+              </Reveal>
+              <Reveal delay={0.16}>
+                <p className="mx-auto mt-6 max-w-xl font-sans text-sm font-light leading-relaxed text-cream/65">
+                  Dr. Jindal walks through {proc.name}, what it is, who it helps, and what to expect.
+                </p>
+              </Reveal>
+            </div>
 
-          <Reveal delay={0.2}>
-            <div className="relative mx-auto mt-10 aspect-video w-full max-w-4xl overflow-hidden border border-cream/15">
-              {videoId ? (
+            <Reveal delay={0.2}>
+              <div className="relative mx-auto mt-10 aspect-video w-full max-w-4xl overflow-hidden border border-cream/15">
                 <iframe
                   title={`${proc.name} explained`}
                   src={`https://www.youtube.com/embed/${videoId}`}
@@ -153,16 +147,14 @@ export default function ProcedurePage({ params }: { params: { slug: string } }) 
                   className="absolute inset-0 h-full w-full"
                   style={{ border: 0 }}
                 />
-              ) : (
-                <Placeholder />
-              )}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
-      {/* Before & After */}
-      <BeforeAfter name={proc.name} />
+      {/* Before & After (only on pages with real results) */}
+      <BeforeAfter name={proc.name} images={baImages} />
 
       {/* FAQ */}
       <section className="bg-noir-deep py-20 lg:py-28">

@@ -1,11 +1,10 @@
 import Reveal from "@/components/Reveal";
-import Placeholder from "@/components/Placeholder";
 import { business, socialFeed } from "@/content/site";
 
 /**
  * "Follow Along" band (shown above the footer). Renders a live Instagram feed
  * when `socialFeed.instagramEmbedUrl` is set (widget embed URL); otherwise a
- * tasteful placeholder grid + follow links.
+ * prominent Instagram follow CTA.
  */
 export default function SocialBand() {
   const { instagramEmbedUrl, instagramHandle } = socialFeed;
@@ -56,8 +55,8 @@ export default function SocialBand() {
           </Reveal>
         </div>
 
-        <div className="mt-12">
-          {instagramEmbedUrl ? (
+        {instagramEmbedUrl && (
+          <div className="mt-12">
             <iframe
               title="Instagram feed"
               src={instagramEmbedUrl}
@@ -66,22 +65,8 @@ export default function SocialBand() {
               className="w-full"
               style={{ border: 0, minHeight: 360 }}
             />
-          ) : (
-            <Reveal>
-              <a
-                href={business.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block h-64 w-full overflow-hidden border border-cream/15 transition-colors duration-500 hover:border-gold/40 md:h-80"
-              >
-                <Placeholder />
-              </a>
-              <p className="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.18em] text-cream/40">
-                Live feed coming soon. Follow {instagramHandle} for the latest.
-              </p>
-            </Reveal>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

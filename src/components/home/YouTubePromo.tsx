@@ -1,10 +1,10 @@
 import Reveal from "@/components/Reveal";
-import Placeholder from "@/components/Placeholder";
 import { socialFeed } from "@/content/site";
 
 /**
  * "Follow Dr. Jindal on YouTube" homepage section. Shows a featured video embed
- * when `socialFeed.youtube.featuredVideoId` is set, otherwise a placeholder.
+ * when `socialFeed.youtube.featuredVideoId` is set; otherwise it collapses to a
+ * single-column Subscribe CTA (no empty video box).
  * The Subscribe button links to `socialFeed.youtube.channelUrl` when provided.
  */
 export default function YouTubePromo() {
@@ -12,9 +12,13 @@ export default function YouTubePromo() {
 
   return (
     <section className="bg-noir-2 py-24 lg:py-32">
-      <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+      <div
+        className={`container-site grid items-center gap-12 lg:gap-16 ${
+          featuredVideoId ? "lg:grid-cols-12" : ""
+        }`}
+      >
         {/* Copy */}
-        <div className="lg:col-span-5">
+        <div className={featuredVideoId ? "lg:col-span-5" : "max-w-2xl"}>
           <Reveal>
             <span className="eyebrow text-gold">On YouTube</span>
           </Reveal>
@@ -41,10 +45,10 @@ export default function YouTubePromo() {
           </Reveal>
         </div>
 
-        {/* Featured video */}
-        <Reveal className="lg:col-span-7">
-          <div className="relative aspect-video w-full overflow-hidden border border-cream/15 bg-noir">
-            {featuredVideoId ? (
+        {/* Featured video (only when one is set) */}
+        {featuredVideoId && (
+          <Reveal className="lg:col-span-7">
+            <div className="relative aspect-video w-full overflow-hidden border border-cream/15 bg-noir">
               <iframe
                 title="Featured video, Dr. Jindal"
                 src={`https://www.youtube.com/embed/${featuredVideoId}`}
@@ -54,11 +58,9 @@ export default function YouTubePromo() {
                 className="absolute inset-0 h-full w-full"
                 style={{ border: 0 }}
               />
-            ) : (
-              <Placeholder />
-            )}
-          </div>
-        </Reveal>
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   );

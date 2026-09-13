@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
-import SiteImage from "@/components/SiteImage";
 import MeetDoctor from "@/components/home/MeetDoctor";
 import ProviderBio from "@/components/ProviderBio";
 import Highlights from "@/components/home/Highlights";
@@ -36,20 +35,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story, image + copy */}
+      {/* Story */}
       <section className="bg-noir-deep py-20 lg:py-28">
-        <div className="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-          <Reveal className="lg:col-span-6">
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
-              <SiteImage
-                imageKey="home.philosophy"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
-          <div className="lg:col-span-6">
+        <div className="container-site grid gap-8 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
             <Reveal>
               <span className="eyebrow text-gold">Our Story</span>
             </Reveal>
@@ -58,9 +47,11 @@ export default function AboutPage() {
                 {about.story.heading}
               </h2>
             </Reveal>
+          </div>
+          <div className="lg:col-span-8">
             {about.story.body.map((para, i) => (
               <Reveal key={i} delay={0.16 + i * 0.06}>
-                <p className="mt-6 max-w-xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70">
+                <p className="mt-6 max-w-2xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/70 first:mt-0">
                   {para}
                 </p>
               </Reveal>

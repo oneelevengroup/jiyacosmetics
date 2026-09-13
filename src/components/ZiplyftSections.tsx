@@ -1,6 +1,5 @@
 import Reveal from "@/components/Reveal";
 import SiteImage from "@/components/SiteImage";
-import Placeholder from "@/components/Placeholder";
 import BookButton from "@/components/BookButton";
 import { business } from "@/content/site";
 
@@ -234,29 +233,6 @@ export default function ZiplyftSections() {
             <Reveal delay={0.22}>
               <BookButton label="Book Your Consultation" className="btn-primary mt-9" />
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Before & After */}
-      <section className="bg-noir-2 py-20 lg:py-28">
-        <div className="container-site">
-          <Reveal>
-            <span className="eyebrow text-gold">Real Results</span>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
-              Before &amp; After
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[0, 1, 2].map((i) => (
-              <Reveal as="div" key={i} delay={i * 0.08}>
-                <div className="relative aspect-[4/5] w-full overflow-hidden border border-cream/15">
-                  <Placeholder />
-                </div>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>

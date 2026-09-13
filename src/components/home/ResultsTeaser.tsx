@@ -1,11 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import Placeholder from "@/components/Placeholder";
 
-/**
- * Before/After teaser that links to the Gallery. Placeholder slots until real
- * patient photos are added (see PLACEHOLDERS.md / CLIENT-NEEDS.md).
- */
+/** Three real before/after results (before on top, after on bottom) linking to the Gallery. */
+const teaser = ["/images/IMG_0698.JPG", "/images/IMG_1549.JPG", "/images/IMG_0582.JPG"];
+
 export default function ResultsTeaser() {
   return (
     <section className="bg-noir-2 py-24 lg:py-32">
@@ -29,17 +28,28 @@ export default function ResultsTeaser() {
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[0, 1, 2].map((i) => (
-            <Reveal as="div" key={i} delay={i * 0.08}>
+          {teaser.map((src, i) => (
+            <Reveal as="div" key={src} delay={i * 0.08}>
               <Link
                 href="/gallery"
-                className="group relative block aspect-[4/5] w-full overflow-hidden border border-cream/15 transition-colors duration-500 hover:border-gold/40"
+                className="group relative block aspect-square w-full overflow-hidden border border-cream/15 transition-colors duration-500 hover:border-gold/40"
               >
-                <Placeholder />
+                <Image
+                  src={src}
+                  alt="Blepharoplasty before and after result"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 ease-lux group-hover:scale-105"
+                />
               </Link>
             </Reveal>
           ))}
         </div>
+        <Reveal delay={0.2}>
+          <p className="mt-6 font-sans text-[0.7rem] uppercase tracking-[0.2em] text-cream/45">
+            Before (top) · After (bottom) · Individual results vary
+          </p>
+        </Reveal>
       </div>
     </section>
   );
