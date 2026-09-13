@@ -7,7 +7,7 @@ import ServicesOverview from "@/components/home/ServicesOverview";
 import Highlights from "@/components/home/Highlights";
 import ResultsTeaser from "@/components/home/ResultsTeaser";
 import Testimonials from "@/components/home/Testimonials";
-import YouTubePromo from "@/components/home/YouTubePromo";
+import ShortsFeed from "@/components/home/ShortsFeed";
 import ConsultCTA from "@/components/home/ConsultCTA";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function HomeEs() {
       <Highlights locale="es" />
       <ResultsTeaser locale="es" />
       <Testimonials locale="es" />
-      <YouTubePromo locale="es" />
+      <ShortsFeed locale="es" />
       <ConsultCTA locale="es" />
     </>
   );

@@ -41,6 +41,7 @@ type UIStrings = {
   explainedSuffix: string; relatedTitle: string; bookConsultation: string;
   contactHeroBody: string; quickQuestion: string; askAnything: string; inquiryBody: string;
   seeResults: string; socialBody: string; scroll: string;
+  shortsEyebrow: string; shortsHeading: string; watchOnYt: string;
 };
 
 const uiEn: UIStrings = {
@@ -109,6 +110,9 @@ const uiEn: UIStrings = {
   socialBody:
     "Follow JIYA for daily before-and-afters, procedure walk-throughs, and patient stories, especially on Instagram.",
   scroll: "Scroll",
+  shortsEyebrow: "Latest Shorts",
+  shortsHeading: "Straight from our YouTube",
+  watchOnYt: "Watch on YouTube",
 };
 
 const uiEs: UIStrings = {
@@ -177,6 +181,9 @@ const uiEs: UIStrings = {
   socialBody:
     "Sigue a JIYA para ver antes y después a diario, explicaciones de procedimientos e historias de pacientes, sobre todo en Instagram.",
   scroll: "Scroll",
+  shortsEyebrow: "Últimos Shorts",
+  shortsHeading: "Directo desde nuestro YouTube",
+  watchOnYt: "Ver en YouTube",
 };
 
 export type UI = UIStrings;
