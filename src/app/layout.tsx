@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Forum, Mulish } from "next/font/google";
 import "./globals.css";
 import { business } from "@/content/site";
+import StickyCTA from "@/components/StickyCTA";
+import { GADS_ID } from "@/lib/forms";
 
 // Display: Forum, elegant high-contrast serif with refined capitals (per client).
 const display = Forum({
@@ -42,7 +45,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <StickyCTA />
+        {/* Google Ads (conversion tag for the bleph Search campaign) */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GADS_ID}');`}
+        </Script>
+      </body>
     </html>
   );
 }

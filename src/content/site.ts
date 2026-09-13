@@ -203,6 +203,7 @@ export const surgeons = [
     imageKey: "home.doctor",
     meetHref: "/about#dr-jindal",
     meetLabel: "Dr. J",
+    provider: "jindal",
     bookLabel: "Book with Dr. Jindal",
   },
   {
@@ -213,6 +214,7 @@ export const surgeons = [
     imageKey: "provider.prabakaran",
     meetHref: "/about#dr-prabakaran",
     meetLabel: "Dr. P",
+    provider: "prabakaran",
     bookLabel: "Book with Dr. Prabakaran",
   },
   {
@@ -223,12 +225,14 @@ export const surgeons = [
     imageKey: "provider.katie",
     meetHref: "/about#katie-gambino",
     meetLabel: "Katie",
+    provider: "gambino",
     bookLabel: "Book with Katie",
   },
 ];
 
 /** Dr. Samantha Prabakaran bio (second surgeon). */
 export const drPrabakaran = {
+  provider: "prabakaran",
   eyebrow: "Oculofacial Surgeon",
   name: "Dr. Samantha Prabakaran",
   bio: [
@@ -241,6 +245,7 @@ export const drPrabakaran = {
 
 /** Katie Gambino, PA-C bio (physician associate, surgical + non-surgical). */
 export const katiePA = {
+  provider: "gambino",
   eyebrow: "Physician Associate",
   name: "Katie Gambino, PA-C",
   bio: [
@@ -254,6 +259,7 @@ export const katiePA = {
 
 /** Dr. Jindal bio + credentials (from jiyacosmetic.com). */
 export const doctor = {
+  provider: "jindal",
   eyebrow: "Meet Your Surgeon",
   name: "Dr. Sumeet Jindal",
   bio: [

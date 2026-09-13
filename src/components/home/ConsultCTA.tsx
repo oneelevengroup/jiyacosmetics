@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import BookButton from "@/components/BookButton";
+import AskButton from "@/components/AskButton";
 import { getSite, getUI, type Locale } from "@/content/i18n";
 
 export default function ConsultCTA({ locale = "en" }: { locale?: Locale }) {
@@ -24,6 +25,7 @@ export default function ConsultCTA({ locale = "en" }: { locale?: Locale }) {
         <Reveal delay={0.24}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <BookButton label={ui.bookConsult} className="btn-primary" />
+            <AskButton label={ui.askQuestion} className="btn-ghost" />
             <a href={business.phoneHref} className="btn-primary">
               {ui.call} {business.phone}
             </a>

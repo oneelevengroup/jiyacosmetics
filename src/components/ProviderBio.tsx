@@ -8,6 +8,7 @@ type Provider = {
   name: string;
   bio: string[];
   cta: { label: string; href: string };
+  provider?: string;
 };
 
 /**
@@ -59,7 +60,7 @@ export default function ProviderBio({
           ))}
           <Reveal delay={0.34}>
             <div className="mt-10">
-              <BookButton label={provider.cta.label} className="btn-primary" />
+              <BookButton label={provider.cta.label} provider={provider.provider} className="btn-primary" />
             </div>
           </Reveal>
         </div>

@@ -46,7 +46,7 @@ export default function MeetDoctor({ locale = "en" }: { locale?: Locale }) {
           ))}
           <Reveal delay={0.34}>
             <div className="mt-10">
-              <BookButton label={doctor.cta.label} className="btn-primary" />
+              <BookButton label={doctor.cta.label} provider={doctor.provider} className="btn-primary" />
             </div>
           </Reveal>
         </div>

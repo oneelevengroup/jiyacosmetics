@@ -44,6 +44,7 @@ type UIStrings = {
   shortsEyebrow: string; shortsHeading: string; watchOnYt: string;
   subscribeDrJindal: string;
   ncoEyebrow: string; ncoHeadline: string; ncoBody: string; ncoCta: string;
+  askQuestion: string;
 };
 
 const uiEn: UIStrings = {
@@ -121,6 +122,7 @@ const uiEn: UIStrings = {
   ncoBody:
     "JIYA and NCO Eye Center come from the same practice, founded by Dr. Sumeet Jindal. NCO handles the vision side: cataract surgery, lens replacement, ICL, LASIK, and keratoconus care, with operating rooms in the building instead of a hospital. Same Brier Creek address, one suite over.",
   ncoCta: "Visit NCO Eye Center",
+  askQuestion: "Ask a question",
 };
 
 const uiEs: UIStrings = {
@@ -198,6 +200,7 @@ const uiEs: UIStrings = {
   ncoBody:
     "JIYA y NCO Eye Center pertenecen al mismo grupo médico, fundado por el Dr. Sumeet Jindal. NCO se encarga de la visión: cirugía de cataratas, reemplazo de cristalino, ICL, LASIK y queratocono, con quirófanos propios en el edificio, no en un hospital. Mismo edificio en Brier Creek, una suite más allá.",
   ncoCta: "Visitar NCO Eye Center",
+  askQuestion: "Hacer una pregunta",
 };
 
 export type UI = UIStrings;

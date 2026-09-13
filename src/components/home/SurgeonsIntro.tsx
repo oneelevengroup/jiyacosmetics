@@ -52,7 +52,7 @@ export default function SurgeonsIntro({ locale = "en" }: { locale?: Locale }) {
                   </p>
 
                   <div className="mt-7 flex flex-wrap items-center gap-4">
-                    <BookButton label={s.bookLabel} className="btn-primary" />
+                    <BookButton label={s.bookLabel} provider={s.provider} className="btn-primary" />
                     <Link href={localePath(locale, s.meetHref)} className="btn-ghost">
                       {ui.meet} {s.meetLabel}
                     </Link>
