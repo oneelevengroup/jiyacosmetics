@@ -89,7 +89,7 @@ export default function Gallery() {
       </motion.div>
 
       <p className="mt-10 font-sans text-[0.7rem] uppercase tracking-[0.2em] text-cream/45">
-        Before (top) · After (bottom) · Individual results vary
+        Actual JIYA patients · Individual results vary
       </p>
     </div>
   );
