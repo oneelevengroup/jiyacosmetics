@@ -1,16 +1,18 @@
 import Reveal from "@/components/Reveal";
-import { highlights } from "@/content/site";
+import { getSite, getUI, type Locale } from "@/content/i18n";
 
-export default function Highlights() {
+export default function Highlights({ locale = "en" }: { locale?: Locale }) {
+  const { highlights } = getSite(locale);
+  const ui = getUI(locale);
   return (
     <section className="bg-noir py-24 lg:py-36">
       <div className="container-site">
         <Reveal>
-          <span className="eyebrow">Why JIYA</span>
+          <span className="eyebrow">{ui.whyJiya}</span>
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="mt-6 max-w-3xl font-display text-display-md font-light uppercase text-cream">
-            The same hospitality &amp; customized care, at every stage
+            {ui.whyJiyaHeading}
           </h2>
         </Reveal>
 

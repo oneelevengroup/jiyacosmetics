@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import { socialFeed } from "@/content/site";
+import { getSite, getUI, type Locale } from "@/content/i18n";
 
 /**
  * "Follow Dr. Jindal on YouTube" homepage section. Shows a featured video embed
@@ -7,7 +7,9 @@ import { socialFeed } from "@/content/site";
  * single-column Subscribe CTA (no empty video box).
  * The Subscribe button links to `socialFeed.youtube.channelUrl` when provided.
  */
-export default function YouTubePromo() {
+export default function YouTubePromo({ locale = "en" }: { locale?: Locale }) {
+  const { socialFeed } = getSite(locale);
+  const ui = getUI(locale);
   const { channelUrl, featuredVideoId, blurb } = socialFeed.youtube;
 
   return (
@@ -20,11 +22,11 @@ export default function YouTubePromo() {
         {/* Copy */}
         <div className={featuredVideoId ? "lg:col-span-5" : "max-w-2xl"}>
           <Reveal>
-            <span className="eyebrow text-gold">On YouTube</span>
+            <span className="eyebrow text-gold">{ui.onYouTube}</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
-              Follow Dr. Jindal
+              {ui.followDrJindal}
             </h2>
           </Reveal>
           <Reveal delay={0.16}>
@@ -40,7 +42,7 @@ export default function YouTubePromo() {
               aria-disabled={!channelUrl}
               className={`btn-primary mt-9 ${channelUrl ? "" : "pointer-events-none opacity-60"}`}
             >
-              Subscribe on YouTube
+              {ui.subscribeYouTube}
             </a>
           </Reveal>
         </div>

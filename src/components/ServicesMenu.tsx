@@ -3,14 +3,16 @@
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { serviceCategories } from "@/content/site";
+import { getSite, getUI, localePath, type Locale } from "@/content/i18n";
 
 /**
  * Desktop hover dropdown for "Services": a left column of the four categories;
  * hovering a category reveals its procedures (right column) so visitors can jump
  * directly to any procedure page. The trigger still links to the /services hub.
  */
-export default function ServicesMenu() {
+export default function ServicesMenu({ locale = "en" }: { locale?: Locale }) {
+  const { serviceCategories } = getSite(locale);
+  const ui = getUI(locale);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(serviceCategories[0]?.id ?? "");
 
@@ -23,12 +25,12 @@ export default function ServicesMenu() {
       onMouseLeave={() => setOpen(false)}
     >
       <Link
-        href="/services"
+        href={localePath(locale, "/services")}
         className={`link-underline label transition-colors ${
           open ? "text-cream" : "text-cream/75 hover:text-cream"
         }`}
       >
-        Services
+        {ui.servicesLabel}
       </Link>
 
       <AnimatePresence>
@@ -47,7 +49,7 @@ export default function ServicesMenu() {
                 {serviceCategories.map((cat) => (
                   <li key={cat.id} onMouseEnter={() => setActive(cat.id)}>
                     <Link
-                      href={`/services#${cat.id}`}
+                      href={localePath(locale, `/services#${cat.id}`)}
                       className={`flex items-center justify-between gap-4 px-6 py-3 label transition-colors duration-300 ${
                         active === cat.id
                           ? "bg-noir-2 text-gold"
@@ -81,7 +83,7 @@ export default function ServicesMenu() {
                               {p.name}
                             </a>
                           ) : (
-                            <Link href={p.href ?? `/services/${p.slug}`} className={cls}>
+                            <Link href={localePath(locale, p.href ?? `/services/${p.slug}`)} className={cls}>
                               {p.name}
                             </Link>
                           )}

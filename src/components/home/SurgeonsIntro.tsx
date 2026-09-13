@@ -2,7 +2,7 @@ import Link from "next/link";
 import SiteImage from "@/components/SiteImage";
 import Reveal from "@/components/Reveal";
 import BookButton from "@/components/BookButton";
-import { surgeons } from "@/content/site";
+import { getSite, getUI, localePath, type Locale } from "@/content/i18n";
 import type { ImageKey } from "@/lib/images";
 
 /**
@@ -10,17 +10,19 @@ import type { ImageKey } from "@/lib/images";
  * side by side, each with a "Meet" link (to their full bio on About) and a
  * Book CTA.
  */
-export default function SurgeonsIntro() {
+export default function SurgeonsIntro({ locale = "en" }: { locale?: Locale }) {
+  const { surgeons } = getSite(locale);
+  const ui = getUI(locale);
   return (
     <section className="bg-noir-deep py-24 lg:py-32">
       <div className="container-site">
         <div className="text-center">
           <Reveal>
-            <span className="eyebrow text-gold">Our Team</span>
+            <span className="eyebrow text-gold">{ui.ourTeam}</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mx-auto mt-6 font-display text-display-md font-light uppercase text-cream md:whitespace-nowrap">
-              Meet the team behind JIYA
+              {ui.meetTeam}
             </h2>
           </Reveal>
         </div>
@@ -51,8 +53,8 @@ export default function SurgeonsIntro() {
 
                   <div className="mt-7 flex flex-wrap items-center gap-4">
                     <BookButton label={s.bookLabel} className="btn-primary" />
-                    <Link href={s.meetHref} className="btn-ghost">
-                      Meet {s.meetLabel}
+                    <Link href={localePath(locale, s.meetHref)} className="btn-ghost">
+                      {ui.meet} {s.meetLabel}
                     </Link>
                   </div>
                 </div>

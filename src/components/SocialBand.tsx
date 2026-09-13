@@ -1,12 +1,14 @@
 import Reveal from "@/components/Reveal";
-import { business, socialFeed } from "@/content/site";
+import { getSite, getUI, type Locale } from "@/content/i18n";
 
 /**
  * "Follow Along" band (shown above the footer). Renders a live Instagram feed
  * when `socialFeed.instagramEmbedUrl` is set (widget embed URL); otherwise a
  * prominent Instagram follow CTA.
  */
-export default function SocialBand() {
+export default function SocialBand({ locale = "en" }: { locale?: Locale }) {
+  const { business, socialFeed } = getSite(locale);
+  const ui = getUI(locale);
   const { instagramEmbedUrl, instagramHandle } = socialFeed;
 
   return (
@@ -15,7 +17,7 @@ export default function SocialBand() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="eyebrow text-gold">Follow Along</span>
+              <span className="eyebrow text-gold">{ui.followAlong}</span>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">

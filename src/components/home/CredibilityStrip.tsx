@@ -1,6 +1,7 @@
-import { credibility } from "@/content/site";
+import { getSite, type Locale } from "@/content/i18n";
 
-export default function CredibilityStrip() {
+export default function CredibilityStrip({ locale = "en" }: { locale?: Locale }) {
+  const { credibility } = getSite(locale);
   return (
     <section className="border-y border-cream/10 bg-noir-2">
       <div className="container-site flex flex-wrap items-center justify-center gap-x-10 gap-y-4 py-7 lg:gap-x-16">

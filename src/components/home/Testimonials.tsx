@@ -1,16 +1,18 @@
 import Reveal from "@/components/Reveal";
-import { testimonials } from "@/content/site";
+import { getSite, getUI, type Locale } from "@/content/i18n";
 
-export default function Testimonials() {
+export default function Testimonials({ locale = "en" }: { locale?: Locale }) {
+  const { testimonials } = getSite(locale);
+  const ui = getUI(locale);
   return (
     <section className="bg-noir-deep py-24 lg:py-32">
       <div className="container-site">
         <Reveal>
-          <span className="eyebrow text-gold">Patient Stories</span>
+          <span className="eyebrow text-gold">{ui.patientStories}</span>
         </Reveal>
         <Reveal delay={0.08}>
           <h2 className="mt-6 max-w-2xl font-display text-display-md font-light uppercase text-cream">
-            In their words
+            {ui.inTheirWords}
           </h2>
         </Reveal>
 

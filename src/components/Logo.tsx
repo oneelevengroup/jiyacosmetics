@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getImage } from "@/lib/images";
+import { localePath, type Locale } from "@/content/i18n";
 
 /**
  * JIYA logo, the real transparent gold lockup (src/lib/images.ts → "brand.logo").
@@ -9,17 +10,20 @@ import { getImage } from "@/lib/images";
 export default function Logo({
   size = "header",
   centered = false,
+  locale = "en",
 }: {
   size?: "header" | "footer";
   centered?: boolean;
+  locale?: Locale;
 }) {
   // Header uses the horizontal lockup; footer uses the taller vertical lockup.
   const logo = getImage(size === "footer" ? "brand.logo" : "brand.logoHorizontal");
   const height = size === "footer" ? "h-16 lg:h-20" : "h-10 md:h-12";
+  const home = localePath(locale, "/");
 
   if (!logo.placeholder) {
     return (
-      <Link href="/" aria-label="JIYA, home" className={centered ? "block text-center" : "block"}>
+      <Link href={home} aria-label="JIYA, home" className={centered ? "block text-center" : "block"}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={logo.src} alt={logo.alt} className={`${height} w-auto`} />
       </Link>
@@ -28,7 +32,7 @@ export default function Logo({
 
   return (
     <Link
-      href="/"
+      href={home}
       aria-label="JIYA, home"
       className={`group block text-cream ${centered ? "text-center" : ""}`}
     >

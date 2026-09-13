@@ -12,7 +12,7 @@ import {
 import SiteImage from "@/components/SiteImage";
 import BookButton from "@/components/BookButton";
 import { getImage } from "@/lib/images";
-import { business } from "@/content/site";
+import { getSite, getUI, localePath, type Locale } from "@/content/i18n";
 
 /**
  * Two-phase cinematic hero.
@@ -26,7 +26,9 @@ import { business } from "@/content/site";
  * Implemented as a tall section with a sticky inner stage so the reveal happens
  * while the hero stays pinned in view.
  */
-export default function Hero() {
+export default function Hero({ locale = "en" }: { locale?: Locale }) {
+  const { business } = getSite(locale);
+  const ui = getUI(locale);
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const [revealed, setRevealed] = useState(false);
@@ -123,22 +125,21 @@ export default function Hero() {
             <span className="eyebrow">{business.founderTitle} · Raleigh, NC</span>
 
             <h1 className="mt-6 font-display text-display-lg font-light uppercase leading-[1.02] text-gold">
-              Look better.
+              {ui.heroLine1}
               <br />
-              See better.
+              {ui.heroLine2}
               <br />
-              Feel better.
+              {ui.heroLine3}
             </h1>
 
             <p className="mt-7 max-w-md font-sans text-sm font-light uppercase leading-relaxed tracking-[0.14em] text-cream/80">
-              Luxury facial cosmetic surgery & regenerative care from oculofacial
-              surgeon Dr. Sumeet Jindal
+              {ui.heroSubtitle}
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-5">
-              <BookButton label="Book a Consultation" className="btn-primary" />
-              <Link href="/services" className="btn-ghost">
-                Explore Services
+              <BookButton label={ui.bookConsult} className="btn-primary" />
+              <Link href={localePath(locale, "/services")} className="btn-ghost">
+                {ui.exploreServices}
               </Link>
             </div>
           </div>
@@ -150,7 +151,7 @@ export default function Hero() {
           className="pointer-events-none absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-4"
         >
           <span className="font-sans text-xs uppercase tracking-[0.45em] text-cream/75">
-            Scroll
+            {ui.scroll}
           </span>
           <motion.img
             src={icon.src}

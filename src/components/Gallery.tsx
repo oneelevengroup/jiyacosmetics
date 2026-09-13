@@ -5,13 +5,23 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { galleryCategories, galleryItems } from "@/content/gallery";
 import Placeholder from "@/components/Placeholder";
+import { getUI, type Locale } from "@/content/i18n";
+
+const ES_TAB: Record<string, string> = {
+  all: "Todas",
+  eyelid: "Ojos",
+  face: "Rostro",
+  nonsurgical: "No Quirúrgico",
+  hair: "Cabello",
+};
 
 /**
  * Filterable Before & After gallery. Combined before/after images (before on
  * top, after on bottom) render whole; separate pairs render side by side. Only
  * categories that actually have results are shown as filter tabs.
  */
-export default function Gallery() {
+export default function Gallery({ locale = "en" }: { locale?: Locale }) {
+  const ui = getUI(locale);
   const [active, setActive] = useState("all");
 
   // Only show category tabs that have at least one item (plus "All").
@@ -38,7 +48,7 @@ export default function Gallery() {
                 active === cat.id ? "text-gold" : "text-cream/55 hover:text-cream"
               }`}
             >
-              {cat.label}
+              {locale === "es" ? ES_TAB[cat.id] ?? cat.label : cat.label}
             </button>
           ))}
         </div>
@@ -89,7 +99,7 @@ export default function Gallery() {
       </motion.div>
 
       <p className="mt-10 font-sans text-[0.7rem] uppercase tracking-[0.2em] text-cream/45">
-        Actual JIYA patients · Individual results vary
+        {ui.resultsVary}
       </p>
     </div>
   );

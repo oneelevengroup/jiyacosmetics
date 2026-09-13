@@ -1,7 +1,7 @@
 import SiteImage from "@/components/SiteImage";
 import Reveal from "@/components/Reveal";
 import BookButton from "@/components/BookButton";
-import { doctor, credentials } from "@/content/site";
+import { getSite, getUI, type Locale } from "@/content/i18n";
 
 /**
  * "Meet Dr. Jindal", portrait left, bio right, with a "Member of" credentials
@@ -9,7 +9,9 @@ import { doctor, credentials } from "@/content/site";
  * Each credential renders its white/transparent logo when one is provided
  * (see PLACEHOLDERS.md), otherwise the name as elegant text.
  */
-export default function MeetDoctor() {
+export default function MeetDoctor({ locale = "en" }: { locale?: Locale }) {
+  const { doctor, credentials } = getSite(locale);
+  const ui = getUI(locale);
   return (
     <section id="dr-jindal" className="scroll-mt-28 bg-noir-deep py-24 lg:py-36">
       <div className="container-site grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
@@ -53,7 +55,7 @@ export default function MeetDoctor() {
       {/* Credentials */}
       <Reveal>
         <div className="container-site mt-16 border-t border-cream/10 pt-10 lg:mt-24 lg:pt-12">
-          <span className="eyebrow">Member of</span>
+          <span className="eyebrow">{ui.memberOf}</span>
           <div className="mt-7 flex flex-wrap items-center gap-x-10 gap-y-6 lg:gap-x-14">
             {credentials.map((c) =>
               c.logo ? (

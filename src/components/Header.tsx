@@ -4,14 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { nav, business } from "@/content/site";
+import { getSite, getUI, localePath, type Locale } from "@/content/i18n";
 import Logo from "./Logo";
 import BookButton from "./BookButton";
 import ServicesMenu from "./ServicesMenu";
 
-export default function Header() {
+export default function Header({ locale = "en" }: { locale?: Locale }) {
+  const { nav, business } = getSite(locale);
+  const ui = getUI(locale);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const isHome = pathname === "/" || pathname === "/es";
+
+  // Language toggle targets: same page in the other language.
+  const basePath = pathname.startsWith("/es") ? pathname.slice(3) || "/" : pathname;
+  const enHref = basePath;
+  const esHref = basePath === "/" ? "/es" : `/es${basePath}`;
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -51,11 +58,11 @@ export default function Header() {
         <nav className="hidden items-center gap-8 lg:flex">
           {nav.slice(0, 4).map((item) =>
             item.href === "/services" ? (
-              <ServicesMenu key={item.href} />
+              <ServicesMenu key={item.href} locale={locale} />
             ) : (
               <Link
                 key={item.href}
-                href={item.href}
+                href={localePath(locale, item.href)}
                 className="link-underline label text-cream/75 hover:text-cream"
               >
                 {item.label}
@@ -66,22 +73,37 @@ export default function Header() {
 
         {/* Center: logo */}
         <div className="flex justify-start lg:justify-center">
-          <Logo centered />
+          <Logo centered locale={locale} />
         </div>
 
-        {/* Right: remaining nav + CTA */}
+        {/* Right: remaining nav + language toggle + CTA */}
         <div className="hidden items-center justify-end gap-7 lg:flex">
           {nav.slice(4).map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+              href={localePath(locale, item.href)}
               className="link-underline label text-cream/75 hover:text-cream"
             >
               {item.label}
             </Link>
           ))}
+          <span className="flex items-center gap-2 label text-cream/50">
+            <Link
+              href={enHref}
+              className={locale === "en" ? "text-gold" : "hover:text-cream"}
+            >
+              EN
+            </Link>
+            <span className="text-cream/25">/</span>
+            <Link
+              href={esHref}
+              className={locale === "es" ? "text-gold" : "hover:text-cream"}
+            >
+              ES
+            </Link>
+          </span>
           <BookButton
-            label="Book a Consultation"
+            label={ui.bookConsult}
             className="label whitespace-nowrap text-cream transition-colors duration-500 hover:text-gold"
           />
         </div>
@@ -124,7 +146,7 @@ export default function Header() {
                 transition={{ delay: 0.07 * i + 0.1, duration: 0.5 }}
               >
                 <Link
-                  href={item.href}
+                  href={localePath(locale, item.href)}
                   onClick={() => setOpen(false)}
                   className="block py-2 font-display text-4xl font-light uppercase tracking-wide text-cream"
                 >
@@ -133,11 +155,20 @@ export default function Header() {
               </motion.div>
             ))}
             <div className="mt-10 flex flex-col gap-4">
+              <span className="flex items-center gap-3 label text-cream/60">
+                <Link href={enHref} onClick={() => setOpen(false)} className={locale === "en" ? "text-gold" : ""}>
+                  EN
+                </Link>
+                <span className="text-cream/25">/</span>
+                <Link href={esHref} onClick={() => setOpen(false)} className={locale === "es" ? "text-gold" : ""}>
+                  ES
+                </Link>
+              </span>
               <a href={business.phoneHref} className="label text-cream/60">
                 {business.phone}
               </a>
               <BookButton
-                label="Book a Consultation"
+                label={ui.bookConsult}
                 className="btn-primary self-start"
                 onOpen={() => setOpen(false)}
               />

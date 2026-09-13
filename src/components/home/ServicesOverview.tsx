@@ -4,14 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
-import { serviceCategories } from "@/content/site";
+import { getSite, getUI, localePath, type Locale } from "@/content/i18n";
 
 /**
  * Procedure index as an elegant accordion, uppercase tracked labels, hairline
  * dividers, and a circular "+" that expands to reveal procedures. Directly
  * echoes the service list on the inspiration site.
  */
-export default function ServicesOverview() {
+export default function ServicesOverview({ locale = "en" }: { locale?: Locale }) {
+  const { serviceCategories } = getSite(locale);
+  const ui = getUI(locale);
   const [openId, setOpenId] = useState<string | null>(serviceCategories[0]?.id ?? null);
 
   return (
@@ -20,17 +22,17 @@ export default function ServicesOverview() {
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="eyebrow">What We Do</span>
+              <span className="eyebrow">{ui.whatWeDo}</span>
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="mt-6 max-w-2xl font-display text-display-md font-light uppercase text-cream">
-                Surgical artistry &amp; regenerative care
+                {ui.surgicalArtistry}
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.16}>
-            <Link href="/services" className="btn-ghost shrink-0">
-              All Services
+            <Link href={localePath(locale, "/services")} className="btn-ghost shrink-0">
+              {ui.allServices}
             </Link>
           </Reveal>
         </div>
@@ -99,7 +101,7 @@ export default function ServicesOverview() {
                                         {p.name}
                                       </a>
                                     ) : (
-                                      <Link href={p.href ?? `/services/${p.slug}`} className={cls}>
+                                      <Link href={localePath(locale, p.href ?? `/services/${p.slug}`)} className={cls}>
                                         {p.name}
                                       </Link>
                                     )}
