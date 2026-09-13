@@ -120,8 +120,8 @@ export const images = {
     src: "/images/home/iris.jpg",
     alt: "Macro detail of a human iris",
     target: "/images/home/iris.jpg",
-    placeholder: true,
-    note: "Full-bleed background for the NCO Eye Center band: macro crop of a human iris (client-supplied). Drop at /public/images/home/iris.jpg and set placeholder:false. Until then the band renders on a dark warm gradient.",
+    placeholder: false,
+    note: "Full-bleed background for the NCO Eye Center band: macro crop of a human iris (client-supplied, 2070x1380, warm gold tones).",
   },
 
   // ---- Service category imagery ----
