@@ -107,6 +107,14 @@ export const images = {
     note: "Katie Gambino PA-C headshot (1254x1254, studio background), framed portrait in the About team section.",
   },
 
+  "brand.nco": {
+    key: "brand.nco",
+    src: "/images/brand/nco-logo.png",
+    alt: "NCO Eye Center",
+    target: "/images/brand/nco-logo.png",
+    placeholder: true,
+    note: "NCO Eye Center logo, white or light/transparent PNG (or SVG) for the dark sister-brand band. Drop at /public/images/brand/nco-logo.png and set placeholder:false.",
+  },
   "home.iris": {
     key: "home.iris",
     src: "/images/home/iris.jpg",

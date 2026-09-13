@@ -15,6 +15,7 @@ const NCO_URL = "https://www.ncophth.com/";
 export default function NcoBand({ locale = "en" }: { locale?: Locale }) {
   const ui = getUI(locale);
   const iris = getImage("home.iris");
+  const ncoLogo = getImage("brand.nco");
 
   return (
     <section className="relative isolate overflow-hidden bg-noir-deep">
@@ -54,11 +55,22 @@ export default function NcoBand({ locale = "en" }: { locale?: Locale }) {
           <Reveal>
             <span className="eyebrow text-gold">{ui.ncoEyebrow}</span>
           </Reveal>
-          <Reveal delay={0.08}>
-            <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
-              {ui.ncoHeadline}
-            </h2>
-          </Reveal>
+          {ncoLogo.placeholder ? (
+            <Reveal delay={0.08}>
+              <h2 className="mt-5 font-display text-display-md font-light uppercase text-cream">
+                {ui.ncoHeadline}
+              </h2>
+            </Reveal>
+          ) : (
+            <Reveal delay={0.08}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ncoLogo.src}
+                alt={ncoLogo.alt}
+                className="mt-6 h-12 w-auto md:h-14"
+              />
+            </Reveal>
+          )}
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-xl font-sans text-[0.95rem] font-light leading-relaxed text-cream/85">
               {ui.ncoBody}
