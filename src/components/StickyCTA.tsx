@@ -31,7 +31,6 @@ export default function StickyCTA() {
 
   const [mounted, setMounted] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
-  const [popupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
@@ -46,11 +45,10 @@ export default function StickyCTA() {
     return () => io.disconnect();
   }, [pathname]);
 
-  const hidden = footerVisible || popupOpen || !mounted;
-  const openHandlers = {
-    onOpen: () => setPopupOpen(true),
-    onClose: () => setPopupOpen(false),
-  };
+  // Dock only when the footer is in view. The Typeform popup is a full-screen
+  // overlay, so the sticky never needs to hide itself when a form opens (and
+  // doing so previously destroyed the popup mid-open, the "dead buttons" bug).
+  const hidden = footerVisible || !mounted;
 
   return (
     <div
@@ -63,16 +61,15 @@ export default function StickyCTA() {
     >
       {TWO_EQUAL_PILLS ? (
         <div className="flex flex-wrap items-center justify-end gap-2">
-          <BookButton label={ui.bookConsult} className={PILL} {...openHandlers} />
-          <AskButton label={ui.askQuestion} className={PILL} {...openHandlers} />
+          <BookButton label={ui.bookConsult} className={PILL} />
+          <AskButton label={ui.askQuestion} className={PILL} />
         </div>
       ) : (
         <>
-          <BookButton label={ui.bookConsult} className={PILL} {...openHandlers} />
+          <BookButton label={ui.bookConsult} className={PILL} />
           <AskButton
             label={ui.askQuestion}
             className="rounded-full bg-noir/70 px-3 py-1 font-sans text-[0.65rem] uppercase tracking-label text-cream/80 backdrop-blur-sm transition-colors duration-300 hover:text-cream"
-            {...openHandlers}
           />
         </>
       )}
