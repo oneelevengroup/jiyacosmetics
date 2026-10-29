@@ -4,10 +4,15 @@
 
 /**
  * Self-hosted Avenir (licensed, client to provide).
- * Drop the web fonts in /public/fonts and these @font-face rules activate
- * automatically. Until then, the Mulish stand-in (loaded via next/font) is used.
- * Filenames expected: Avenir-Book / Avenir-Roman / Avenir-Medium (.woff2/.woff).
+ * DISABLED until the real font files exist, otherwise the browser requests
+ * non-existent /fonts/Avenir-*.woff2 on every page (404s). The Mulish stand-in
+ * (loaded via next/font) is used in the meantime.
+ *
+ * TO ENABLE AVENIR: drop Avenir-Book / Avenir-Roman / Avenir-Medium
+ * (.woff2 + .woff) into /public/fonts, uncomment the @font-face block below,
+ * and add "Avenir", to the front of --font-sans.
  */
+/*
 @font-face {
   font-family: "Avenir";
   src: url("/fonts/Avenir-Book.woff2") format("woff2"),
@@ -32,15 +37,16 @@
   font-style: normal;
   font-display: swap;
 }
+*/
 
 @layer base {
   :root {
     /* next/font defines --font-display (Forum) and --font-sans-fallback (Mulish)
        on <html>. Do NOT redefine --font-display here, a literal "Forum" has no
        @font-face and would clobber next/font, falling back to Georgia.
-       We only layer Avenir in front of the Mulish fallback, so self-hosted
-       Avenir files (when added to /public/fonts) win automatically. */
-    --font-sans: "Avenir", var(--font-sans-fallback), system-ui, sans-serif;
+       Mulish (via next/font) is the body font. When self-hosted Avenir is added
+       to /public/fonts, prepend "Avenir", to this value. */
+    --font-sans: var(--font-sans-fallback), system-ui, sans-serif;
   }
 
   html {
