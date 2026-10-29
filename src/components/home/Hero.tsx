@@ -76,7 +76,7 @@ export default function Hero({ locale = "en" }: { locale?: Locale }) {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-left"
+              className="object-cover object-[35%_center] md:object-left"
             />
           </motion.div>
 
