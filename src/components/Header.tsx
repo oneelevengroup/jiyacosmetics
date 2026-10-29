@@ -46,20 +46,40 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-700 ease-lux ${
-        show
-          ? "translate-y-0 border-cream/10 bg-noir/85 opacity-100 backdrop-blur-md"
-          : "pointer-events-none -translate-y-full border-transparent opacity-0"
-      }`}
-    >
-      <div className="container-site grid grid-cols-2 items-center py-5 lg:grid-cols-3">
-        {/* Left: nav (desktop) */}
-        <nav className="hidden items-center gap-8 lg:flex">
-          {nav.slice(0, 4).map((item) =>
-            item.href === "/services" ? (
-              <ServicesMenu key={item.href} locale={locale} />
-            ) : (
+    <>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-700 ease-lux ${
+          show
+            ? "translate-y-0 border-cream/10 bg-noir/85 opacity-100 backdrop-blur-md"
+            : "pointer-events-none -translate-y-full border-transparent opacity-0"
+        }`}
+      >
+        <div className="container-site grid grid-cols-2 items-center py-5 lg:grid-cols-3">
+          {/* Left: nav (desktop) */}
+          <nav className="hidden items-center gap-8 lg:flex">
+            {nav.slice(0, 4).map((item) =>
+              item.href === "/services" ? (
+                <ServicesMenu key={item.href} locale={locale} />
+              ) : (
+                <Link
+                  key={item.href}
+                  href={localePath(locale, item.href)}
+                  className="link-underline label text-cream/75 hover:text-cream"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
+          </nav>
+
+          {/* Center: logo */}
+          <div className="flex justify-start lg:justify-center">
+            <Logo centered locale={locale} />
+          </div>
+
+          {/* Right: remaining nav + language toggle + CTA */}
+          <div className="hidden items-center justify-end gap-7 lg:flex">
+            {nav.slice(4).map((item) => (
               <Link
                 key={item.href}
                 href={localePath(locale, item.href)}
@@ -67,115 +87,107 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
               >
                 {item.label}
               </Link>
-            )
-          )}
-        </nav>
+            ))}
+            <span className="flex items-center gap-2 label text-cream/50">
+              <Link
+                href={enHref}
+                className={locale === "en" ? "text-gold" : "hover:text-cream"}
+              >
+                EN
+              </Link>
+              <span className="text-cream/25">/</span>
+              <Link
+                href={esHref}
+                className={locale === "es" ? "text-gold" : "hover:text-cream"}
+              >
+                ES
+              </Link>
+            </span>
+            <BookButton
+              label={ui.bookConsult}
+              className="label whitespace-nowrap text-cream transition-colors duration-500 hover:text-gold"
+            />
+          </div>
 
-        {/* Center: logo */}
-        <div className="flex justify-start lg:justify-center">
-          <Logo centered locale={locale} />
+          {/* Mobile toggle (open) */}
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={open}
+            className="relative z-50 ml-auto flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
+          >
+            <span className="h-px w-7 bg-cream" />
+            <span className="h-px w-7 bg-cream" />
+          </button>
         </div>
+      </header>
 
-        {/* Right: remaining nav + language toggle + CTA */}
-        <div className="hidden items-center justify-end gap-7 lg:flex">
-          {nav.slice(4).map((item) => (
-            <Link
-              key={item.href}
-              href={localePath(locale, item.href)}
-              className="link-underline label text-cream/75 hover:text-cream"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <span className="flex items-center gap-2 label text-cream/50">
-            <Link
-              href={enHref}
-              className={locale === "en" ? "text-gold" : "hover:text-cream"}
-            >
-              EN
-            </Link>
-            <span className="text-cream/25">/</span>
-            <Link
-              href={esHref}
-              className={locale === "es" ? "text-gold" : "hover:text-cream"}
-            >
-              ES
-            </Link>
-          </span>
-          <BookButton
-            label={ui.bookConsult}
-            className="label whitespace-nowrap text-cream transition-colors duration-500 hover:text-gold"
-          />
-        </div>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          className="relative z-50 ml-auto flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
-        >
-          <span
-            className={`h-px w-7 bg-cream transition-all duration-300 ${
-              open ? "translate-y-[3.5px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-px w-7 bg-cream transition-all duration-300 ${
-              open ? "-translate-y-[3.5px] -rotate-45" : ""
-            }`}
-          />
-        </button>
-      </div>
-
-      {/* Mobile menu */}
+      {/* Mobile menu, full-screen opaque overlay. Rendered OUTSIDE the header so
+          its `fixed` positioning is relative to the viewport (the header has a
+          transform, which would otherwise make this size to the header bar). */}
       <AnimatePresence>
         {open && (
           <motion.nav
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 flex flex-col justify-center gap-1 bg-noir px-8 lg:hidden"
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-x-0 top-0 z-[60] flex h-[100dvh] flex-col bg-noir px-8 pb-12 lg:hidden"
           >
-            {nav.map((item, i) => (
-              <motion.div
-                key={item.href}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.07 * i + 0.1, duration: 0.5 }}
+            {/* Top row: logo + close */}
+            <div className="flex items-center justify-between py-5">
+              <Logo locale={locale} />
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                className="relative flex h-10 w-10 flex-col items-center justify-center gap-1.5"
               >
-                <Link
-                  href={localePath(locale, item.href)}
-                  onClick={() => setOpen(false)}
-                  className="block py-2 font-display text-4xl font-light uppercase tracking-wide text-cream"
+                <span className="h-px w-7 translate-y-[3.5px] rotate-45 bg-cream" />
+                <span className="h-px w-7 -translate-y-[3.5px] -rotate-45 bg-cream" />
+              </button>
+            </div>
+
+            {/* Links, centered in remaining space */}
+            <div className="flex flex-1 flex-col justify-center gap-1">
+              {nav.map((item, i) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.06 * i + 0.08, duration: 0.45 }}
                 >
-                  {item.label}
-                </Link>
-              </motion.div>
-            ))}
-            <div className="mt-10 flex flex-col gap-4">
-              <span className="flex items-center gap-3 label text-cream/60">
-                <Link href={enHref} onClick={() => setOpen(false)} className={locale === "en" ? "text-gold" : ""}>
-                  EN
-                </Link>
-                <span className="text-cream/25">/</span>
-                <Link href={esHref} onClick={() => setOpen(false)} className={locale === "es" ? "text-gold" : ""}>
-                  ES
-                </Link>
-              </span>
-              <a href={business.phoneHref} className="label text-cream/60">
-                {business.phone}
-              </a>
-              <BookButton
-                label={ui.bookConsult}
-                className="btn-primary self-start"
-                onOpen={() => setOpen(false)}
-              />
+                  <Link
+                    href={localePath(locale, item.href)}
+                    onClick={() => setOpen(false)}
+                    className="block py-2 font-display text-4xl font-light uppercase tracking-wide text-cream no-underline"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <div className="mt-10 flex flex-col gap-4">
+                <span className="flex items-center gap-3 label text-cream/60">
+                  <Link href={enHref} onClick={() => setOpen(false)} className={locale === "en" ? "text-gold" : ""}>
+                    EN
+                  </Link>
+                  <span className="text-cream/25">/</span>
+                  <Link href={esHref} onClick={() => setOpen(false)} className={locale === "es" ? "text-gold" : ""}>
+                    ES
+                  </Link>
+                </span>
+                <a href={business.phoneHref} className="label text-cream/60 no-underline">
+                  {business.phone}
+                </a>
+                <BookButton
+                  label={ui.bookConsult}
+                  className="btn-primary self-start"
+                  onOpen={() => setOpen(false)}
+                />
+              </div>
             </div>
           </motion.nav>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
